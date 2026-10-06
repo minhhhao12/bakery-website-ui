@@ -1,0 +1,25 @@
+header{
+    background-color: var(--navbar-bg);
+    padding: 1rem 2rem;
+}
+.header__container{
+    display: flex;
+    justify-content:space-between;
+    & .header-logo__container{
+        font-size: var(--text-xl);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    & .header-navlink__container{
+        display: flex;
+        gap: 28px;
+        font-size: var(--text-xl);
+        text-transform: capitalize;
+        color: var(--neutral-900);
+        font-weight: 600;
+        
+    }
+    & .cart__container{
+        font-size: var(--text-xl);
+    }
+}
