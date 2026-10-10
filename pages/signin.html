@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - Sweet Bakery</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../css/signin.css" />
+  </head>
+  <body>
+    <section class="auth-section">
+      <div class="auth-card">
+        <div class="auth-header">
+          <a href="../index.html" class="home-logo auth-logo">
+            <span class="logo-text">Sweet Bakery</span>
+          </a>
+          <h1 class="auth-title">Tạo tài khoản mới</h1>
+          <p class="auth-desc">Khám phá thế giới bánh ngọt ngay hôm nay</p>
+        </div>
+        
+        <form class="auth-form" action="../index.html" method="get">
+          <div class="form-group">
+            <label for="fullname" class="form-label">Họ và tên</label>
+            <input type="text" id="fullname" class="input" placeholder="Nguyễn Văn A" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="input" placeholder="nhapemail@example.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input type="password" id="password" class="input" placeholder="••••••••" required />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password" class="form-label">Xác nhận mật khẩu</label>
+            <input type="password" id="confirm-password" class="input" placeholder="••••••••" required />
+          </div>
+          
+          <div class="auth-options">
+            <label class="checkbox-label">
+              <input type="checkbox" class="checkbox-input" required /> 
+              <span>Tôi đồng ý với <a href="#" class="link">Điều khoản & Dịch vụ</a></span>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg auth-btn">Đăng ký</button>
+        </form>
+        
+        <div class="auth-footer">
+          Đã có tài khoản? <a href="login.html" class="link">Đăng nhập ngay</a>
+        </div>
+        
+        <a href="../index.html" class="back-home-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          Quay lại trang chủ
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
