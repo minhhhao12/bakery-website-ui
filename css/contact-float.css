@@ -1,0 +1,169 @@
+.contact-float {
+  position: fixed;
+  isolation: isolate;
+  z-index: var(--z-dropdown);
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  display: grid;
+  width: 58px;
+  gap: 8px;
+}
+
+.contact-float::before {
+  position: absolute;
+  z-index: -1;
+  top: 26px;
+  right: 27px;
+  bottom: 26px;
+  width: 2px;
+  background: var(--primary-300);
+  content: "";
+}
+
+.contact-float__link {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 58px;
+  min-width: 58px;
+  min-height: 58px;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid rgba(105, 89, 80, 0.12);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  box-shadow: 0 5px 18px rgba(46, 33, 28, 0.14);
+  color: var(--color-text);
+  transition: width 220ms ease, margin-left 220ms ease, transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.contact-float__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(46, 33, 28, 0.2);
+  color: var(--color-text);
+}
+
+.contact-float__link:focus-visible {
+  outline: 3px solid var(--primary-400);
+  outline-offset: 3px;
+}
+
+.contact-float__link--order {
+  border-color: transparent;
+  background: var(--accent-700);
+  color: white;
+}
+
+.contact-float__link--order:hover {
+  background: var(--accent-800);
+  color: white;
+}
+
+.contact-float__icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-100);
+  color: var(--primary-800);
+}
+
+.contact-float__link--order .contact-float__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.contact-float__icon--zalo {
+  border: 2px solid currentColor;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.contact-float__copy {
+  display: grid;
+  min-width: 0;
+  max-width: 0;
+  max-height: 0;
+  gap: 2px;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 220ms ease, max-height 220ms ease, opacity 160ms ease;
+}
+
+.contact-float__copy strong {
+  font-size: var(--text-sm);
+  line-height: 1.25;
+}
+
+.contact-float__copy small {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 10px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-float__link--order .contact-float__copy small {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (min-width: 481px) {
+  .contact-float__link:hover,
+  .contact-float__link:focus-visible {
+    width: 218px;
+    margin-left: -160px;
+    overflow: visible;
+  }
+
+  .contact-float__link:hover .contact-float__copy,
+  .contact-float__link:focus-visible .contact-float__copy {
+    max-width: 156px;
+    max-height: 42px;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-float {
+    right: max(8px, env(safe-area-inset-right));
+    bottom: max(10px, env(safe-area-inset-bottom));
+    width: auto;
+    grid-template-columns: repeat(4, 42px);
+    gap: 6px;
+  }
+
+  .contact-float::before { display: none; }
+
+  .contact-float__link {
+    width: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+  }
+
+  .contact-float__icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .contact-float__copy {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-float__link { transition: none; }
+}
