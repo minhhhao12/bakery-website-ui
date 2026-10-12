@@ -20,7 +20,7 @@
   content: "";
 }
 
-.contact-float__link {
+.contact-float__item {
   position: relative;
   z-index: 1;
   display: flex;
@@ -39,24 +39,19 @@
   transition: width 220ms ease, margin-left 220ms ease, transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
-.contact-float__link:hover {
+.contact-float__item:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(46, 33, 28, 0.2);
   color: var(--color-text);
 }
 
-.contact-float__link:focus-visible {
-  outline: 3px solid var(--primary-400);
-  outline-offset: 3px;
-}
-
-.contact-float__link--order {
+.contact-float__item--order {
   border-color: transparent;
   background: var(--accent-700);
   color: white;
 }
 
-.contact-float__link--order:hover {
+.contact-float__item--order:hover {
   background: var(--accent-800);
   color: white;
 }
@@ -70,9 +65,14 @@
   border-radius: 50%;
   background: var(--primary-100);
   color: var(--primary-800);
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.contact-float__link--order .contact-float__icon {
+.contact-float__item:hover .contact-float__icon {
+  animation: contact-icon-spin 600ms cubic-bezier(0.2, 0.8, 0.2, 1) 1;
+}
+
+.contact-float__item--order .contact-float__icon {
   background: rgba(255, 255, 255, 0.18);
   color: white;
 }
@@ -108,20 +108,18 @@
   white-space: nowrap;
 }
 
-.contact-float__link--order .contact-float__copy small {
+.contact-float__item--order .contact-float__copy small {
   color: rgba(255, 255, 255, 0.86);
 }
 
 @media (min-width: 481px) {
-  .contact-float__link:hover,
-  .contact-float__link:focus-visible {
+  .contact-float__item:hover {
     width: 218px;
     margin-left: -160px;
     overflow: visible;
   }
 
-  .contact-float__link:hover .contact-float__copy,
-  .contact-float__link:focus-visible .contact-float__copy {
+  .contact-float__item:hover .contact-float__copy {
     max-width: 156px;
     max-height: 42px;
     opacity: 1;
@@ -139,7 +137,7 @@
 
   .contact-float::before { display: none; }
 
-  .contact-float__link {
+  .contact-float__item {
     width: 42px;
     min-width: 42px;
     min-height: 42px;
@@ -165,5 +163,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .contact-float__link { transition: none; }
+  .contact-float__item, .contact-float__icon { transition: none; }
+  .contact-float__item:hover .contact-float__icon { animation: none; }
+}
+
+@keyframes contact-icon-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
