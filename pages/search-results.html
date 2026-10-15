@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kết quả tìm kiếm - Sweet Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../css/search.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container container">
+        <div class="header-logo__container">
+          <a href="../index.html" class="home-logo">
+            <span class="logo-text">Sweet Bakery</span>
+          </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="header-search__container">
+          <form class="header-search__form" action="search-results.html" method="get" role="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="search" class="header-search__input" value="bánh kem chocolate" placeholder="Tìm bánh kem, tiramisu, croissant..." aria-label="Tìm kiếm sản phẩm" />
+            <button type="submit" class="header-search__btn">
+              <span>Tìm kiếm</span>
+            </button>
+          </form>
+        </div>
+
+        
+        <div class="header__container--right">
+          <a href="login.html" class="header-btn login-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+            <span>Đăng nhập</span>
+          </a>
+          <a href="signin.html" class="header-btn register-btn">
+            <span>Đăng ký</span>
+          </a>
+          <a href="#" class="cart-logo" aria-label="Xem giỏ hàng">
+            <div class="cart-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+              <span class="cart-badge">2</span>
+            </div>
+            <span class="cart-text">Giỏ hàng</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Kết quả tìm kiếm -->
+    <main class="search-results__section section">
+      <div class="container">
+        <div class="search-header">
+          <p class="breadcrumb"><a href="../index.html" class="link">Trang chủ</a> / Tìm kiếm</p>
+          <h2 class="search-title">Kết quả tìm kiếm cho: <span class="search-keyword">"bánh kem chocolate"</span></h2>
+          <p class="search-count text-muted">Tìm thấy 3 sản phẩm phù hợp</p>
+        </div>
+
+        <div class="best-seller__grid">
+          <!-- Card 1 -->
+          <div class="product-card card">
+            <div class="product-card__img-wrapper">
+              <img src="../assets/cake/53096885.cms.avif" alt="Bánh Chocolate Truffle" />
+            </div>
+            <div class="product-card__body">
+              <h4 class="product-card__name">Bánh Chocolate Truffle</h4>
+              <p class="product-card__desc">Lớp kem chocolate truffle đậm đặc, tan chảy, đắng nhẹ quyến rũ.</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">450.000₫</span>
+                <button class="btn btn-primary btn-sm">Đặt ngay</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card card">
+            <div class="product-card__img-wrapper">
+              <img src="../assets/cake/Mint-Chocolate-So-0.png" alt="Bánh Mint Chocolate" />
+              <span class="badge badge-new">Mới</span>
+            </div>
+            <div class="product-card__body">
+              <h4 class="product-card__name">Bánh Mint Chocolate</h4>
+              <p class="product-card__desc">Sự kết hợp hoàn hảo giữa chocolate đắng và hương bạc hà thanh mát.</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">390.000₫</span>
+                <button class="btn btn-primary btn-sm">Đặt ngay</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card card">
+            <div class="product-card__img-wrapper">
+              <img src="../assets/cake/capuchinocake.png" alt="Bánh Capuchino Chocolate" />
+              <span class="badge badge-sale">Bán chạy</span>
+            </div>
+            <div class="product-card__body">
+              <h4 class="product-card__name">Chocolate Capuchino</h4>
+              <p class="product-card__desc">Bánh chocolate nướng xốp mềm phủ kem vị cà phê Ý thơm lừng.</p>
+              <div class="product-card__footer">
+                <span class="product-card__price">400.000₫</span>
+                <button class="btn btn-primary btn-sm">Đặt ngay</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer__section">
+      <div class="container">
+        <div class="footer__bottom">
+          <p>© 2026 Sweet Bakery.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
