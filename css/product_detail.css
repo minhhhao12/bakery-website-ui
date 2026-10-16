@@ -38,6 +38,8 @@
 }
 
 .product-gallery__main {
+  border: 1px solid var(--color-border-strong);
+
   position: relative;
   display: grid;
   place-items: center;
@@ -45,6 +47,7 @@
   min-height: 520px;
   aspect-ratio: 1 / 1;
   background: #f7e9df;
+  
 }
 
 .product-gallery__main::before {
@@ -129,11 +132,12 @@
   top: 20px;
   left: 20px;
   padding: 8px 12px;
-  background: var(--primary-800);
-  color: white;
+  background: var(--badge-sale-bg);
+  color: var(--badge-sale-text);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
+  border-radius: 24px;
 }
 
 .product-gallery__caption {
@@ -191,6 +195,7 @@
   color: var(--color-text-secondary);
   font-size: var(--text-md);
   line-height: 1.8;
+  font-family: var(--font-sans);
 }
 
 .product-price-block {
@@ -229,12 +234,16 @@
   margin-left: 8px;
   color: var(--color-text-muted);
   font-weight: 400;
+  font-family: var(--font-serif);
 }
 
 .product-size-options {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+  & span{
+    font-family: var(--font-serif);
+  }
 }
 .product-size-option {
   position: relative;
@@ -367,6 +376,7 @@
   color: var(--color-text);
   font: inherit;
   font-size: var(--text-sm);
+  border-radius: 8px;
 }
 .cake-message-input:focus-visible {
   border-color: var(--primary-700);
@@ -387,6 +397,7 @@
   justify-content: center;
   gap: 10px;
   border: 0;
+  border-radius: 24px;
   background: var(--primary-700);
   color: white;
   font: inherit;
@@ -586,6 +597,7 @@
   margin-top: 18px;
 }
 .review-load-more {
+  border-radius: 8px;
   min-height: 42px;
   padding: 0 20px;
   border: 1px solid var(--primary-700);
@@ -637,126 +649,26 @@
   transform: translateY(0);
   opacity: 1;
 }
-
-@media (max-width: 1024px) {
-  .header__container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px 18px;
-  }
-  .header-search__container {
-    order: 3;
-    flex: 1 0 100%;
-    max-width: none;
-  }
+.quantity_input {
+  border-radius: 8px;
 }
-
-@media (max-width: 1024px) {
-  .product-detail {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
-    gap: 32px;
+.product-size-option{
+  border-radius: 8px;
+  & span{
+    border-radius: 8px;
   }
-  .product-gallery__main {
-    min-height: 0;
-  }
-  .product-story {
-    gap: 28px;
-  }
+  
 }
-
-@media (max-width: 700px) {
-  .product-page {
-    padding-top: 16px;
-  }
-  .product-breadcrumb {
-    margin-bottom: 20px;
-  }
-  .product-detail {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .product-gallery__main {
-    max-height: 480px;
-  }
-  .product-info {
-    padding-top: 0;
-  }
-  .product-info h1 {
-    font-size: var(--text-4xl);
-  }
-  .product-story {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 44px;
-  }
-  .product-reviews__heading {
-    align-items: start;
-  }
-  .product-reviews__list {
-    grid-template-columns: 1fr;
-  }
-  .review-card,
-  .review-card + .review-card {
-    padding: 18px 0;
-    border: 0;
-  }
-  .review-card + .review-card {
-    border-top: 1px solid var(--color-border);
-  }
+.product-size-option:hover {
+  box-shadow:
+    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
+.divider-product-detail{
+  background-color: var(--neutral-500);
+  margin: 0.5rem 0rem;
 
-@media (max-width: 480px) {
-  .product-page {
-    padding-bottom: 44px;
-  }
-  .product-breadcrumb {
-    gap: 7px;
-    font-size: var(--text-xs);
-  }
-  .product-gallery__tag {
-    top: 12px;
-    left: 12px;
-  }
-  .product-size-options {
-    gap: 6px;
-  }
-  .product-size-option > span {
-    min-height: 64px;
-    padding: 8px;
-  }
-  .product-quantity-row {
-    gap: 10px;
-  }
-  .product-stock {
-    font-size: 10px;
-  }
-  .product-promises {
-    gap: 10px;
-  }
-  .home-logo {
-    font-size: var(--text-lg);
-  }
-  .header__container--right {
-    gap: 4px;
-  }
-  .header-btn {
-    padding: 6px 8px;
-    font-size: var(--text-xs);
-  }
-  .register-btn {
-    display: none;
-  }
-  .cart-logo {
-    gap: 4px;
-    padding: 6px 8px;
-    font-size: var(--text-xs);
-  }
-  .product-toast {
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    text-align: center;
-  }
 }
-
-
+#product-title{
+  font-family: var(--font-serif);
+}

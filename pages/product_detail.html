@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Bánh kem dâu tây tươi với kem sữa mềm mịn, làm thủ công mỗi ngày tại Sweet Bakery." />
     <title>Bánh Kem Dâu Tây | Sweet Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="../css/product_detail.css" />
   </head>
@@ -12,27 +15,85 @@
     <header class="header">
       <div class="header__container container">
         <div class="header-logo__container">
-          <a href="../index.html" class="home-logo"><span class="logo-text">Sweet Bakery</span></a>
+          <a href="../index.html" class="home-logo">
+            <span class="logo-text">Sweet Bakery</span>
+          </a>
         </div>
+
+        <!-- Search Bar -->
         <div class="header-search__container">
-          <form class="header-search__form" action="../index.html#best-seller" role="search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+          <form class="header-search__form" action="search-results.html" method="get" role="search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="search-icon"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
             </svg>
-            <input type="search" class="header-search__input" placeholder="Tìm bánh kem, tiramisu, croissant..." aria-label="Tìm kiếm sản phẩm" />
-            <button type="submit" class="header-search__btn"><span>Tìm kiếm</span></button>
+            <input
+              type="search"
+              class="header-search__input"
+              placeholder="Tìm bánh kem, tiramisu, croissant..."
+              aria-label="Tìm kiếm sản phẩm"
+            />
+            <button type="submit" class="header-search__btn">
+              <span>Tìm kiếm</span>
+            </button>
           </form>
         </div>
+
+        <!-- Header Actions -->
         <div class="header__container--right">
-          <a href="./login.html" class="header-btn login-btn"><span>Đăng nhập</span></a>
-          <a href="./signin.html" class="header-btn register-btn"><span>Đăng ký</span></a>
-          <a href="#cart" class="cart-logo" aria-label="Xem giỏ hàng">
-            <span class="cart-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+          <a href="./pages/login.html" class="header-btn login-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Đăng nhập</span>
+          </a>
+          <a href="./pages/signin.html" class="header-btn register-btn">
+            <span>Đăng ký</span>
+          </a>
+          <a href="#" class="cart-logo" aria-label="Xem giỏ hàng">
+            <div class="cart-icon-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
               </svg>
-              <span class="cart-badge" aria-live="polite">1</span>
-            </span>
+              <span class="cart-badge">2</span>
+            </div>
             <span class="cart-text">Giỏ hàng</span>
           </a>
         </div>
@@ -50,9 +111,10 @@
         <section class="product-detail" aria-labelledby="product-title">
           <div class="product-gallery">
             <div class="product-gallery__main" id="product-gallery-main" data-view="full">
-              <span class="product-gallery__tag">BÁN CHẠY</span>
+              <span class="product-gallery__tag">Bán chạy</span>
               <img id="main-product-image" src="../assets/cake/banhkemdau.png" alt="Toàn cảnh bánh kem dâu tây phủ kem và topping dâu" />
             </div>
+            <hr class="divider divider-product-detail">
             <div class="product-gallery__thumbnails" role="group" aria-label="Chọn góc xem bánh">
               <button class="gallery-thumb is-selected" type="button" data-view="full" data-caption="Toàn cảnh bánh kem dâu tây" aria-pressed="true" aria-label="Xem toàn cảnh bánh">
                 <img src="../assets/cake/banhkemdau.png" alt="" />
@@ -88,15 +150,15 @@
               <legend>Chọn kích thước <span id="selected-size-label">16 cm · 4–6 người</span></legend>
               <div class="product-size-options">
                 <label class="product-size-option">
-                  <input type="radio" name="size" value="350000" data-label="16 cm · 4–6 người" checked />
+                  <input class="product-size-container" type="radio" name="size" value="350000" data-label="16 cm · 4–6 người" checked />
                   <span><strong>16 cm</strong><small>4–6 người</small></span>
                 </label>
                 <label class="product-size-option">
-                  <input type="radio" name="size" value="480000" data-label="20 cm · 6–8 người" />
+                  <input class="product-size-container" type="radio" name="size" value="480000" data-label="20 cm · 6–8 người" />
                   <span><strong>20 cm</strong><small>6–8 người</small></span>
                 </label>
                 <label class="product-size-option">
-                  <input type="radio" name="size" value="620000" data-label="24 cm · 8–12 người" />
+                  <input class="product-size-container" type="radio" name="size" value="620000" data-label="24 cm · 8–12 người" />
                   <span><strong>24 cm</strong><small>8–12 người</small></span>
                 </label>
               </div>
@@ -104,7 +166,7 @@
 
             <div class="product-quantity-row">
               <label for="quantity">Số lượng</label>
-              <input id="quantity" type="number" min="1" max="20" value="1" inputmode="numeric" />
+              <input class="quantity_input" id="quantity" type="number" min="1" max="20" value="1" inputmode="numeric" />
               <span class="product-stock"><span aria-hidden="true"></span> Nhận đặt trong ngày</span>
             </div>
 

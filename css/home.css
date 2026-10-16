@@ -214,13 +214,6 @@
   }
 }
 
-.hamburger-btn {
-  display: none;
-  background: transparent;
-  border: none;
-  padding: 6px;
-  color: var(--neutral-800);
-}
 
 /* ----- Hero Section ----- */
 .hero__section {
