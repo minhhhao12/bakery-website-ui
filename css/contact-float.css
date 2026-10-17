@@ -54,6 +54,8 @@
   border-color: transparent;
   background: var(--accent-700);
   color: white;
+  padding-left: 9px;
+  padding-right: 7px;
 }
 
 .contact-float__link--order:hover {
