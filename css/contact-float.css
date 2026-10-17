@@ -4,20 +4,81 @@
   z-index: var(--z-dropdown);
   right: max(16px, env(safe-area-inset-right));
   bottom: max(20px, env(safe-area-inset-bottom));
-  display: grid;
+  display: flex;
+  flex-direction: column-reverse;
   width: 58px;
   gap: 8px;
 }
 
 .contact-float::before {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 26px;
   right: 27px;
   bottom: 26px;
   width: 2px;
   background: var(--primary-300);
   content: "";
+  display: none;
+}
+
+.contact-float[open]::before {
+  display: block;
+}
+
+.contact-float__toggle {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  background: var(--primary-200);
+  box-shadow: 0 5px 18px rgba(46, 33, 28, 0.14);
+  cursor: pointer;
+  list-style: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.contact-float__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.contact-float__toggle::marker {
+  content: "";
+}
+
+.contact-float__toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(46, 33, 28, 0.2);
+}
+
+.contact-float__toggle:focus-visible {
+  outline: 3px solid var(--primary-300);
+  outline-offset: 3px;
+}
+
+.contact-float__icon.contact-float__toggle-icon {
+  background: var(--primary-200);
+  color: var(--primary-800);
+}
+
+.contact-float__toggle-icon svg {
+  transition: transform 220ms ease;
+}
+
+.contact-float[open] .contact-float__toggle-icon svg {
+  transform: rotate(45deg);
+}
+
+.contact-float__items {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 8px;
 }
 
 .contact-float__item {
@@ -132,20 +193,31 @@
   .contact-float {
     right: max(8px, env(safe-area-inset-right));
     bottom: max(10px, env(safe-area-inset-bottom));
-    width: auto;
-    grid-template-columns: repeat(4, 42px);
+    width: 58px;
     gap: 6px;
   }
 
-  .contact-float::before { display: none; }
+  .contact-float::before {
+    top: 24px;
+    right: 28px;
+    bottom: 24px;
+  }
 
   .contact-float__item {
     width: 42px;
     min-width: 42px;
     min-height: 42px;
+    justify-self: center;
     justify-content: center;
     padding: 4px;
     border-radius: 50%;
+  }
+
+  .contact-float__toggle {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+    align-self: center;
   }
 
   .contact-float__icon {

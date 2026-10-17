@@ -259,7 +259,13 @@
       </div>
     </footer>
 
-    <aside class="contact-float" aria-label="Liên hệ nhanh">
+    <details class="contact-float" aria-label="Liên hệ nhanh">
+      <summary class="contact-float__toggle" aria-label="Mở hoặc đóng liên hệ nhanh">
+        <span class="contact-float__icon contact-float__toggle-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+        </span>
+      </summary>
+      <div class="contact-float__items">
       <div class="contact-float__item contact-float__item--order">
         <span class="contact-float__icon" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z" /><path d="M9 7a3 3 0 0 1 6 0" /><path d="M9 12h6" /></svg>
@@ -282,7 +288,8 @@
         </span>
         <span class="contact-float__copy"><strong>Gửi email</strong><small>sweetbakeryofficial@sweetbakery.vn</small></span>
       </div>
-    </aside>
+      </div>
+    </details>
 
     <script>
       const priceElement = document.querySelector("#product-price");
