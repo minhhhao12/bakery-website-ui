@@ -396,14 +396,8 @@
 }
 
 @media (max-width: 1024px) {
-  .catalog-body .header__container {
-    justify-content: space-between;
-    gap: var(--space-3);
-  }
-
   .catalog-body .header-search__container {
     min-width: 0;
-    max-width: 340px;
   }
 
   .catalog-body .header-search__input {
@@ -419,10 +413,10 @@
     gap: var(--space-2);
   }
 
-    .catalog-body .header-btn svg {
-      display: block;
-      flex-shrink: 0;
-    }
+  .catalog-body .header-btn svg {
+    display: block;
+    flex-shrink: 0;
+  }
 }
 
 @media (max-width: 768px) {

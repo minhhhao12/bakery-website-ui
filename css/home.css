@@ -18,7 +18,7 @@
 .header__container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 32px;
   min-height: var(--navbar-height);
   padding-block: var(--space-3);

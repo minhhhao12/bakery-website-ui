@@ -31,6 +31,7 @@ const priceElement = document.querySelector("#product-price");
       document.querySelector("#add-to-cart").addEventListener("click", () => {
         const quantity = Math.min(20, Math.max(1, Number(quantityInput.value) || 1));
         quantityInput.value = quantity;
+        cartBadge.textContent = "1";
         toast.textContent = "Thêm vào giỏ hàng thành công";
         toast.classList.add("is-visible");
         window.setTimeout(() => toast.classList.remove("is-visible"), 2600);

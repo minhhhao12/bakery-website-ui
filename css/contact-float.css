@@ -81,6 +81,10 @@
   gap: 8px;
 }
 
+details.contact-float:not([open]) .contact-float__items {
+  display: none;
+}
+
 .contact-float__link {
   position: relative;
   z-index: 1;

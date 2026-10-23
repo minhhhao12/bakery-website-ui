@@ -7,7 +7,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--cream-400) 0%, var(--primary-100) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--cream-400) 0%,
+    var(--primary-100) 100%
+  );
   padding: var(--space-6) var(--space-4);
 }
 
@@ -105,4 +109,21 @@
 
 .back-home-link:hover {
   color: var(--primary-700);
+}
+.input {
+  padding: 1.5rem;
+  transition: transform 0.1s ease-in-out;
+}
+.input:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.input:focus {
+  transform: translateY(-3px);
+}
+.input::placeholder {
+  transition: transform 0.1s ease-in-out;
+}
+
+.input:focus::placeholder {
+  transform: translateY(-1px);
 }
