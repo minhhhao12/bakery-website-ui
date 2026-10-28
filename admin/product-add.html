@@ -1,196 +1,388 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bảng điều khiển quản trị Sweet Bakery — giao diện Admin Dashboard." />
-  <title>Thêm sản phẩm | Sweet Bakery Admin</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/admin.css" />
-  
-</head>
-<body class="admin-body">
-  <input type="checkbox" id="admin-nav-toggle" class="admin-nav-toggle" aria-hidden="true" />
-  <div class="admin-shell">
-    <label for="admin-nav-toggle" class="admin-sidebar-backdrop" aria-hidden="true"></label>
-    <aside class="admin-sidebar">
-      <div class="admin-brand">
-        <a class="admin-brand__logo" href="index.html">Sweet Bakery</a><span class="admin-brand__badge">Admin</span>
-        <p class="admin-brand__sub">Bảng điều khiển cửa hàng</p>
-      </div>
-      <div class="admin-sidebar__close-row">
-        <label for="admin-nav-toggle" class="admin-sidebar__close" aria-label="Đóng menu"><i class="bi bi-x-lg"></i></label>
-      </div>
-      <nav class="admin-nav" aria-label="Điều hướng quản trị"><span class="admin-nav__label">Tổng quan</span><a class="admin-nav__link" href="index.html"><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a><span class="admin-nav__label">Quản lý cửa hàng</span><a class="admin-nav__link" href="users.html"><i class="bi bi-people"></i><span>Người dùng</span><span class="admin-nav__badge">11</span></a><a class="admin-nav__link active" href="products.html"><i class="bi bi-cake2"></i><span>Sản phẩm</span><span class="admin-nav__badge">14</span></a><a class="admin-nav__link" href="orders.html"><i class="bi bi-receipt"></i><span>Đơn hàng</span><span class="admin-nav__badge admin-nav__badge--alert">2</span></a><a class="admin-nav__link" href="statistics.html"><i class="bi bi-bar-chart-line"></i><span>Thống kê khách hàng</span></a><span class="admin-nav__label">Hệ thống</span><a class="admin-nav__link" href="../index.html" target="_blank" rel="noopener"><i class="bi bi-shop"></i><span>Xem website</span><i class="bi bi-box-arrow-up-right"></i></a><a class="admin-nav__link" href="../pages/login.html"><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></a></nav>
-      <div class="admin-sidebar__footer">
-        <div class="admin-profile">
-          <span class="avatar">NA</span>
-          <div><strong>Ngọc Anh</strong><small>Quản trị viên</small></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bảng điều khiển quản trị Sweet Bakery — giao diện Admin Dashboard."
+    />
+    <title>Thêm sản phẩm | Sweet Bakery Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <input
+      type="checkbox"
+      id="admin-nav-toggle"
+      class="admin-nav-toggle"
+      aria-hidden="true"
+    />
+    <div class="admin-shell">
+      <label
+        for="admin-nav-toggle"
+        class="admin-sidebar-backdrop"
+        aria-hidden="true"
+      ></label>
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a>
+          <p class="admin-brand__sub">Trang Admin</p>
         </div>
-      </div>
-    </aside>
-
-    <div class="admin-main">
-      <header class="admin-topbar">
-        <div class="admin-topbar__left">
-          <label for="admin-nav-toggle" class="admin-menu-btn d-lg-none" aria-label="Mở menu"><i class="bi bi-list"></i></label>
-          <div>
-            <nav class="admin-breadcrumb" aria-label="Điều hướng">Quản trị <span>/ Sản phẩm / Thêm sản phẩm</span></nav>
-            <h1 class="admin-page-title">Thêm sản phẩm</h1>
+        <div class="admin-sidebar__close-row">
+          <label
+            for="admin-nav-toggle"
+            class="admin-sidebar__close"
+            aria-label="Đóng menu"
+            ><i class="bi bi-x-lg"></i
+          ></label>
+        </div>
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <span class="admin-nav__label">Tổng quan</span
+          ><a class="admin-nav__link" href="index.html"
+            ><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a
+          ><span class="admin-nav__label">Quản lý cửa hàng</span
+          ><a class="admin-nav__link" href="users.html"
+            ><i class="bi bi-people"></i><span>Người dùng</span
+            ><span class="admin-nav__badge">11</span></a
+          ><a class="admin-nav__link active" href="products.html"
+            ><i class="bi bi-cake2"></i><span>Sản phẩm</span
+            ><span class="admin-nav__badge">14</span></a
+          ><a class="admin-nav__link" href="orders.html"
+            ><i class="bi bi-receipt"></i><span>Đơn hàng</span
+            ><span class="admin-nav__badge admin-nav__badge--alert">2</span></a
+          ><a class="admin-nav__link" href="statistics.html"
+            ><i class="bi bi-bar-chart-line"></i
+            ><span>Thống kê khách hàng</span></a
+          ><span class="admin-nav__label">Hệ thống</span
+          ><a
+            class="admin-nav__link"
+            href="../index.html"
+            target="_blank"
+            rel="noopener"
+            ><i class="bi bi-shop"></i><span>Xem website</span
+            ><i class="bi bi-box-arrow-up-right"></i></a
+          ><a class="admin-nav__link" href="../pages/login.html"
+            ><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></a
+          >
+        </nav>
+        <div class="admin-sidebar__footer">
+          <div class="admin-profile">
+            <span class="avatar">AD</span>
+            <div><strong>Admin</strong><small>Quản trị viên</small></div>
           </div>
         </div>
-        <div class="admin-topbar__right">
-          <span class="admin-date d-none d-md-inline-flex"><i class="bi bi-calendar3"></i>Thứ Tư, 28/10/2026</span>
-          <a href="../index.html" target="_blank" rel="noopener" class="btn btn-soft btn-sm d-none d-sm-inline-flex"><i class="bi bi-shop"></i> Xem cửa hàng</a>
-          <a href="orders.html" class="admin-icon-btn" aria-label="Đơn hàng cần xử lý"><i class="bi bi-bell"></i><span class="dot"></span></a>
-          <div class="admin-user-chip">
-            <span class="avatar">NA</span>
-            <div><strong>Ngọc Anh</strong><small>Quản trị viên</small></div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-topbar__left">
+            <label
+              for="admin-nav-toggle"
+              class="admin-menu-btn d-lg-none"
+              aria-label="Mở menu"
+              ><i class="bi bi-list"></i
+            ></label>
+            <div>
+              <nav class="admin-breadcrumb" aria-label="Điều hướng">
+                Quản trị <span>/ Sản phẩm / Thêm sản phẩm</span>
+              </nav>
+              <h1 class="admin-page-title">Thêm sản phẩm</h1>
+            </div>
           </div>
-        </div>
-      </header>
-      <main class="admin-content">
-
-<div class="target-alert" id="product-added-success" role="status"><i class="bi bi-check2-circle"></i><div><strong>Đã thêm sản phẩm thành công.</strong>Sản phẩm mới đã được lưu và sẵn sàng hiển thị trên website Sweet Bakery.</div><a href="#!" class="target-alert__close" aria-label="Đóng">×</a></div>
-
-<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-  <a href="products.html" class="btn btn-soft btn-sm"><i class="bi bi-arrow-left"></i> Quay lại danh sách</a>
-  <span class="cat-chip cat-chip--rose"><i class="bi bi-info-circle"></i> Phân loại lấy đúng từ website hiện có</span>
-</div>
-
-<form>
-  <div class="row g-4">
-    <div class="col-xl-8">
-      <section class="admin-card mb-4">
-        <div class="admin-card__header"><div><h2>Thông tin sản phẩm</h2><p>Các trường có dấu <span style="color:var(--sb-primary-dark)">*</span> là bắt buộc</p></div><span class="status-badge status-badge--draft">Bản nháp mới</span></div>
-        <div class="admin-card__body">
-          <div class="row g-3">
-            <div class="col-md-8">
-              <label class="form-label" for="add-product-name">Tên sản phẩm <span class="required">*</span></label>
-              <input class="form-control" id="add-product-name" type="text" placeholder="Ví dụ: Bánh Kem Dâu Tây" />
+          <div class="admin-topbar__right">
+            <span class="admin-date d-none d-md-inline-flex"
+              ><i class="bi bi-calendar3"></i>Thứ Tư, 28/10/2026</span
+            >
+            <a
+              href="../index.html"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-soft btn-sm d-none d-sm-inline-flex"
+              ><i class="bi bi-shop"></i> Xem cửa hàng</a
+            >
+            <a
+              href="orders.html"
+              class="admin-icon-btn"
+              aria-label="Đơn hàng cần xử lý"
+              ><i class="bi bi-bell"></i><span class="dot"></span
+            ></a>
+            <div class="admin-user-chip">
+              <span class="avatar">AD</span>
+              <div><strong>Admin</strong><small>Quản trị viên</small></div>
             </div>
-            <div class="col-md-4">
-              <label class="form-label" for="add-product-price">Giá bán <span class="required">*</span></label>
-              <div class="input-group"><input class="form-control" id="add-product-price" type="number" min="0" step="1000" placeholder="350000" /><span class="input-group-text">₫</span></div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="target-alert" id="product-added-success" role="status">
+            <i class="bi bi-check2-circle"></i>
+            <div>
+              <strong>Đã thêm sản phẩm thành công.</strong>Sản phẩm mới đã được
+              lưu và sẵn sàng hiển thị trên website Sweet Bakery.
             </div>
-            <div class="col-12">
-              <label class="form-label">Phân loại sản phẩm <span class="required">*</span></label>
-              <div class="category-check">
-                <input class="btn-check" type="checkbox" id="cat-fruit" checked /><label class="btn" for="cat-fruit">Trái cây</label>
-                <input class="btn-check" type="checkbox" id="cat-chocolate" /><label class="btn" for="cat-chocolate">Chocolate</label>
-                <input class="btn-check" type="checkbox" id="cat-mousse" /><label class="btn" for="cat-mousse">Mousse &amp; lạnh</label>
-                <input class="btn-check" type="checkbox" id="cat-birthday" checked /><label class="btn" for="cat-birthday">Sinh nhật</label>
-                <input class="btn-check" type="checkbox" id="cat-pastry" /><label class="btn" for="cat-pastry">Bánh mì &amp; Pastry</label>
-                <input class="btn-check" type="checkbox" id="cat-savory" /><label class="btn" for="cat-savory">Bánh mặn</label>
+            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
+          </div>
+
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
+          >
+            <a href="products.html" class="btn btn-soft btn-sm"
+              ><i class="bi bi-arrow-left"></i> Quay lại danh sách</a
+            >
+          </div>
+
+          <form>
+            <div class="row g-4">
+              <div class="col-xl-8">
+                <section class="admin-card mb-4">
+                  <div class="admin-card__header">
+                    <div>
+                      <h2>Thông tin sản phẩm</h2>
+                      <p>
+                        Các trường có dấu
+                        <span style="color: var(--sb-primary-dark)">*</span> là
+                        bắt buộc
+                      </p>
+                    </div>
+                  </div>
+                  <div class="admin-card__body">
+                    <div class="row g-3">
+                      <div class="col-md-8">
+                        <label class="form-label" for="add-product-name"
+                          >Tên sản phẩm <span class="required">*</span></label
+                        >
+                        <input
+                          class="form-control"
+                          id="add-product-name"
+                          type="text"
+                          placeholder="Ví dụ: Bánh Kem Dâu Tây"
+                        />
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label" for="add-product-price"
+                          >Giá bán <span class="required">*</span></label
+                        >
+                        <div class="input-group">
+                          <input
+                            class="form-control"
+                            id="add-product-price"
+                            type="number"
+                            min="0"
+                            step="1000"
+                            placeholder="350000"
+                          /><span class="input-group-text">₫</span>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label"
+                          >Phân loại sản phẩm
+                          <span class="required">*</span></label
+                        >
+                        <div class="category-check">
+                          <input
+                            class="btn-check"
+                            type="checkbox"
+                            id="cat-fruit"
+                            checked
+                          /><label class="btn" for="cat-fruit">Trái cây</label>
+                          <input
+                            class="btn-check"
+                            type="checkbox"
+                            id="cat-chocolate"
+                          /><label class="btn" for="cat-chocolate"
+                            >Chocolate</label
+                          >
+                          <input
+                            class="btn-check"
+                            type="checkbox"
+                            id="cat-mousse"
+                          /><label class="btn" for="cat-mousse"
+                            >Mousse &amp; lạnh</label
+                          >
+                          <input
+                            class="btn-check"
+                            type="checkbox"
+                            id="cat-birthday"
+                            checked
+                          /><label class="btn" for="cat-birthday"
+                            >Sinh nhật</label
+                          >
+                          <input
+                            class="btn-check"
+                            type="checkbox"
+                            id="cat-pastry"
+                          /><label class="btn" for="cat-pastry"
+                            >Bánh mì &amp; Pastry</label
+                          >
+                          <input
+                            class="btn-check"
+                            type="checkbox"
+                            id="cat-savory"
+                          /><label class="btn" for="cat-savory">Bánh mặn</label>
+                        </div>
+                        <div class="form-text">
+                          Chọn một hoặc nhiều phân loại. Đây là đúng các danh
+                          mục đang có trên website: Trái cây, Chocolate, Mousse
+                          &amp; lạnh, Sinh nhật, Bánh mì &amp; Pastry, Bánh mặn.
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <label class="form-label" for="add-product-size"
+                          >Kích cỡ mặc định</label
+                        >
+                        <select class="form-select" id="add-product-size">
+                          <option>16 cm · 4–6 người</option>
+                          <option selected>18 cm · 6–8 người</option>
+                          <option>20 cm · 8–10 người</option>
+                          <option>24 cm · 10–12 người</option>
+                        </select>
+                      </div>
+                      <div class="col-md-7">
+                        <label class="form-label" for="add-product-status"
+                          >Trạng thái hiển thị</label
+                        >
+                        <select class="form-select" id="add-product-status">
+                          <option selected>
+                            Đang bán — hiển thị trên website
+                          </option>
+                          <option>Ẩn — không hiển thị với khách hàng</option>
+                        </select>
+                      </div>
+                      <div class="col-12">
+                        <label class="form-label" for="add-product-desc"
+                          >Mô tả ngắn</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="add-product-desc"
+                          rows="3"
+                          placeholder="Mô tả hương vị, nguyên liệu và điểm nổi bật của bánh..."
+                        ></textarea>
+                        <div class="form-text">
+                          Mô tả sẽ hiển thị bên dưới tên sản phẩm trên trang
+                          bánh.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="admin-card">
+                  <div class="admin-card__header">
+                    <div>
+                      <h2>Hình ảnh sản phẩm</h2>
+                      <p>
+                        Tải ảnh mới hoặc chọn nhanh ảnh có sẵn — xem trước ngay
+                        trước khi thêm
+                      </p>
+                    </div>
+                    <span class="cat-chip"
+                      ><i class="bi bi-image"></i> JPG, PNG, WEBP</span
+                    >
+                  </div>
+                  <div class="admin-card__body">
+                    <label
+                      class="upload-dropzone d-block mb-3"
+                      for="add-product-image"
+                    >
+                      <span
+                        ><i class="bi bi-cloud-arrow-up"></i
+                        ><strong>Tải ảnh từ máy</strong
+                        ><span
+                          >Kéo thả hoặc nhấp để chọn ảnh · tối đa 5MB</span
+                        ></span
+                      >
+                      <input
+                        class="visually-hidden"
+                        id="add-product-image"
+                        type="file"
+                        accept="image/*"
+                      />
+                    </label>
+                  </div>
+                </section>
+
+                <div class="d-flex flex-wrap justify-content-end gap-2 mt-4">
+                  <a href="products.html" class="btn btn-soft"
+                    ><i class="bi bi-x-lg"></i> Huỷ</a
+                  >
+                  <a href="#product-added-success" class="btn btn-brand"
+                    ><i class="bi bi-plus-lg"></i> Thêm sản phẩm</a
+                  >
+                </div>
               </div>
-              <div class="form-text">Chọn một hoặc nhiều phân loại. Đây là đúng các danh mục đang có trên website: Trái cây, Chocolate, Mousse &amp; lạnh, Sinh nhật, Bánh mì &amp; Pastry, Bánh mặn.</div>
-            </div>
-            <div class="col-md-5">
-              <label class="form-label" for="add-product-size">Kích cỡ mặc định</label>
-              <select class="form-select" id="add-product-size">
-                <option>16 cm · 4–6 người</option>
-                <option selected>18 cm · 6–8 người</option>
-                <option>20 cm · 8–10 người</option>
-                <option>24 cm · 10–12 người</option>
-              </select>
-            </div>
-            <div class="col-md-7">
-              <label class="form-label" for="add-product-status">Trạng thái hiển thị</label>
-              <select class="form-select" id="add-product-status">
-                <option selected>Đang bán — hiển thị trên website</option>
-                <option>Ẩn — không hiển thị với khách hàng</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label class="form-label" for="add-product-desc">Mô tả ngắn</label>
-              <textarea class="form-control" id="add-product-desc" rows="3" placeholder="Mô tả hương vị, nguyên liệu và điểm nổi bật của bánh..."></textarea>
-              <div class="form-text">Mô tả sẽ hiển thị bên dưới tên sản phẩm trên trang bánh.</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="admin-card">
-        <div class="admin-card__header"><div><h2>Hình ảnh sản phẩm</h2><p>Tải ảnh mới hoặc chọn nhanh ảnh có sẵn — xem trước ngay trước khi thêm</p></div><span class="cat-chip"><i class="bi bi-image"></i> JPG, PNG, WEBP</span></div>
-        <div class="admin-card__body">
-          <label class="upload-dropzone d-block mb-3" for="add-product-image">
-            <span><i class="bi bi-cloud-arrow-up"></i><strong>Tải ảnh từ máy</strong><span>Kéo thả hoặc nhấp để chọn ảnh · tối đa 5MB</span></span>
-            <input class="visually-hidden" id="add-product-image" type="file" accept="image/*" />
-          </label>
-          <div class="d-flex align-items-center gap-2 mb-2"><hr class="flex-grow-1" style="border-color:var(--sb-border)" /><small class="text-soft" style="font-size:.62rem">hoặc chọn ảnh có sẵn</small><hr class="flex-grow-1" style="border-color:var(--sb-border)" /></div>
+              <div class="col-xl-4">
+                <section class="admin-card mb-3">
+                  <div class="admin-card__header">
+                    <div>
+                      <h2>Ảnh đang chọn</h2>
+                      <p>Hiển thị trước khi thêm</p>
+                    </div>
+                  </div>
+                  <div class="admin-card__body">
+                    <div class="current-image">
+                      <span class="current-image__tag">Ảnh xem trước</span
+                      ><img
+                        src="../assets/cake/banhkemdau.png"
+                        alt="Ảnh sản phẩm đang chọn"
+                      />
+                    </div>
+                    <div class="form-text mt-2">
+                      Ảnh này sẽ được dùng làm ảnh đại diện sản phẩm trên trang
+                      bánh.
+                    </div>
+                  </div>
+                </section>
 
-          <div class="image-picker">
-            <input class="image-picker__input" type="radio" name="product-image-pick" id="pick-dau" checked />
-            <input class="image-picker__input" type="radio" name="product-image-pick" id="pick-nhat" />
-            <input class="image-picker__input" type="radio" name="product-image-pick" id="pick-truffle" />
-            <input class="image-picker__input" type="radio" name="product-image-pick" id="pick-tra-xanh" />
-            <input class="image-picker__input" type="radio" name="product-image-pick" id="pick-hong" />
-            <input class="image-picker__input" type="radio" name="product-image-pick" id="pick-croissant" />
-            <div class="image-picker__preview">
-              <span class="image-picker__badge"><i class="bi bi-eye"></i> Xem trước ảnh</span>
-              <img class="preview-dau" src="../assets/cake/banhkemdau.png" alt="Xem trước Bánh Kem Dâu Tây" /><img class="preview-nhat" src="../assets/cake/banhsinhnhat2.png" alt="Xem trước Bánh Sinh Nhật Hoa Kem" /><img class="preview-truffle" src="../assets/cake/53096885.cms.avif" alt="Xem trước Chocolate Truffle" /><img class="preview-tra-xanh" src="../assets/cake/mousse-tra-xanh.png" alt="Xem trước Mousse Trà Xanh" /><img class="preview-hong" src="../assets/cake/catalog-pink-celebration.jpg" alt="Xem trước Bánh Kem Hồng Ánh Nhũ" /><img class="preview-croissant" src="../assets/cake/croissant.png" alt="Xem trước Croissant" />
+                <section class="admin-card">
+                  <div class="admin-card__header">
+                    <div><h2>Lưu ý khi thêm</h2></div>
+                  </div>
+                  <div class="admin-card__body">
+                    <ul class="legend-list">
+                      <li>
+                        <i class="bi bi-check2-circle text-success"></i> Tên và
+                        giá bán là bắt buộc
+                      </li>
+                      <li>
+                        <i class="bi bi-check2-circle text-success"></i> Chọn ít
+                        nhất một phân loại
+                      </li>
+                      <li>
+                        <i class="bi bi-check2-circle text-success"></i> Kiểm
+                        tra ảnh xem trước trước khi lưu
+                      </li>
+                      <li>
+                        <i class="bi bi-info-circle text-primary"></i> Sản phẩm
+                        mới mặc định “Đang bán”
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
             </div>
-            <div class="image-picker__options"><label for="pick-dau" title="Bánh Kem Dâu Tây"><img src="../assets/cake/banhkemdau.png" alt="Bánh Kem Dâu Tây" /></label><label for="pick-nhat" title="Bánh Sinh Nhật Hoa Kem"><img src="../assets/cake/banhsinhnhat2.png" alt="Bánh Sinh Nhật Hoa Kem" /></label><label for="pick-truffle" title="Chocolate Truffle"><img src="../assets/cake/53096885.cms.avif" alt="Chocolate Truffle" /></label><label for="pick-tra-xanh" title="Mousse Trà Xanh"><img src="../assets/cake/mousse-tra-xanh.png" alt="Mousse Trà Xanh" /></label><label for="pick-hong" title="Bánh Kem Hồng Ánh Nhũ"><img src="../assets/cake/catalog-pink-celebration.jpg" alt="Bánh Kem Hồng Ánh Nhũ" /></label><label for="pick-croissant" title="Croissant"><img src="../assets/cake/croissant.png" alt="Croissant" /></label></div>
-          </div>
-          <div class="form-text mt-2"><i class="bi bi-info-circle me-1"></i>Ảnh lớn phía trên là ảnh xem trước trước khi thêm sản phẩm. Chọn ảnh khác trong dãy thumbnail để đổi ảnh xem trước.</div>
-        </div>
-      </section>
+          </form>
 
-      <div class="d-flex flex-wrap justify-content-end gap-2 mt-4">
-        <a href="products.html" class="btn btn-soft"><i class="bi bi-x-lg"></i> Huỷ</a>
-        <a href="#product-added-success" class="btn btn-brand"><i class="bi bi-plus-lg"></i> Thêm sản phẩm</a>
+          <footer class="admin-footer">
+            <span>© 2026 Sweet Bakery.</span>
+            <span>Phiên bản 1.0</span>
+          </footer>
+        </main>
       </div>
     </div>
-
-    <div class="col-xl-4">
-      <section class="admin-card mb-3">
-        <div class="admin-card__header"><div><h2>Phân loại hiện có</h2><p>Dùng đúng bộ lọc trên trang sản phẩm</p></div></div>
-        <div class="admin-card__body">
-          <div class="d-flex flex-wrap gap-2 mb-3">
-            <span class="cat-chip cat-chip--rose">Trái cây</span>
-            <span class="cat-chip">Chocolate</span>
-            <span class="cat-chip cat-chip--blue">Mousse &amp; lạnh</span>
-            <span class="cat-chip cat-chip--green">Sinh nhật</span>
-            <span class="cat-chip cat-chip--sand">Bánh mì &amp; Pastry</span>
-            <span class="cat-chip cat-chip--sand">Bánh mặn</span>
-          </div>
-          <div class="admin-alert admin-alert--info"><i class="bi bi-lightbulb"></i><div><strong>Gợi ý phân loại</strong>Bánh kem dâu có thể chọn đồng thời “Trái cây” và “Sinh nhật”, giống cách website đang gắn nhãn cho sản phẩm.</div></div>
-        </div>
-      </section>
-
-      <section class="admin-card mb-3">
-        <div class="admin-card__header"><div><h2>Ảnh đang chọn</h2><p>Hiển thị trước khi thêm</p></div></div>
-        <div class="admin-card__body">
-          <div class="current-image"><span class="current-image__tag">Ảnh xem trước</span><img src="../assets/cake/banhkemdau.png" alt="Ảnh sản phẩm đang chọn" /></div>
-          <div class="form-text mt-2">Ảnh này sẽ được dùng làm ảnh đại diện sản phẩm trên trang bánh.</div>
-        </div>
-      </section>
-
-      <section class="admin-card">
-        <div class="admin-card__header"><div><h2>Lưu ý khi thêm</h2></div></div>
-        <div class="admin-card__body">
-          <ul class="legend-list">
-            <li><i class="bi bi-check2-circle text-success"></i> Tên và giá bán là bắt buộc</li>
-            <li><i class="bi bi-check2-circle text-success"></i> Chọn ít nhất một phân loại</li>
-            <li><i class="bi bi-check2-circle text-success"></i> Kiểm tra ảnh xem trước trước khi lưu</li>
-            <li><i class="bi bi-info-circle text-primary"></i> Sản phẩm mới mặc định “Đang bán”</li>
-          </ul>
-        </div>
-      </section>
-    </div>
-  </div>
-</form>
-
-        <footer class="admin-footer">
-          <span>© 2026 Sweet Bakery. Giao diện quản trị minh hoạ — HTML/CSS, không sử dụng JavaScript.</span>
-          <span>Phiên bản 1.0 · Dữ liệu mẫu</span>
-        </footer>
-      </main>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
