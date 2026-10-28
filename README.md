@@ -7,7 +7,7 @@
 
 ## Tech Stack
 
-- **HTML5:**
+- **HTML5**
 - **CSS3**
 - **JavaScript**
 
@@ -29,17 +29,13 @@ bakery-website-ui/
     ├── cake/               # Bộ sưu tập hình ảnh bánh ngọt
     │
     └── logo/               # Icon & logo thương hiệu
+└── admin/                 # Trang dành cho admin
 ```
 
 ## Hệ thống màu sắc & Typography (Design System)
-
-Hệ thống biến CSS được định nghĩa trong `css/theme.css`:
-
 - **Primary (Rose/Pastel Pink):** Tone hồng ngọt ngào tượng trưng cho bánh ngọt, kem tươi (`#fceef2` → `#db8299` → `#8b4358`).
 - **Accent (Caramel/Brown):** Tone nâu caramel cho giá tiền, bánh nướng và điểm nhấn (`#dda38a` → `#b87555` → `#704332`).
 - **Cream (Warm Background):** Nền kem ngà tinh tế(`#fffdfb`, `#fff9f5`, `#fdf1e8`).
 - **Typography:**
   - **Heading:** `Playfair Display`.
-  - **Body text:** `Poppins`, `Inter`, `sans-serif`.
-
----
+  - **Body text:** `Be Vietnam Pro`, `sans-serif`

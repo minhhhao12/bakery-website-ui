@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bảng điều khiển quản trị Sweet Bakery — giao diện Admin Dashboard."
+    />
+    <title>Đơn hàng | Sweet Bakery Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <input
+      type="checkbox"
+      id="admin-nav-toggle"
+      class="admin-nav-toggle"
+      aria-hidden="true"
+    />
+    <div class="admin-shell">
+      <label
+        for="admin-nav-toggle"
+        class="admin-sidebar-backdrop"
+        aria-hidden="true"
+      ></label>
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a>
+          <p class="admin-brand__sub">Bảng điều khiển cửa hàng</p>
+        </div>
+        <div class="admin-sidebar__close-row">
+          <label
+            for="admin-nav-toggle"
+            class="admin-sidebar__close"
+            aria-label="Đóng menu"
+            ><i class="bi bi-x-lg"></i
+          ></label>
+        </div>
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <span class="admin-nav__label">Tổng quan</span
+          ><a class="admin-nav__link" href="index.html"
+            ><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a
+          ><span class="admin-nav__label">Quản lý cửa hàng</span
+          ><a class="admin-nav__link" href="users.html"
+            ><i class="bi bi-people"></i><span>Người dùng</span
+            ><span class="admin-nav__badge">11</span></a
+          ><a class="admin-nav__link" href="products.html"
+            ><i class="bi bi-cake2"></i><span>Sản phẩm</span
+            ><span class="admin-nav__badge">14</span></a
+          ><a class="admin-nav__link active" href="orders.html"
+            ><i class="bi bi-receipt"></i><span>Đơn hàng</span
+            ><span class="admin-nav__badge admin-nav__badge--alert">2</span></a
+          ><a class="admin-nav__link" href="statistics.html"
+            ><i class="bi bi-bar-chart-line"></i
+            ><span>Thống kê khách hàng</span></a
+          ><span class="admin-nav__label">Hệ thống</span
+          ><a
+            class="admin-nav__link"
+            href="../index.html"
+            target="_blank"
+            rel="noopener"
+            ><i class="bi bi-shop"></i><span>Xem website</span
+            ><i class="bi bi-box-arrow-up-right"></i></a
+          ><a class="admin-nav__link" href="../pages/login.html"
+            ><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></a
+          >
+        </nav>
+        <div class="admin-sidebar__footer">
+          <div class="admin-profile">
+            <span class="avatar">AD</span>
+            <div><strong>Admin</strong><small>Quản trị viên</small></div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-topbar__left">
+            <label
+              for="admin-nav-toggle"
+              class="admin-menu-btn d-lg-none"
+              aria-label="Mở menu"
+              ><i class="bi bi-list"></i
+            ></label>
+            <div>
+              <nav class="admin-breadcrumb" aria-label="Điều hướng">
+                Quản trị <span>/ Đơn hàng</span>
+              </nav>
+              <h1 class="admin-page-title">Đơn hàng</h1>
+            </div>
+          </div>
+          <div class="admin-topbar__right">
+            <span class="admin-date d-none d-md-inline-flex"
+              ><i class="bi bi-calendar3"></i>Thứ Tư, 28/10/2026</span
+            >
+            <a
+              href="../index.html"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-soft btn-sm d-none d-sm-inline-flex"
+              ><i class="bi bi-shop"></i> Xem cửa hàng</a
+            >
+            <a
+              href="orders.html"
+              class="admin-icon-btn"
+              aria-label="Đơn hàng cần xử lý"
+              ><i class="bi bi-bell"></i><span class="dot"></span
+            ></a>
+            <div class="admin-user-chip">
+              <span class="avatar">AD</span>
+              <div><strong>Admin</strong><small>Quản trị viên</small></div>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="row g-3 mb-4">
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--caramel"
+                    ><i class="bi bi-hourglass-split"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Chưa xác nhận</p>
+                <p class="stat-card__value">2</p>
+                <div class="stat-card__meta">Cần xử lý ngay hôm nay</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--blue"
+                    ><i class="bi bi-check2-circle"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Đã xác nhận</p>
+                <p class="stat-card__value">2</p>
+                <div class="stat-card__meta">Đang chuẩn bị và giao bánh</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--green"
+                    ><i class="bi bi-truck"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Đã giao</p>
+                <p class="stat-card__value">11</p>
+                <div class="stat-card__meta">Đơn giao thành công</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--rose"
+                    ><i class="bi bi-x-circle"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Huỷ đơn</p>
+                <p class="stat-card__value">1</p>
+                <div class="stat-card__meta">Không tính vào doanh thu</div>
+              </div>
+            </div>
+          </div>
+
+          <section class="admin-card mb-4">
+            <div class="admin-card__header">
+              <div>
+                <h2>Bộ lọc đơn hàng</h2>
+                <p>Tình trạng · khoảng thời gian · địa điểm giao hàng</p>
+              </div>
+            </div>
+            <div class="admin-card__body">
+              <div class="row g-3">
+                <div class="col-md-4 col-xl-2">
+                  <label class="form-label" for="order-status"
+                    >Tình trạng đơn hàng</label
+                  >
+                  <select class="form-select" id="order-status">
+                    <option selected>Tất cả tình trạng</option>
+                    <option>Chưa xác nhận</option>
+                    <option>Đã xác nhận</option>
+                    <option>Đã giao</option>
+                    <option>Huỷ đơn</option>
+                  </select>
+                </div>
+                <div class="col-6 col-md-4 col-xl-2">
+                  <label class="form-label" for="order-from">Từ ngày</label>
+                  <input
+                    class="form-control"
+                    id="order-from"
+                    type="date"
+                    value="2026-10-01"
+                  />
+                </div>
+                <div class="col-6 col-md-4 col-xl-2">
+                  <label class="form-label" for="order-to">Đến ngày</label>
+                  <input
+                    class="form-control"
+                    id="order-to"
+                    type="date"
+                    value="2026-10-28"
+                  />
+                </div>
+                <div class="col-6 col-md-6 col-xl-3">
+                  <label class="form-label" for="order-city"
+                    >Tỉnh / Thành phố</label
+                  >
+                  <select class="form-select" id="order-city">
+                    <option selected>TP. Hồ Chí Minh</option>
+                    <option>Hà Nội</option>
+                    <option>Đà Nẵng</option>
+                    <option>Cần Thơ</option>
+                  </select>
+                </div>
+                <div class="col-6 col-md-6 col-xl-3">
+                  <label class="form-label" for="order-district">Phường</label>
+                  <select class="form-select" id="order-district">
+                    <option selected>Tất cả phường</option>
+                    <option>Phường Chợ Quán</option>
+                    <option>Phường Sài Gòn</option>
+                    <option>Phường Thủ Đức</option>
+                    <option>Phường Tân Phú</option>
+                    <option>Phường Tân Bình</option>
+                    <option>Phường An Khánh</option>
+                    <option>Phường Tân Định</option>
+                    <option>Phường Nhiêu Lộc</option>
+                    <option>Phường Cầu Kiệu</option>
+                    <option>Phường Xuân Hoà</option>
+                  </select>
+                </div>
+              </div>
+              <div
+                class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-3"
+              >
+                <div class="d-flex flex-wrap gap-2">
+                  <button class="btn btn-brand" type="button">
+                    <i class="bi bi-funnel"></i> Áp dụng bộ lọc
+                  </button>
+                  <button class="btn btn-soft" type="button">
+                    <i class="bi bi-arrow-counterclockwise"></i> Đặt lại
+                  </button>
+                </div>
+              </div>
+              <div
+                class="d-flex flex-wrap align-items-center gap-2 mt-3 pt-3"
+                style="border-top: 1px solid var(--sb-border-soft)"
+              >
+                <span class="text-soft" style="font-size: 0.63rem"
+                  >Đang áp dụng:</span
+                >
+                <span class="cat-chip cat-chip--rose"
+                  ><i class="bi bi-calendar3"></i> 01/10/2026 – 28/10/2026</span
+                >
+                <span class="cat-chip cat-chip--blue"
+                  ><i class="bi bi-geo-alt"></i> TP. Hồ Chí Minh</span
+                >
+                <span class="cat-chip"
+                  ><i class="bi bi-check2"></i> Tất cả tình trạng</span
+                >
+              </div>
+            </div>
+          </section>
+
+          <section class="admin-card">
+            <div class="admin-card__header">
+              <div>
+                <h2>Danh sách đơn hàng</h2>
+                <p>16 đơn trong khoảng thời gian đã chọn</p>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <button
+                  class="btn btn-soft btn-sm d-none d-sm-inline-flex"
+                  type="button"
+                >
+                  <i class="bi bi-download"></i> Xuất báo cáo
+                </button>
+                <button class="btn btn-brand btn-sm" type="button">
+                  <i class="bi bi-arrow-repeat"></i> Làm mới
+                </button>
+              </div>
+            </div>
+            <div class="admin-card__body pb-3">
+              <div class="order-tabs">
+                <a class="order-tab active" href="#!">Tất cả <span>16</span></a>
+                <a class="order-tab" href="#!">Chưa xác nhận <span>2</span></a>
+                <a class="order-tab" href="#!">Đã xác nhận <span>2</span></a>
+                <a class="order-tab" href="#!">Đã giao <span>11</span></a>
+                <a class="order-tab" href="#!">Huỷ đơn <span>1</span></a>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table admin-table align-middle">
+                <thead>
+                  <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Ngày đặt</th>
+                    <th>Địa điểm giao</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th class="text-end">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0192"
+                        >SB-2026-0192</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--caramel">TB</span>
+                        <div>
+                          <span class="cell-main">Trần Thị Bích</span
+                          ><span class="cell-sub">091 234 5678</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">27/10/2026</span
+                      ><span class="cell-sub">09:15</span>
+                    </td>
+                    <td>
+                      <span class="cell-main"
+                        >Phường Sài Gòn
+                        <nav></nav></span
+                      ><span class="cell-sub"
+                        >12 Nguyễn Huệ, Phường Sài Gòn, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">810.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--pending"
+                        >Chưa xác nhận</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0191"
+                        >SB-2026-0191</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--blue">HN</span>
+                        <div>
+                          <span class="cell-main">Lê Hoàng Nam</span
+                          ><span class="cell-sub">098 765 4321</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">26/10/2026</span
+                      ><span class="cell-sub">16:40</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Sài Gòn</span
+                      ><span class="cell-sub"
+                        >45 Lê Lợi, Phường Sài Gòn, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">700.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--pending"
+                        >Chưa xác nhận</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0190"
+                        >SB-2026-0190</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--green">TH</span>
+                        <div>
+                          <span class="cell-main">Phạm Thu Hà</span
+                          ><span class="cell-sub">093 456 7890</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">26/10/2026</span
+                      ><span class="cell-sub">10:05</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Cầu Kiệu</span
+                      ><span class="cell-sub">
+                        88 Phan Xích Long, Phường Cầu Kiệu, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">910.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--confirmed"
+                        >Đã xác nhận</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0189"
+                        >SB-2026-0189</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--blue">MK</span>
+                        <div>
+                          <span class="cell-main">Đỗ Minh Khoa</span
+                          ><span class="cell-sub">090 987 6543</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">25/10/2026</span
+                      ><span class="cell-sub">18:22</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Chợ Quán</span
+                      ><span class="cell-sub">
+                        27 Nguyễn Văn Cừ, Phường Chợ Quán, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">780.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0188"
+                        >SB-2026-0188</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--sand">NL</span>
+                        <div>
+                          <span class="cell-main">Võ Ngọc Lan</span
+                          ><span class="cell-sub">097 111 2222</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">25/10/2026</span
+                      ><span class="cell-sub">11:08</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Nhiêu Lộc</span
+                      ><span class="cell-sub">
+                        156 Cách Mạng Tháng 8, Phường Nhiêu Lộc, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">900.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0187"
+                        >SB-2026-0187</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--caramel">TT</span>
+                        <div>
+                          <span class="cell-main">Bùi Thanh Tùng</span
+                          ><span class="cell-sub">096 333 4444</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">24/10/2026</span
+                      ><span class="cell-sub">15:45</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Xóm Chiếu</span
+                      ><span class="cell-sub">
+                        9 Hoàng Diệu, Phường Xóm Chiếu, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">400.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--cancelled"
+                        >Huỷ đơn</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0186"
+                        >SB-2026-0186</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--rose">NA</span>
+                        <div>
+                          <span class="cell-main">Nguyễn Văn A</span
+                          ><span class="cell-sub">090 123 4567</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">23/10/2026</span
+                      ><span class="cell-sub">14:32</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Chợ Quán</span
+                      ><span class="cell-sub">
+                        273 An Dương Vương, Phường Chợ Quán, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">770.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--confirmed"
+                        >Đã xác nhận</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0185"
+                        >SB-2026-0185</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--plum">TM</span>
+                        <div>
+                          <span class="cell-main">Ngô Thị Mai</span
+                          ><span class="cell-sub">094 555 6666</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">22/10/2026</span
+                      ><span class="cell-sub">09:30</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Xuân Hòa</span
+                      ><span class="cell-sub">
+                        210 Nguyễn Thị Minh Khai, Phường Xuân Hòa, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">920.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0184"
+                        >SB-2026-0184</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--rose">QB</span>
+                        <div>
+                          <span class="cell-main">Trịnh Quốc Bảo</span
+                          ><span class="cell-sub">092 777 8888</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">21/10/2026</span
+                      ><span class="cell-sub">19:12</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường An Khánh</span
+                      ><span class="cell-sub">
+                        33 Trần Não, Phường An Khánh, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">780.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0183"
+                        >SB-2026-0183</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--green">TV</span>
+                        <div>
+                          <span class="cell-main">Lý Thanh Vy</span
+                          ><span class="cell-sub">095 999 0000</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">20/10/2026</span
+                      ><span class="cell-sub">13:00</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Chợ Quán</span
+                      ><span class="cell-sub">
+                        71 Nguyễn Trãi, Phường Chợ Quán, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">830.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0182"
+                        >SB-2026-0182</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--rose">NA</span>
+                        <div>
+                          <span class="cell-main">Nguyễn Văn A</span
+                          ><span class="cell-sub">090 123 4567</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">18/10/2026</span
+                      ><span class="cell-sub">10:20</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Chợ Quán</span
+                      ><span class="cell-sub">
+                        273 An Dương Vương, Phường Chợ Quán, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">350.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0181"
+                        >SB-2026-0181</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--caramel">TB</span>
+                        <div>
+                          <span class="cell-main">Trần Thị Bích</span
+                          ><span class="cell-sub">091 234 5678</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">15/10/2026</span
+                      ><span class="cell-sub">14:05</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Sài Gòn</span
+                      ><span class="cell-sub">
+                        12 Nguyễn Huệ, Phường Sài Gòn, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">910.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0180"
+                        >SB-2026-0180</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--rose">NA</span>
+                        <div>
+                          <span class="cell-main">Nguyễn Văn A</span
+                          ><span class="cell-sub">090 123 4567</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">12/10/2026</span
+                      ><span class="cell-sub">09:45</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Chợ Quán</span
+                      ><span class="cell-sub">
+                        273 An Dương Vương, Phường Chợ Quán, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">430.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0179"
+                        >SB-2026-0179</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--blue">HN</span>
+                        <div>
+                          <span class="cell-main">Lê Hoàng Nam</span
+                          ><span class="cell-sub">098 765 4321</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">11/10/2026</span
+                      ><span class="cell-sub">17:30</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Sài Gòn</span
+                      ><span class="cell-sub">
+                        45 Lê Lợi, Phường Sài Gòn, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">930.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0178"
+                        >SB-2026-0178</a
+                      ><span class="cell-sub">2 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--green">TH</span>
+                        <div>
+                          <span class="cell-main">Phạm Thu Hà</span
+                          ><span class="cell-sub">093 456 7890</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">09/10/2026</span
+                      ><span class="cell-sub">12:15</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Cầu Kiệu</span
+                      ><span class="cell-sub">
+                        88 Phan Xích Long, Phường Cầu Kiệu, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">750.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        class="cell-main"
+                        href="order-detail.html#order-sb-2026-0177"
+                        >SB-2026-0177</a
+                      ><span class="cell-sub">1 sản phẩm</span>
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--plum">TM</span>
+                        <div>
+                          <span class="cell-main">Ngô Thị Mai</span
+                          ><span class="cell-sub">094 555 6666</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap">
+                      <span class="cell-main">07/10/2026</span
+                      ><span class="cell-sub">16:50</span>
+                    </td>
+                    <td>
+                      <span class="cell-main">Phường Xuân Hòa</span
+                      ><span class="cell-sub">
+                        210 Nguyễn Thị Minh Khai, Phường Xuân Hòa, TP.HCM</span
+                      >
+                    </td>
+                    <td class="text-nowrap text-price">840.000₫</td>
+                    <td>
+                      <span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      >
+                    </td>
+                    <td class="text-end">
+                      <span class="table-actions"
+                        ><a
+                          href="order-detail.html#order-sb-2026-0185"
+                          class="btn-icon"
+                          title="Xem chi tiết"
+                          ><i class="bi bi-eye"></i></a
+                      ></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="admin-card__footer d-flex flex-wrap align-items-center justify-content-between gap-2"
+            >
+              <span class="text-soft" style="font-size: 0.65rem"
+                >Hiển thị 1–16 trong 16 đơn hàng</span
+              >
+              <nav aria-label="Phân trang đơn hàng">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#!">Trước</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#!">1</a>
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#!">Sau</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </section>
+
+          <footer class="admin-footer">
+            <span>© 2026 Sweet Bakery.</span>
+            <span>Phiên bản 1.0</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

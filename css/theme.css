@@ -169,14 +169,14 @@
 
   /* ======================================================
      06. TYPOGRAPHY — FONT FAMILY
-     Có thể thay bằng Google Fonts sau này.
+     Font được tải qua Google Fonts (không cần cài vào máy).
      Gợi ý:
        Heading: Playfair Display
-       Body:    Poppins / Inter
+       Body:    Be Vietnam Pro
      ====================================================== */
 
   --font-sans:
-    "Poppins", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    "Be Vietnam Pro", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
 
