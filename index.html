@@ -11,11 +11,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="main.css" />
-    <script src="./Javascript/advanced-search.js" defer></script>
+    <link rel="stylesheet" href="./css/account.css">
   </head>
   <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header_index">
       <div class="header__container container">
         <div class="header-logo__container">
           <a href="./index.html" class="home-logo">
@@ -495,7 +495,7 @@
     </section>
 
     <!-- CTA Banner -->
-    <section class="cta-banner__section section">
+    <section class="cta-banner__section section" id="cta">
       <div class="container">
         <div class="cta-banner__content">
           <h2>Đặt bánh ngay hôm nay</h2>
@@ -504,7 +504,7 @@
             đơn từ 500.000₫.
           </p>
           <div class="cta-banner__actions">
-            <button class="btn btn-primary btn-lg">Đặt bánh ngay</button>
+            <button id="order-button" class="btn btn-primary btn-lg">Đặt bánh ngay</button>
             <a
               href="tel:0901234567"
               class="btn btn-ghost btn-lg cta-banner__phone"
@@ -596,19 +596,17 @@
           <div class="footer__col">
             <h5>Liên kết nhanh</h5>
             <ul>
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Sản phẩm</a></li>
-              <li><a href="#">Về chúng tôi</a></li>
-              <li><a href="#">Liên hệ</a></li>
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="./pages/products.html">Sản phẩm</a></li>
             </ul>
           </div>
           <div class="footer__col">
             <h5>Danh mục</h5>
             <ul>
-              <li><a href="#">Bánh sinh nhật</a></li>
-              <li><a href="#">Bánh mì & Pastry</a></li>
-              <li><a href="#">Mousse & Bánh lạnh</a></li>
-              <li><a href="#">Bánh mặn</a></li>
+              <li><a href="./pages/products.html">Bánh sinh nhật</a></li>
+              <li><a href="./pages/products.html">Bánh mì & Pastry</a></li>
+              <li><a href="./pages/products.html">Mousse & Bánh lạnh</a></li>
+              <li><a href="./pages/products.html">Bánh mặn</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -769,5 +767,156 @@
         >
       </a>
     </aside>
+    <div
+      class="modal"
+      id="order-history"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="order-history-title"
+    >
+      <!-- href="#!" : đóng modal mà không cuộn trang lên đầu -->
+      <a class="modal__overlay" href="#!" aria-label="Đóng hộp thoại"></a>
+
+      <div class="modal__dialog">
+        <header class="modal__header">
+          <div>
+            <span class="section-subtitle">Tài khoản của bạn</span>
+            <h3 class="modal__title" id="order-history-title">
+              Lịch sử đơn hàng
+            </h3>
+          </div>
+          <a class="modal__close" href="#!" aria-label="Đóng hộp thoại">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </a>
+        </header>
+
+        <div class="modal__body">
+          <!-- Đơn hàng 1 -->
+          <article class="order-card">
+            <div class="order-card__top">
+              <div class="order-card__code">
+                <strong>#BK-241207</strong>
+                <span>07/12/2026 · 18:24</span>
+              </div>
+              <span class="badge badge-warning">Đang giao</span>
+            </div>
+            <ul class="order-card__items">
+              <li>
+                <img src="./assets/cake/banhkemdau.png" alt="" />
+                <div class="order-card__info">
+                  <strong>Bánh Kem Dâu Tây</strong>
+                  <span>Size 16cm · SL 1</span>
+                </div>
+                <span class="order-card__price">350.000₫</span>
+              </li>
+              <li>
+                <img src="./assets/cake/CLASSIC-TIRAMISU-MINI.png" alt="" />
+                <div class="order-card__info">
+                  <strong>Tiramisu Cổ Điển</strong>
+                  <span>Size 18cm · SL 1</span>
+                </div>
+                <span class="order-card__price">420.000₫</span>
+              </li>
+            </ul>
+            <div class="order-card__bottom">
+              <span class="order-card__total"
+                >Tổng cộng <strong>770.000₫</strong></span
+              >
+              <div class="order-card__actions">
+                <button type="button" class="btn btn-outline btn-sm">
+                  Xem chi tiết
+                </button>
+                <button type="button" class="btn btn-primary btn-sm">
+                  Mua lại
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Đơn hàng 2 -->
+          <article class="order-card">
+            <div class="order-card__top">
+              <div class="order-card__code">
+                <strong>#BK-241119</strong>
+                <span>19/11/2026 · 09:12</span>
+              </div>
+              <span class="badge badge-success">Hoàn tất</span>
+            </div>
+            <ul class="order-card__items">
+              <li>
+                <img src="./assets/cake/mousse-tra-xanh.png" alt="" />
+                <div class="order-card__info">
+                  <strong>Mousse Trà Xanh</strong>
+                  <span>Size 20cm · SL 2</span>
+                </div>
+                <span class="order-card__price">760.000₫</span>
+              </li>
+            </ul>
+            <div class="order-card__bottom">
+              <span class="order-card__total"
+                >Tổng cộng <strong>760.000₫</strong></span
+              >
+              <div class="order-card__actions">
+                <button type="button" class="btn btn-outline btn-sm">
+                  Xem chi tiết
+                </button>
+                <button type="button" class="btn btn-primary btn-sm">
+                  Mua lại
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Đơn hàng 3 -->
+          <article class="order-card">
+            <div class="order-card__top">
+              <div class="order-card__code">
+                <strong>#BK-241027</strong>
+                <span>27/10/2026 · 15:40</span>
+              </div>
+              <span class="badge badge-error">Đã hủy</span>
+            </div>
+            <ul class="order-card__items">
+              <li>
+                <img src="./assets/cake/capuchinocake.png" alt="" />
+                <div class="order-card__info">
+                  <strong>Bánh Capuchino</strong>
+                  <span>Size 16cm · SL 1</span>
+                </div>
+                <span class="order-card__price">400.000₫</span>
+              </li>
+            </ul>
+            <div class="order-card__bottom">
+              <span class="order-card__total"
+                >Tổng cộng <strong>400.000₫</strong></span
+              >
+              <div class="order-card__actions">
+                <button type="button" class="btn btn-outline btn-sm">
+                  Xem chi tiết
+                </button>
+                <button type="button" class="btn btn-primary btn-sm">
+                  Mua lại
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <script src="./Javascript/auth.js"></script>
+    <script src="./Javascript/menu.js"></script>
   </body>
 </html>
