@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Khám phá bộ sưu tập bánh kem tươi Sweet Bakery: bánh trái cây, chocolate, mousse và bánh sinh nhật." />
+    <title>Bánh Kem | Sweet Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../css/products.css" />
+  </head>
+  <body class="catalog-body">
+    <header class="header">
+      <div class="header__container container">
+        <div class="header-logo__container">
+          <a href="../index.html" class="home-logo"><span class="logo-text">Sweet Bakery</span></a>
+        </div>
+        <div class="header-search__container">
+          <form class="header-search__form" action="../index.html#best-seller" role="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="search" class="header-search__input" placeholder="Tìm bánh kem, tiramisu, croissant..." aria-label="Tìm kiếm sản phẩm" />
+            <button type="submit" class="header-search__btn"><span>Tìm kiếm</span></button>
+          </form>
+        </div>
+        <div class="header__container--right">
+          <a href="./login.html" class="header-btn login-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0" /><circle cx="12" cy="8" r="5" /></svg>
+            <span>Đăng nhập</span>
+          </a>
+          <a href="./signin.html" class="header-btn register-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="10" cy="7" r="4" /><path d="M19 8v6M22 11h-6" /></svg>
+            <span>Đăng ký</span>
+          </a>
+          <a href="#cart" class="cart-logo" aria-label="Xem giỏ hàng">
+            <span class="cart-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="8" cy="21" r="1" /><circle cx="19" cy="21" r="1" /><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+              </svg>
+              <span class="cart-badge">1</span>
+            </span>
+            <span class="cart-text">Giỏ hàng</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="catalog-page">
+      <div class="container">
+        <nav class="catalog-breadcrumb" aria-label="Điều hướng">
+          <a href="../index.html">Trang chủ</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Bánh sinh nhật</span>
+        </nav>
+
+        <section class="catalog-intro" aria-labelledby="catalog-heading">
+          <p class="catalog-eyebrow">BÁNH TƯƠI MỖI NGÀY · LÀM THỦ CÔNG</p>
+          <h1 id="catalog-heading">Bánh kem cho ngày thật ngọt</h1>
+          <p>Chọn hương vị yêu thích từ những chiếc bánh kem mềm mịn, hoàn thiện tại bếp Sweet Bakery.</p>
+        </section>
+
+        <section class="catalog-listing" aria-label="Danh sách bánh kem">
+          <input class="catalog-filter-input" id="filter-all" type="radio" name="cake-category" checked />
+          <input class="catalog-filter-input" id="filter-fruit" type="radio" name="cake-category" />
+          <input class="catalog-filter-input" id="filter-chocolate" type="radio" name="cake-category" />
+          <input class="catalog-filter-input" id="filter-mousse" type="radio" name="cake-category" />
+          <input class="catalog-filter-input" id="filter-birthday" type="radio" name="cake-category" />
+
+          <div class="catalog-toolbar">
+            <div class="catalog-filter-tabs" role="group" aria-label="Lọc theo hương vị">
+              <label for="filter-all">Tất cả</label>
+              <label for="filter-fruit">Trái cây</label>
+              <label for="filter-chocolate">Chocolate</label>
+              <label for="filter-mousse">Mousse &amp; lạnh</label>
+              <label for="filter-birthday">Sinh nhật</label>
+            </div>
+            <p class="catalog-count">14 mẫu bánh</p>
+          </div>
+
+          <div class="catalog-grid">
+            <article class="catalog-card" data-category="fruit birthday">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh kem dâu tây">
+                <img src="../assets/cake/banhkemdau.png" alt="Bánh kem dâu tây phủ kem tươi" />
+                <span class="catalog-card__badge">Bán chạy</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Bánh Kem Dâu Tây</a></h2>
+                <p>Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</p>
+                <div class="catalog-card__footer"><strong>350.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh kem dâu tây">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="fruit mousse">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh dâu kem hạnh nhân">
+                <img src="../assets/cake/catalog-strawberry-meringue.jpg" alt="Bánh kem dâu và hạnh nhân trên nền sáng" loading="lazy" />
+                <span class="catalog-card__badge catalog-card__badge--new">Mới</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.8</div>
+                <h2><a href="./product_detail.html">Dâu Kem Hạnh Nhân</a></h2>
+                <p>Lớp kem mịn, dâu tươi và hạnh nhân rang thơm.</p>
+                <div class="catalog-card__footer"><strong>390.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh dâu kem hạnh nhân">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="fruit birthday">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh kem trái cây tươi">
+                <img src="../assets/cake/catalog-floral-cream.jpg" alt="Bánh kem trái cây tươi trang trí trên đế trắng" loading="lazy" />
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Bánh Kem Trái Cây</a></h2>
+                <p>Kem sữa tươi phủ trái cây theo mùa, vị ngọt thanh.</p>
+                <div class="catalog-card__footer"><strong>420.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh kem trái cây">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="fruit mousse">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh mousse chanh dây">
+                <img src="../assets/cake/banhkemchanhday.png" alt="Bánh kem chanh dây trang trí múi cam và chanh" />
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.8</div>
+                <h2><a href="./product_detail.html">Mousse Chanh Dây</a></h2>
+                <p>Vị chua dịu tươi mát cùng lớp mousse mềm tan.</p>
+                <div class="catalog-card__footer"><strong>360.000₫</strong><a href="./product_detail.html" aria-label="Chọn mousse chanh dây">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="chocolate">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh chocolate truffle">
+                <img src="../assets/cake/53096885.cms.avif" alt="Bánh chocolate truffle phủ lớp kem cacao" loading="lazy" />
+                <span class="catalog-card__badge">Được yêu thích</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 5.0</div>
+                <h2><a href="./product_detail.html">Chocolate Truffle</a></h2>
+                <p>Chocolate đậm vị, cốt bánh ẩm và kem truffle mượt.</p>
+                <div class="catalog-card__footer"><strong>430.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh chocolate truffle">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="chocolate">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh chocolate cherry">
+                <img src="../assets/cake/catalog-chocolate-cherry.jpg" alt="Bánh chocolate phủ sốt chocolate trên nền trắng" loading="lazy" />
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Chocolate Cherry</a></h2>
+                <p>Sốt chocolate đắng nhẹ kết hợp kem sữa và cherry.</p>
+                <div class="catalog-card__footer"><strong>450.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh chocolate cherry">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="chocolate">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh chocolate berries">
+                <img src="../assets/cake/catalog-chocolate-berry.jpg" alt="Bánh chocolate nhiều lớp với quả mọng" loading="lazy" />
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.8</div>
+                <h2><a href="./product_detail.html">Chocolate Berries</a></h2>
+                <p>Cốt cacao nhiều lớp, kem tươi và quả mọng chua ngọt.</p>
+                <div class="catalog-card__footer"><strong>460.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh chocolate berries">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="chocolate birthday">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh chocolate óc chó">
+                <img src="../assets/cake/catalog-party-cakes.jpg" alt="Bánh chocolate óc chó trên đế trắng" loading="lazy" />
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Chocolate Óc Chó</a></h2>
+                <p>Bánh chocolate phủ ganache, thêm óc chó rang bùi thơm.</p>
+                <div class="catalog-card__footer"><strong>450.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh chocolate óc chó">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="chocolate mousse">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh capuchino">
+                <img src="../assets/cake/capuchinocake.png" alt="Bánh kem cappuccino vị cà phê" />
+                <span class="catalog-card__badge">Bán chạy</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.8</div>
+                <h2><a href="./product_detail.html">Bánh Cappuccino</a></h2>
+                <p>Cà phê thơm nồng hòa quyện cùng chocolate và kem sữa.</p>
+                <div class="catalog-card__footer"><strong>400.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh cappuccino">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="mousse">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh mousse trà xanh">
+                <img src="../assets/cake/mousse-tra-xanh.png" alt="Bánh mousse trà xanh matcha" loading="lazy" />
+                <span class="catalog-card__badge">Bán chạy</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Mousse Trà Xanh</a></h2>
+                <p>Matcha thanh vị, mousse mịn nhẹ và không quá ngọt.</p>
+                <div class="catalog-card__footer"><strong>380.000₫</strong><a href="./product_detail.html" aria-label="Chọn mousse trà xanh">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="mousse">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem tiramisu cổ điển">
+                <img src="../assets/cake/CLASSIC-TIRAMISU-MINI.png" alt="Bánh tiramisu phủ bột cacao" />
+                <span class="catalog-card__badge">Bán chạy</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Tiramisu Cổ Điển</a></h2>
+                <p>Mascarpone béo mịn, cà phê đậm và cacao thơm.</p>
+                <div class="catalog-card__footer"><strong>420.000₫</strong><a href="./product_detail.html" aria-label="Chọn tiramisu cổ điển">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="birthday">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh sinh nhật hoa kem">
+                <img src="../assets/cake/banhsinhnhat2.png" alt="Bánh sinh nhật trang trí hoa kem" />
+                <span class="catalog-card__badge catalog-card__badge--new">Mới</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 5.0</div>
+                <h2><a href="./product_detail.html">Bánh Sinh Nhật Hoa Kem</a></h2>
+                <p>Hoa kem tạo hình thủ công, phù hợp cho ngày đặc biệt.</p>
+                <div class="catalog-card__footer"><strong>490.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh sinh nhật hoa kem">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="birthday fruit">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh kem vanilla dừa">
+                <img src="../assets/cake/catalog-coconut-vanilla.jpg" alt="Bánh kem vanilla dừa trên nền trắng" loading="lazy" />
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.8</div>
+                <h2><a href="./product_detail.html">Vanilla Dừa Tươi</a></h2>
+                <p>Kem vanilla thơm dịu, điểm dừa tươi và chút chanh thanh mát.</p>
+                <div class="catalog-card__footer"><strong>440.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh vanilla dừa">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="catalog-card" data-category="birthday">
+              <a class="catalog-card__image" href="./product_detail.html" aria-label="Xem bánh kem hồng ánh nhũ">
+                <img src="../assets/cake/catalog-pink-celebration.jpg" alt="Bánh kem hồng trang trí viên chocolate ánh nhũ" loading="lazy" />
+                <span class="catalog-card__badge catalog-card__badge--new">Mới</span>
+              </a>
+              <div class="catalog-card__body">
+                <div class="catalog-card__rating"><span aria-label="5 trên 5 sao">★★★★★</span> 4.9</div>
+                <h2><a href="./product_detail.html">Bánh Kem Hồng Ánh Nhũ</a></h2>
+                <p>Cốt vani mềm, kem hồng nhẹ và điểm nhấn chocolate thủ công.</p>
+                <div class="catalog-card__footer"><strong>480.000₫</strong><a href="./product_detail.html" aria-label="Chọn bánh kem hồng ánh nhũ">Chọn bánh <span aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+          </div>
+
+          <nav class="catalog-pagination" aria-label="Phân trang minh họa">
+            <span class="catalog-pagination__item catalog-pagination__item--current" aria-current="page">1</span>
+            <span class="catalog-pagination__item">2</span>
+            <span class="catalog-pagination__item">3</span>
+            <span class="catalog-pagination__ellipsis" aria-hidden="true">…</span>
+            <span class="catalog-pagination__item">8</span>
+            <span class="catalog-pagination__item catalog-pagination__next">Tiếp <span aria-hidden="true">→</span></span>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer__section" id="contact">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brand">
+            <a href="../index.html" class="footer__logo">Sweet Bakery</a>
+            <p>Mỗi chiếc bánh là một tác phẩm nghệ thuật, được tạo nên từ đam mê và nguyên liệu thượng hạng.</p>
+            <div class="footer__socials">
+              <a href="#" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h5>Liên kết nhanh</h5>
+            <ul>
+              <li><a href="../index.html">Trang chủ</a></li>
+              <li><a href="./products.html">Sản phẩm</a></li>
+              <li><a href="../index.html#why-us">Về chúng tôi</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Danh mục</h5>
+            <ul>
+              <li><a href="./products.html">Bánh sinh nhật</a></li>
+              <li><a href="../index.html#best-seller">Bánh mì &amp; Pastry</a></li>
+              <li><a href="../index.html#best-seller">Mousse &amp; Bánh lạnh</a></li>
+              <li><a href="../index.html#best-seller">Bánh mặn</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Liên hệ</h5>
+            <ul class="footer__contact">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                273 An Dương Vương, Phường Chợ Quán, TP.HCM
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                090 123 4567
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+                sweetbakeryofficial@sweetbakery.vn
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="footer__bottom"><p>© 2026 Sweet Bakery.</p></div>
+      </div>
+    </footer>
+
+    <details class="contact-float" aria-label="Liên hệ nhanh">
+      <summary class="contact-float__toggle" aria-label="Mở hoặc đóng liên hệ nhanh">
+        <span class="contact-float__icon contact-float__toggle-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+        </span>
+      </summary>
+      <div class="contact-float__items">
+      <div class="contact-float__item contact-float__item--order">
+        <span class="contact-float__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z" /><path d="M9 7a3 3 0 0 1 6 0" /><path d="M9 12h6" /></svg>
+        </span>
+        <span class="contact-float__copy"><strong>Đặt bánh ngay</strong><small>Chọn bánh yêu thích</small></span>
+      </div>
+      <div class="contact-float__item">
+        <span class="contact-float__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg>
+        </span>
+        <span class="contact-float__copy"><strong>Gọi hotline</strong><small>090 123 4567</small></span>
+      </div>
+      <div class="contact-float__item">
+        <span class="contact-float__icon contact-float__icon--zalo" aria-hidden="true">Z</span>
+        <span class="contact-float__copy"><strong>Tư vấn qua Zalo</strong><small>Chat với Sweet Bakery</small></span>
+      </div>
+      <div class="contact-float__item">
+        <span class="contact-float__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+        </span>
+        <span class="contact-float__copy"><strong>Gửi email</strong><small>sweetbakeryofficial@sweetbakery.vn</small></span>
+      </div>
+      </div>
+    </details>
+  </body>
+</html>

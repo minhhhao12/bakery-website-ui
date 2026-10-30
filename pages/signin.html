@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - Sweet Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../css/signin.css" />
+  </head>
+  <body>
+    <section class="auth-section">
+      <div class="auth-split-card">
+        
+        <!-- Cột Trái: Banner Hình ảnh -->
+        <div class="auth-visual">
+          <div class="auth-visual-content">
+            <h2 class="auth-visual-title">Gia nhập Sweet Bakery</h2>
+            <p class="auth-visual-desc">Tạo tài khoản để nhận ngay ưu đãi giảm 10% cho đơn hàng đầu tiên và tích điểm đổi bánh miễn phí mỗi ngày.</p>
+          </div>
+        </div>
+
+        <!-- Cột Phải: Form Đăng ký -->
+        <div class="auth-content">
+          <div class="auth-header">
+            <a href="../index.html" class="home-logo auth-logo">
+              <span class="logo-text">Sweet Bakery</span>
+            </a>
+            <h1 class="auth-title">Tạo tài khoản mới</h1>
+            <p class="auth-desc">Điền thông tin bên dưới để bắt đầu</p>
+          </div>
+          
+          <form class="auth-form" action="../index.html" method="get">
+            
+            <!-- Hàng 1: Họ và Tên -->
+            <div class="form-row">
+              <div class="form-group form-col">
+                <label for="lastname" class="form-label">Họ và tên đệm</label>
+                <input type="text" id="lastname" class="input" placeholder="Nguyễn Văn" required />
+              </div>
+              <div class="form-group form-col">
+                <label for="firstname" class="form-label">Tên</label>
+                <input type="text" id="firstname" class="input" placeholder="A" required />
+              </div>
+            </div>
+
+            <!-- Hàng 2: Email và Số điện thoại -->
+            <div class="form-row">
+              <div class="form-group form-col">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="input" placeholder="email@example.com" required />
+              </div>
+              <div class="form-group form-col">
+                <label for="phone" class="form-label">Số điện thoại</label>
+                <input type="tel" id="phone" class="input" placeholder="090 123 4567" required />
+              </div>
+            </div>
+
+            <!-- Hàng 3: Địa chỉ (Full width) -->
+            <div class="form-group">
+              <label for="address" class="form-label">Địa chỉ giao hàng</label>
+              <input type="text" id="address" class="input" placeholder="Số nhà, Tên đường, Phường/Xã, Quận/Huyện..." required />
+            </div>
+            
+            <!-- Hàng 4: Mật khẩu -->
+            <div class="form-row">
+              <div class="form-group form-col">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" id="password" class="input" placeholder="••••••••" required />
+              </div>
+              <div class="form-group form-col">
+                <label for="confirm-password" class="form-label">Xác nhận mật khẩu</label>
+                <input type="password" id="confirm-password" class="input" placeholder="••••••••" required />
+              </div>
+            </div>
+            
+            <div class="auth-options">
+              <label class="checkbox-label">
+                <input type="checkbox" class="checkbox-input" required /> 
+                <span>Tôi đồng ý với <a href="#" class="link">Điều khoản & Dịch vụ</a></span>
+              </label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg auth-btn">Đăng ký thành viên</button>
+          </form>
+          
+          <div class="auth-footer">
+            Đã có tài khoản? <a href="login.html" class="link">Đăng nhập ngay</a>
+          </div>
+          
+          <a href="../index.html" class="back-home-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            Quay lại trang chủ
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Nút liên hệ nhanh -->
+    <details class="contact-float" aria-label="Liên hệ nhanh">
+      <summary class="contact-float__toggle" aria-label="Mở hoặc đóng liên hệ nhanh">
+        <span class="contact-float__icon contact-float__toggle-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+        </span>
+      </summary>
+      <div class="contact-float__items">
+        <div class="contact-float__item contact-float__item--order">
+          <span class="contact-float__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5L6 7Z" /><path d="M9 7a3 3 0 0 1 6 0" /><path d="M9 12h6" /></svg></span>
+          <span class="contact-float__copy"><strong>Đặt bánh ngay</strong><small>Chọn bánh yêu thích</small></span>
+        </div>
+        <div class="contact-float__item">
+          <span class="contact-float__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" /></svg></span>
+          <span class="contact-float__copy"><strong>Gọi hotline</strong><small>090 123 4567</small></span>
+        </div>
+        <div class="contact-float__item">
+          <span class="contact-float__icon contact-float__icon--zalo" aria-hidden="true">Z</span>
+          <span class="contact-float__copy"><strong>Tư vấn qua Zalo</strong><small>Chat với Sweet Bakery</small></span>
+        </div>
+        <div class="contact-float__item">
+          <span class="contact-float__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg></span>
+          <span class="contact-float__copy"><strong>Gửi email</strong><small>sweetbakeryofficial@sweetbakery.vn</small></span>
+        </div>
+      </div>
+    </details>
+  </body>
+</html>

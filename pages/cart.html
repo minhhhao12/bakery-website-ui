@@ -1,0 +1,1176 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Giỏ hàng Sweet Bakery — kiểm tra bánh đã chọn, số lượng và tổng tiền trước khi đặt hàng."
+    />
+    <title>Giỏ hàng | Sweet Bakery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../css/account.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container container">
+        <div class="header-logo__container">
+          <a href="../index-logged-in.html" class="home-logo">
+            <span class="logo-text">Sweet Bakery</span>
+          </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="header-search__container">
+          <form
+            class="header-search__form"
+            action="./search-results.html"
+            method="get"
+            role="search"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="search-icon"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input
+              type="search"
+              class="header-search__input"
+              placeholder="Tìm bánh kem, tiramisu, croissant..."
+              aria-label="Tìm kiếm sản phẩm"
+            />
+            <button type="submit" class="header-search__btn">
+              <span>Tìm kiếm</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header__container--right">
+          <!-- User menu — trạng thái đã đăng nhập (thuần HTML + CSS) -->
+          <details class="user-menu">
+            <summary class="user-menu__trigger">
+              <span class="user-menu__avatar" aria-hidden="true">A</span>
+              <span class="user-menu__name">Nguyễn Văn A</span>
+              <svg
+                class="user-menu__chevron"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+
+            <div class="user-dropdown">
+              <div class="user-dropdown__profile">
+                <span class="user-dropdown__avatar" aria-hidden="true">A</span>
+                <div class="user-dropdown__identity">
+                  <strong class="user-dropdown__title">Nguyễn Văn A</strong>
+                  <span class="user-dropdown__subtitle"
+                    >Thành viên Bạc · Sweet Bakery</span
+                  >
+                </div>
+              </div>
+
+              <hr class="divider" />
+
+              <!-- Thông tin tài khoản -->
+              <dl class="user-info">
+                <div class="user-info__row">
+                  <dt>Họ và tên</dt>
+                  <dd>Nguyễn Văn A</dd>
+                </div>
+                <div class="user-info__row">
+                  <dt>Email</dt>
+                  <dd>nguyenvana@gmail.com</dd>
+                </div>
+                <div class="user-info__row">
+                  <dt>Địa chỉ</dt>
+                  <dd>273 An Dương Vương, Phường Chợ Quán, TP.HCM</dd>
+                </div>
+                <div class="user-info__row">
+                  <dt>Số điện thoại</dt>
+                  <dd>090 123 4567</dd>
+                </div>
+              </dl>
+
+              <hr class="divider" />
+
+              <nav
+                class="user-dropdown__actions"
+                aria-label="Liên kết tài khoản"
+              >
+                <a
+                  class="user-dropdown__link"
+                  href="../index-logged-in.html#order-history"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 2h9l5 5v15H6z" />
+                    <path d="M15 2v5h5" />
+                    <path d="M9 13h7M9 17h5" />
+                  </svg>
+                  <span>Lịch sử đơn hàng</span>
+                  <span class="user-dropdown__count">3</span>
+                </a>
+                <a
+                  class="user-dropdown__link user-dropdown__link--danger"
+                  href="./login.html"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <path d="m16 17 5-5-5-5" />
+                    <path d="M21 12H9" />
+                  </svg>
+                  <span>Đăng xuất</span>
+                </a>
+              </nav>
+            </div>
+          </details>
+
+          <a
+            href="./cart.html"
+            class="cart-logo is-active"
+            aria-label="Giỏ hàng của bạn"
+            aria-current="page"
+          >
+            <div class="cart-icon-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
+              </svg>
+              <span class="cart-badge">2</span>
+            </div>
+            <span class="cart-text">Giỏ hàng</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="cart-page">
+      <div class="container">
+        <nav class="cart-breadcrumb" aria-label="Điều hướng">
+          <a href="../index-logged-in.html">Trang chủ</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Giỏ hàng</span>
+        </nav>
+
+        <header class="cart-heading">
+          <div>
+            <span class="section-subtitle">Đơn hàng của bạn</span>
+            <h1 class="cart-heading__title">Giỏ hàng</h1>
+          </div>
+          <span class="cart-heading__count" id="cart-item-count"
+            >2 sản phẩm</span
+          >
+        </header>
+
+        <div class="cart-layout">
+          <!-- ===== Cột trái: sản phẩm, địa chỉ và thanh toán ===== -->
+          <div class="cart-main">
+            <section class="cart-items" aria-labelledby="cart-items-title">
+              <div class="cart-items__header">
+                <h2 class="cart-items__title" id="cart-items-title">
+                  <span class="checkout-step" aria-hidden="true">1</span>
+                  Sản phẩm đã chọn
+                </h2>
+                <button class="cart-items__clear" id="clear-cart" type="button">
+                  Xóa tất cả
+                </button>
+              </div>
+
+              <div class="cart-list" id="cart-list">
+                <!-- Sản phẩm 1 -->
+                <article class="cart-item" data-price="350000">
+                  <a
+                    class="cart-item__image"
+                    href="./product_detail.html"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <img
+                      src="../assets/cake/banhkemdau.png"
+                      alt="Bánh Kem Dâu Tây"
+                    />
+                  </a>
+
+                  <div class="cart-item__body">
+                    <div class="cart-item__head">
+                      <h3 class="cart-item__name">
+                        <a href="./product_detail.html">Bánh Kem Dâu Tây</a>
+                      </h3>
+                      <button
+                        class="cart-item__remove"
+                        type="button"
+                        data-remove
+                        aria-label="Xóa Bánh Kem Dâu Tây khỏi giỏ hàng"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M3 6h18" />
+                          <path d="M8 6V4h8v2" />
+                          <path d="M19 6l-1 14H6L5 6" />
+                          <path d="M10 11v6M14 11v6" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <ul class="cart-item__meta">
+                      <li><span>Kích cỡ</span><strong>16cm</strong></li>
+                      <li>
+                        <span>Hương vị</span
+                        ><strong>Kem tươi &amp; dâu tây</strong>
+                      </li>
+                    </ul>
+
+                    <p class="cart-item__note">
+                      Ghi chú: viết “Happy Birthday” lên mặt bánh
+                    </p>
+
+                    <div class="cart-item__footer">
+                      <div class="quantity">
+                        <button
+                          class="quantity__btn"
+                          type="button"
+                          data-step="-1"
+                          aria-label="Giảm số lượng Bánh Kem Dâu Tây"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M5 12h14" />
+                          </svg>
+                        </button>
+                        <input
+                          class="quantity__input"
+                          type="number"
+                          value="1"
+                          min="1"
+                          max="20"
+                          inputmode="numeric"
+                          aria-label="Số lượng Bánh Kem Dâu Tây"
+                        />
+                        <button
+                          class="quantity__btn"
+                          type="button"
+                          data-step="1"
+                          aria-label="Tăng số lượng Bánh Kem Dâu Tây"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="cart-item__pricing">
+                        <span class="cart-item__unit">350.000₫ / bánh</span>
+                        <strong class="cart-item__total" data-line-total
+                          >350.000₫</strong
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Sản phẩm 2 -->
+                <article class="cart-item" data-price="420000">
+                  <a
+                    class="cart-item__image"
+                    href="./product_detail.html"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <img
+                      src="../assets/cake/CLASSIC-TIRAMISU-MINI.png"
+                      alt="Tiramisu Cổ Điển"
+                    />
+                  </a>
+
+                  <div class="cart-item__body">
+                    <div class="cart-item__head">
+                      <h3 class="cart-item__name">
+                        <a href="./product_detail.html">Tiramisu Cổ Điển</a>
+                      </h3>
+                      <button
+                        class="cart-item__remove"
+                        type="button"
+                        data-remove
+                        aria-label="Xóa Tiramisu Cổ Điển khỏi giỏ hàng"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M3 6h18" />
+                          <path d="M8 6V4h8v2" />
+                          <path d="M19 6l-1 14H6L5 6" />
+                          <path d="M10 11v6M14 11v6" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <ul class="cart-item__meta">
+                      <li><span>Kích cỡ</span><strong>18cm</strong></li>
+                      <li>
+                        <span>Hương vị</span
+                        ><strong>Cà phê &amp; mascarpone</strong>
+                      </li>
+                    </ul>
+
+                    <p class="cart-item__note">
+                      Ghi chú: gói riêng, giao trước 15h
+                    </p>
+
+                    <div class="cart-item__footer">
+                      <div class="quantity">
+                        <button
+                          class="quantity__btn"
+                          type="button"
+                          data-step="-1"
+                          aria-label="Giảm số lượng Tiramisu Cổ Điển"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M5 12h14" />
+                          </svg>
+                        </button>
+                        <input
+                          class="quantity__input"
+                          type="number"
+                          value="1"
+                          min="1"
+                          max="20"
+                          inputmode="numeric"
+                          aria-label="Số lượng Tiramisu Cổ Điển"
+                        />
+                        <button
+                          class="quantity__btn"
+                          type="button"
+                          data-step="1"
+                          aria-label="Tăng số lượng Tiramisu Cổ Điển"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.2"
+                            stroke-linecap="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div class="cart-item__pricing">
+                        <span class="cart-item__unit">420.000₫ / bánh</span>
+                        <strong class="cart-item__total" data-line-total
+                          >420.000₫</strong
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Trạng thái giỏ hàng trống -->
+              <div class="cart-empty" id="cart-empty" hidden>
+                <span class="cart-empty__icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="34"
+                    height="34"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </span>
+                <h3 class="cart-empty__title">Giỏ hàng đang trống</h3>
+                <p class="cart-empty__desc">
+                  Bạn chưa chọn chiếc bánh nào. Ghé thực đơn để chọn vị bánh yêu
+                  thích nhé!
+                </p>
+                <a
+                  class="btn btn-primary"
+                  href="../index-logged-in.html#best-seller"
+                  >Khám phá sản phẩm</a
+                >
+              </div>
+
+              <!-- Mã giảm giá -->
+              <form class="coupon" id="coupon-form" novalidate>
+                <div class="coupon__field">
+                  <label class="sr-only" for="coupon-code">Mã giảm giá</label>
+                  <input
+                    class="input"
+                    id="coupon-code"
+                    type="text"
+                    placeholder="Nhập mã giảm giá (ví dụ: SWEET10)"
+                    autocomplete="off"
+                  />
+                </div>
+                <button class="btn btn-outline" id="btn-coupon" type="button">
+                  Áp dụng
+                </button>
+              </form>
+              <p class="coupon__hint" id="coupon-hint" role="status">
+                Mã gợi ý: <strong>SWEET10</strong> — giảm 10% cho đơn từ
+                500.000₫.
+              </p>
+
+              <a
+                class="cart-continue"
+                href="../index-logged-in.html#best-seller"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5" />
+                  <path d="m12 19-7-7 7-7" />
+                </svg>
+                Tiếp tục mua sắm
+              </a>
+            </section>
+
+            <!-- ===== Địa chỉ nhận hàng ===== -->
+            <section class="checkout-panel" aria-labelledby="address-title">
+              <header class="checkout-panel__header">
+                <span class="checkout-step" aria-hidden="true">2</span>
+                <div class="checkout-panel__heading">
+                  <h2 class="checkout-panel__title" id="address-title">
+                    Địa chỉ nhận hàng
+                  </h2>
+                  <p class="checkout-panel__desc">
+                    Chọn địa chỉ có sẵn hoặc giao bánh đến một địa chỉ khác.
+                  </p>
+                </div>
+              </header>
+
+              <div class="address-list">
+                <label class="address-option">
+                  <input
+                    class="address-option__input"
+                    type="radio"
+                    name="delivery-address"
+                    value="current"
+                    checked
+                  />
+                  <span class="address-option__body">
+                    <span class="address-option__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                        />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                    </span>
+                    <span class="address-option__info">
+                      <span class="address-option__title">
+                        Nguyễn Văn A
+                        <span class="address-tag">Mặc định</span>
+                      </span>
+                      <span class="address-option__line">090 123 4567</span>
+                      <span class="address-option__line">
+                        273 An Dương Vương, Phường Chợ Quán, TP.HCM
+                      </span>
+                    </span>
+                    <span
+                      class="address-option__radio"
+                      aria-hidden="true"
+                    ></span>
+                  </span>
+                </label>
+
+                <label class="address-option">
+                  <input
+                    class="address-option__input"
+                    id="address-other"
+                    type="radio"
+                    name="delivery-address"
+                    value="other"
+                  />
+                  <span class="address-option__body">
+                    <span class="address-option__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 8v8M8 12h8" />
+                      </svg>
+                    </span>
+                    <span class="address-option__info">
+                      <span class="address-option__title">
+                        Giao đến địa chỉ khác
+                      </span>
+                      <span class="address-option__line">
+                        Thêm địa chỉ mới cho đơn hàng này
+                      </span>
+                    </span>
+                    <span
+                      class="address-option__radio"
+                      aria-hidden="true"
+                    ></span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="address-form" id="address-form" hidden>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="receiver-name">Họ và tên người nhận</label>
+                    <input
+                      class="input"
+                      id="receiver-name"
+                      type="text"
+                      placeholder="Nguyễn Văn A"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="receiver-phone">Số điện thoại</label>
+                    <input
+                      class="input"
+                      id="receiver-phone"
+                      type="tel"
+                      placeholder="090 123 4567"
+                      autocomplete="tel"
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="receiver-province">Tỉnh / Thành phố</label>
+                    <select class="select" id="receiver-province">
+                      <option>TP. Hồ Chí Minh</option>
+                      <option>Hà Nội</option>
+                      <option>Đà Nẵng</option>
+                      <option>Cần Thơ</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ===== Phương thức thanh toán ===== -->
+            <section class="checkout-panel" aria-labelledby="payment-title">
+              <header class="checkout-panel__header">
+                <span class="checkout-step" aria-hidden="true">3</span>
+                <div class="checkout-panel__heading">
+                  <h2 class="checkout-panel__title" id="payment-title">
+                    Phương thức thanh toán
+                  </h2>
+                  <p class="checkout-panel__desc">
+                    Chọn cách bạn muốn thanh toán cho đơn bánh này.
+                  </p>
+                </div>
+              </header>
+
+              <div class="payment-list">
+                <label class="payment-option">
+                  <input
+                    class="payment-option__input"
+                    type="radio"
+                    name="payment-method"
+                    value="card"
+                    checked
+                  />
+                  <span class="payment-option__body">
+                    <span class="payment-option__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <path d="M2 10h20" />
+                      </svg>
+                    </span>
+                    <span class="payment-option__info">
+                      <span class="payment-option__title">Thẻ ngân hàng</span>
+                      <span class="payment-option__line">
+                        Visa, Mastercard, JCB, ATM nội địa
+                      </span>
+                    </span>
+                    <span
+                      class="payment-option__radio"
+                      aria-hidden="true"
+                    ></span>
+                  </span>
+                </label>
+
+                <label class="payment-option">
+                  <input
+                    class="payment-option__input"
+                    type="radio"
+                    name="payment-method"
+                    value="cash"
+                  />
+                  <span class="payment-option__body">
+                    <span class="payment-option__icon" aria-hidden="true">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="2" y="6" width="20" height="12" rx="2" />
+                        <circle cx="12" cy="12" r="2.5" />
+                        <path d="M6 12h.01M18 12h.01" />
+                      </svg>
+                    </span>
+                    <span class="payment-option__info">
+                      <span class="payment-option__title">
+                        Tiền mặt khi nhận hàng
+                      </span>
+                      <span class="payment-option__line">
+                        Thanh toán trực tiếp cho shipper
+                      </span>
+                    </span>
+                    <span
+                      class="payment-option__radio"
+                      aria-hidden="true"
+                    ></span>
+                  </span>
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <!-- ===== Cột phải: tóm tắt đơn hàng ===== -->
+          <aside class="cart-summary" aria-labelledby="cart-summary-title">
+            <h2 class="cart-summary__title" id="cart-summary-title">
+              Tóm tắt đơn hàng
+            </h2>
+
+            <dl class="cart-summary__list">
+              <div class="cart-summary__row">
+                <dt>
+                  Tạm tính (<span id="summary-quantity">2</span> sản phẩm)
+                </dt>
+                <dd id="summary-subtotal">770.000₫</dd>
+              </div>
+              <div class="cart-summary__row">
+                <dt>Giảm giá</dt>
+                <dd id="summary-discount" class="cart-summary__discount">0₫</dd>
+              </div>
+              <div class="cart-summary__row">
+                <dt>Phí giao hàng</dt>
+                <dd id="summary-shipping">Miễn phí</dd>
+              </div>
+              <div class="cart-summary__row">
+                <dt>Thanh toán</dt>
+                <dd id="summary-payment">Thẻ ngân hàng</dd>
+              </div>
+            </dl>
+
+            <hr class="divider" />
+
+            <div class="cart-summary__total">
+              <span>Tổng cộng</span>
+              <strong id="summary-total">770.000₫</strong>
+            </div>
+
+            <p class="cart-summary__note" id="summary-note">
+              Đơn hàng của bạn đã được miễn phí giao hàng.
+            </p>
+
+            <a
+              class="btn btn-primary btn-lg cart-summary__checkout"
+              id="checkout-btn"
+              href="./order-success.html"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="4" y="11" width="16" height="10" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+              Đặt hàng
+            </a>
+
+            <p class="cart-summary__terms">
+              Bằng việc đặt hàng, bạn đồng ý với
+              <a href="#">chính sách giao hàng &amp; đổi trả</a> của Sweet
+              Bakery.
+            </p>
+
+            <ul class="cart-assurance">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="m8.5 12.5 2.5 2.5 4.5-5" />
+                </svg>
+                Giao nhanh 2 giờ nội thành
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="m8.5 12.5 2.5 2.5 4.5-5" />
+                </svg>
+                Thanh toán an toàn, đổi trả trong 24h
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="m8.5 12.5 2.5 2.5 4.5-5" />
+                </svg>
+                Hỗ trợ đặt bánh: 090 123 4567
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer__section">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__brand">
+            <a href="../index-logged-in.html" class="footer__logo"
+              >Sweet Bakery</a
+            >
+            <p>
+              Mỗi chiếc bánh là một tác phẩm nghệ thuật, được tạo nên từ đam mê
+              và nguyên liệu thượng hạng.
+            </p>
+            <div class="footer__socials">
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__col">
+            <h5>Liên kết nhanh</h5>
+            <ul>
+              <li><a href="../index-logged-in.html">Trang chủ</a></li>
+              <li>
+                <a href="../index-logged-in.html#best-seller">Sản phẩm</a>
+              </li>
+              <li><a href="../index-logged-in.html#why-us">Về chúng tôi</a></li>
+              <li><a href="../index-logged-in.html#review">Đánh giá</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Danh mục</h5>
+            <ul>
+              <li><a href="#">Bánh sinh nhật</a></li>
+              <li><a href="#">Bánh mì &amp; Pastry</a></li>
+              <li><a href="#">Mousse &amp; Bánh lạnh</a></li>
+              <li><a href="#">Bánh mặn</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Liên hệ</h5>
+            <ul class="footer__contact">
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                273 An Dương Vương, Phường Chợ Quán, TP.HCM
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                090 123 4567
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                sweetbakeryofficial@sweetbakery.vn
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="divider" />
+        <div class="footer__bottom">
+          <p>© 2026 Sweet Bakery.</p>
+        </div>
+      </div>
+    </footer>
+
+    <aside class="contact-float" aria-label="Liên hệ nhanh">
+      <a
+        class="contact-float__link contact-float__link--order"
+        href="../index-logged-in.html#best-seller"
+      >
+        <span class="contact-float__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 7h12l1 14H5L6 7Z" />
+            <path d="M9 7a3 3 0 0 1 6 0" />
+            <path d="M9 12h6" />
+          </svg>
+        </span>
+        <span class="contact-float__copy"
+          ><strong>Đặt bánh ngay</strong
+          ><small>Chọn bánh yêu thích</small></span
+        >
+      </a>
+      <a class="contact-float__link" href="tel:+84901234567">
+        <span class="contact-float__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"
+            />
+          </svg>
+        </span>
+        <span class="contact-float__copy"
+          ><strong>Gọi hotline</strong><small>090 123 4567</small></span
+        >
+      </a>
+      <a
+        class="contact-float__link"
+        href="https://zalo.me/0901234567"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span
+          class="contact-float__icon contact-float__icon--zalo"
+          aria-hidden="true"
+          >Z</span
+        >
+        <span class="contact-float__copy"
+          ><strong>Tư vấn qua Zalo</strong
+          ><small>Chat với Sweet Bakery</small></span
+        >
+      </a>
+      <a
+        class="contact-float__link"
+        href="mailto:sweetbakeryofficial@sweetbakery.vn"
+      >
+        <span class="contact-float__icon" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+        </span>
+        <span class="contact-float__copy"
+          ><strong>Gửi email</strong
+          ><small>sweetbakeryofficial@sweetbakery.vn</small></span
+        >
+      </a>
+    </aside>
+
+    <!-- Thông báo nhanh -->
+    <div
+      class="cart-toast"
+      id="cart-toast"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <script src="../Javascript/cart.js"></script>
+    <script src="../Javascript/checkout.js"></script>
+  </body>
+</html>

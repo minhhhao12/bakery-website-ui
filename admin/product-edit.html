@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bảng điều khiển quản trị Sweet Bakery — giao diện Admin Dashboard."
+    />
+    <title>Sửa sản phẩm | Sweet Bakery Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <input
+      type="checkbox"
+      id="admin-nav-toggle"
+      class="admin-nav-toggle"
+      aria-hidden="true"
+    />
+    <div class="admin-shell">
+      <label
+        for="admin-nav-toggle"
+        class="admin-sidebar-backdrop"
+        aria-hidden="true"
+      ></label>
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a
+          >
+          <p class="admin-brand__sub">Trang Admin</p>
+        </div>
+        <div class="admin-sidebar__close-row">
+          <label
+            for="admin-nav-toggle"
+            class="admin-sidebar__close"
+            aria-label="Đóng menu"
+            ><i class="bi bi-x-lg"></i
+          ></label>
+        </div>
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <span class="admin-nav__label">Tổng quan</span
+          ><a class="admin-nav__link" href="index.html"
+            ><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a
+          ><span class="admin-nav__label">Quản lý cửa hàng</span
+          ><a class="admin-nav__link" href="users.html"
+            ><i class="bi bi-people"></i><span>Người dùng</span
+            ><span class="admin-nav__badge">11</span></a
+          ><a class="admin-nav__link active" href="products.html"
+            ><i class="bi bi-cake2"></i><span>Sản phẩm</span
+            ><span class="admin-nav__badge">14</span></a
+          ><a class="admin-nav__link" href="orders.html"
+            ><i class="bi bi-receipt"></i><span>Đơn hàng</span
+            ><span class="admin-nav__badge admin-nav__badge--alert">2</span></a
+          ><a class="admin-nav__link" href="statistics.html"
+            ><i class="bi bi-bar-chart-line"></i
+            ><span>Thống kê khách hàng</span></a
+          ><span class="admin-nav__label">Hệ thống</span
+          ><a
+            class="admin-nav__link"
+            href="../index.html"
+            target="_blank"
+            rel="noopener"
+            ><i class="bi bi-shop"></i><span>Xem website</span
+            ><i class="bi bi-box-arrow-up-right"></i></a
+          ><a class="admin-nav__link" href="../pages/login.html"
+            ><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></a
+          >
+        </nav>
+        <div class="admin-sidebar__footer">
+          <div class="admin-profile">
+            <span class="avatar">AD</span>
+            <div><strong>Admin</strong><small>Quản trị viên</small></div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-topbar__left">
+            <label
+              for="admin-nav-toggle"
+              class="admin-menu-btn d-lg-none"
+              aria-label="Mở menu"
+              ><i class="bi bi-list"></i
+            ></label>
+            <div>
+              <nav class="admin-breadcrumb" aria-label="Điều hướng">
+                Quản trị <span>/ Sản phẩm / Sửa sản phẩm</span>
+              </nav>
+              <h1 class="admin-page-title">Sửa sản phẩm</h1>
+            </div>
+          </div>
+          <div class="admin-topbar__right">
+            <span class="admin-date d-none d-md-inline-flex"
+              ><i class="bi bi-calendar3"></i>Thứ Tư, 28/10/2026</span
+            >
+            <a
+              href="../index.html"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-soft btn-sm d-none d-sm-inline-flex"
+              ><i class="bi bi-shop"></i> Xem cửa hàng</a
+            >
+            <a
+              href="orders.html"
+              class="admin-icon-btn"
+              aria-label="Đơn hàng cần xử lý"
+              ><i class="bi bi-bell"></i><span class="dot"></span
+            ></a>
+            <div class="admin-user-chip">
+              <span class="avatar">AD</span>
+              <div><strong>Admin</strong><small>Quản trị viên</small></div>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="admin-alert admin-alert--info mb-4">
+            <i class="bi bi-info-circle"></i>
+            <div>
+              <strong>Chọn sản phẩm cần sửa ở cột bên trái.</strong>Mỗi sản phẩm
+              có một biểu mẫu riêng với đúng tên, giá, phân loại và hình ảnh
+              tương ứng. Trang này không dùng JavaScript, việc chuyển sản phẩm
+              được thực hiện bằng liên kết neo (anchor).
+            </div>
+          </div>
+          <div class="edit-layout">
+            <div class="product-edit-panels">
+              <section
+                class="product-edit-panel product-edit-panel--default"
+                id="edit-banh-kem-dau-tay"
+                aria-labelledby="edit-banh-kem-dau-tay-title"
+              >
+                <div class="panel-heading">
+                  <div>
+                    <span class="eyebrow">Sản phẩm #001</span>
+                    <h2 id="edit-banh-kem-dau-tay-title">
+                      Sửa: Bánh Kem Dâu Tây
+                    </h2>
+                    <p>
+                      Thông tin bên dưới được tải đúng theo sản phẩm bạn chọn,
+                      gồm cả phân loại và hình ảnh.
+                    </p>
+                  </div>
+                  <a
+                    href="../pages/products.html"
+                    target="_blank"
+                    class="btn btn-soft btn-sm"
+                    ><i class="bi bi-box-arrow-up-right"></i> Xem trên
+                    website</a
+                  >
+                </div>
+                <div class="row g-4">
+                  <div class="col-lg-8">
+                    <section class="admin-card mb-4">
+                      <div class="admin-card__header">
+                        <div>
+                          <h2>Thông tin sản phẩm</h2>
+                          <p>Cập nhật tên, giá, phân loại và mô tả</p>
+                        </div>
+                        <span class="status-badge status-badge--active"
+                          >Đang bán</span
+                        >
+                      </div>
+                      <div class="admin-card__body">
+                        <div class="row g-3">
+                          <div class="col-md-8">
+                            <label
+                              class="form-label"
+                              for="banh-kem-dau-tay-name"
+                              >Tên sản phẩm
+                              <span class="required">*</span></label
+                            ><input
+                              class="form-control"
+                              id="banh-kem-dau-tay-name"
+                              type="text"
+                              value="Bánh Kem Dâu Tây"
+                            />
+                          </div>
+                          <div class="col-md-4">
+                            <label
+                              class="form-label"
+                              for="banh-kem-dau-tay-price"
+                              >Giá bán <span class="required">*</span></label
+                            >
+                            <div class="input-group">
+                              <input
+                                class="form-control"
+                                id="banh-kem-dau-tay-price"
+                                type="number"
+                                min="0"
+                                step="1000"
+                                value="350000"
+                              /><span class="input-group-text">₫</span>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <label class="form-label"
+                              >Phân loại sản phẩm
+                              <span class="required">*</span></label
+                            >
+                            <div class="category-check">
+                              <input
+                                class="btn-check"
+                                type="checkbox"
+                                id="banh-kem-dau-tay-cat-fruit"
+                                checked
+                              /><label
+                                class="btn"
+                                for="banh-kem-dau-tay-cat-fruit"
+                                >Trái cây</label
+                              ><input
+                                class="btn-check"
+                                type="checkbox"
+                                id="banh-kem-dau-tay-cat-chocolate"
+                              /><label
+                                class="btn"
+                                for="banh-kem-dau-tay-cat-chocolate"
+                                >Chocolate</label
+                              ><input
+                                class="btn-check"
+                                type="checkbox"
+                                id="banh-kem-dau-tay-cat-mousse"
+                              /><label
+                                class="btn"
+                                for="banh-kem-dau-tay-cat-mousse"
+                                >Mousse &amp; lạnh</label
+                              ><input
+                                class="btn-check"
+                                type="checkbox"
+                                id="banh-kem-dau-tay-cat-birthday"
+                                checked
+                              /><label
+                                class="btn"
+                                for="banh-kem-dau-tay-cat-birthday"
+                                >Sinh nhật</label
+                              ><input
+                                class="btn-check"
+                                type="checkbox"
+                                id="banh-kem-dau-tay-cat-pastry"
+                              /><label
+                                class="btn"
+                                for="banh-kem-dau-tay-cat-pastry"
+                                >Bánh mì &amp; Pastry</label
+                              ><input
+                                class="btn-check"
+                                type="checkbox"
+                                id="banh-kem-dau-tay-cat-savory"
+                              /><label
+                                class="btn"
+                                for="banh-kem-dau-tay-cat-savory"
+                                >Bánh mặn</label
+                              >
+                            </div>
+                            <div class="form-text">
+                              Các phân loại đang được gắn đúng với sản phẩm này
+                              trên website.
+                            </div>
+                          </div>
+                          <div class="col-md-5">
+                            <label
+                              class="form-label"
+                              for="banh-kem-dau-tay-size"
+                              >Kích cỡ</label
+                            ><select
+                              class="form-select"
+                              id="banh-kem-dau-tay-size"
+                            >
+                              <option selected>16 cm · 4–6 người</option>
+                              <option>18 cm · 6–8 người</option>
+                              <option>20 cm · 8–10 người</option>
+                              <option>24 cm · 10–12 người</option>
+                            </select>
+                          </div>
+                          <div class="col-md-7">
+                            <label
+                              class="form-label"
+                              for="banh-kem-dau-tay-status"
+                              >Trạng thái hiển thị</label
+                            ><select
+                              class="form-select"
+                              id="banh-kem-dau-tay-status"
+                            >
+                              <option selected>
+                                Đang bán — hiển thị trên website
+                              </option>
+                              <option>
+                                Ẩn — không hiển thị với khách hàng
+                              </option>
+                            </select>
+                          </div>
+                          <div class="col-12">
+                            <label
+                              class="form-label"
+                              for="banh-kem-dau-tay-desc"
+                              >Mô tả ngắn</label
+                            ><textarea
+                              class="form-control"
+                              id="banh-kem-dau-tay-desc"
+                              rows="3"
+                            >
+Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</textarea
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="admin-card__footer d-flex flex-wrap justify-content-end gap-2"
+                      >
+                        <a href="products.html" class="btn btn-soft">Huỷ</a>
+                        <button type="button" class="btn btn-brand">
+                          <i class="bi bi-check2"></i> Lưu thay đổi
+                        </button>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-lg-4">
+                    <section class="admin-card mb-3">
+                      <div class="admin-card__header">
+                        <div>
+                          <h2>Hình ảnh hiện tại</h2>
+                          <p>Ảnh đúng của sản phẩm đang sửa</p>
+                        </div>
+                      </div>
+                      <div class="admin-card__body">
+                        <div class="current-image">
+                          <span class="current-image__tag">Ảnh hiện tại</span
+                          ><img
+                            src="../assets/cake/banhkemdau.png"
+                            alt="Bánh Kem Dâu Tây"
+                          />
+                        </div>
+                        <label
+                          class="btn btn-soft btn-sm w-100 mt-2"
+                          for="banh-kem-dau-tay-image"
+                          ><i class="bi bi-arrow-repeat"></i> Thay ảnh
+                          khác</label
+                        >
+                        <input
+                          class="visually-hidden"
+                          id="banh-kem-dau-tay-image"
+                          type="file"
+                          accept="image/*"
+                        />
+                        <div class="form-text mt-1">
+                          Chọn ảnh mới để thay thế ảnh đại diện sản phẩm.
+                        </div>
+                      </div>
+                    </section>
+                    <section class="admin-card mb-3">
+                      <div class="admin-card__header">
+                        <div><h2>Thông tin bán hàng</h2></div>
+                      </div>
+                      <div class="admin-card__body">
+                        <div
+                          class="d-flex justify-content-between align-items-center py-2"
+                          style="border-bottom: 1px solid var(--sb-border-soft)"
+                        >
+                          <span class="text-soft" style="font-size: 0.67rem"
+                            >Đã bán</span
+                          ><strong style="font-size: 0.8rem">128</strong>
+                        </div>
+                        <div
+                          class="d-flex justify-content-between align-items-center py-2"
+                          style="border-bottom: 1px solid var(--sb-border-soft)"
+                        >
+                          <span class="text-soft" style="font-size: 0.67rem"
+                            >Đánh giá</span
+                          ><strong style="font-size: 0.8rem">4.9 / 5</strong>
+                        </div>
+                        <div
+                          class="d-flex justify-content-between align-items-center py-2"
+                        >
+                          <span class="text-soft" style="font-size: 0.67rem"
+                            >Mã sản phẩm</span
+                          ><strong style="font-size: 0.8rem">SP-001</strong>
+                        </div>
+                        <div class="admin-alert admin-alert--warning mt-2 mb-0">
+                          <i class="bi bi-exclamation-triangle"></i>
+                          <div>
+                            Sản phẩm đã được bán 128 lần. Không thể xoá vĩnh
+                            viễn; chỉ có thể ẩn khỏi website.
+                            <a
+                              href="products.html#delete-banh-kem-dau-tay"
+                              class="fw-semibold"
+                              style="color: inherit; text-decoration: underline"
+                              >Xem quy tắc xoá</a
+                            >.
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="admin-card">
+                      <div class="admin-card__header">
+                        <div><h2>Phân loại đang gắn</h2></div>
+                      </div>
+                      <div class="admin-card__body">
+                        <div class="d-flex flex-wrap gap-2">
+                          <span class="cat-chip cat-chip--rose">Trái cây</span>
+                          <span class="cat-chip cat-chip--green"
+                            >Sinh nhật</span
+                          >
+                        </div>
+                        <div class="form-text mt-2">
+                          Nếu thay đổi phân loại, sản phẩm sẽ xuất hiện trong bộ
+                          lọc tương ứng ở trang bánh.
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </section>
+
+              
+              
+            </div>
+          </div>
+
+          <footer class="admin-footer">
+            <span
+              >© 2026 Sweet Bakery.</span
+            >
+            <span>Phiên bản 1.0</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

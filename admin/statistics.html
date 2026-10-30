@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bảng điều khiển quản trị Sweet Bakery — giao diện Admin Dashboard."
+    />
+    <title>Thống kê khách hàng | Sweet Bakery Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <input
+      type="checkbox"
+      id="admin-nav-toggle"
+      class="admin-nav-toggle"
+      aria-hidden="true"
+    />
+    <div class="admin-shell">
+      <label
+        for="admin-nav-toggle"
+        class="admin-sidebar-backdrop"
+        aria-hidden="true"
+      ></label>
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a
+          >
+          <p class="admin-brand__sub">Bảng điều khiển cửa hàng</p>
+        </div>
+        <div class="admin-sidebar__close-row">
+          <label
+            for="admin-nav-toggle"
+            class="admin-sidebar__close"
+            aria-label="Đóng menu"
+            ><i class="bi bi-x-lg"></i
+          ></label>
+        </div>
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <span class="admin-nav__label">Tổng quan</span
+          ><a class="admin-nav__link" href="index.html"
+            ><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a
+          ><span class="admin-nav__label">Quản lý cửa hàng</span
+          ><a class="admin-nav__link" href="users.html"
+            ><i class="bi bi-people"></i><span>Người dùng</span
+            ><span class="admin-nav__badge">11</span></a
+          ><a class="admin-nav__link" href="products.html"
+            ><i class="bi bi-cake2"></i><span>Sản phẩm</span
+            ><span class="admin-nav__badge">14</span></a
+          ><a class="admin-nav__link" href="orders.html"
+            ><i class="bi bi-receipt"></i><span>Đơn hàng</span
+            ><span class="admin-nav__badge admin-nav__badge--alert">2</span></a
+          ><a class="admin-nav__link active" href="statistics.html"
+            ><i class="bi bi-bar-chart-line"></i
+            ><span>Thống kê khách hàng</span></a
+          ><span class="admin-nav__label">Hệ thống</span
+          ><a
+            class="admin-nav__link"
+            href="../index.html"
+            target="_blank"
+            rel="noopener"
+            ><i class="bi bi-shop"></i><span>Xem website</span
+            ><i class="bi bi-box-arrow-up-right"></i></a
+          ><a class="admin-nav__link" href="../pages/login.html"
+            ><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></a
+          >
+        </nav>
+        <div class="admin-sidebar__footer">
+          <div class="admin-profile">
+            <span class="avatar">AD</span>
+            <div><strong>Admin</strong><small>Quản trị viên</small></div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-topbar__left">
+            <label
+              for="admin-nav-toggle"
+              class="admin-menu-btn d-lg-none"
+              aria-label="Mở menu"
+              ><i class="bi bi-list"></i
+            ></label>
+            <div>
+              <nav class="admin-breadcrumb" aria-label="Điều hướng">
+                Quản trị <span>/ Thống kê khách hàng</span>
+              </nav>
+              <h1 class="admin-page-title">Thống kê khách hàng</h1>
+            </div>
+          </div>
+          <div class="admin-topbar__right">
+            <span class="admin-date d-none d-md-inline-flex"
+              ><i class="bi bi-calendar3"></i>Thứ Tư, 28/10/2026</span
+            >
+            <a
+              href="../index.html"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-soft btn-sm d-none d-sm-inline-flex"
+              ><i class="bi bi-shop"></i> Xem cửa hàng</a
+            >
+            <a
+              href="orders.html"
+              class="admin-icon-btn"
+              aria-label="Đơn hàng cần xử lý"
+              ><i class="bi bi-bell"></i><span class="dot"></span
+            ></a>
+            <div class="admin-user-chip">
+              <span class="avatar">AD</span>
+              <div><strong>Admin</strong><small>Quản trị viên</small></div>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <section class="admin-card mb-4">
+            <div class="admin-card__header">
+              <div>
+                <h2>Khoảng thời gian thống kê</h2>
+                <p>
+                  Chọn khoảng ngày để tìm 5 khách hàng có mức mua hàng cao nhất
+                </p>
+              </div>
+              <span class="cat-chip cat-chip--rose"
+                ><i class="bi bi-calendar-range"></i> 01/10/2026 –
+                28/10/2026</span
+              >
+            </div>
+            <div class="admin-card__body">
+              <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                  <label class="form-label" for="stat-from">Từ ngày</label
+                  ><input
+                    class="form-control"
+                    id="stat-from"
+                    type="date"
+                    value="2026-10-01"
+                  />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="stat-to">Đến ngày</label
+                  ><input
+                    class="form-control"
+                    id="stat-to"
+                    type="date"
+                    value="2026-10-28"
+                  />
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-brand w-100" type="button">
+                    <i class="bi bi-bar-chart-line"></i> Thống kê
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="row g-3 mb-4">
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--rose"
+                    ><i class="bi bi-wallet2"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Doanh thu trong kỳ</p>
+                <p class="stat-card__value">11.610.000₫</p>
+                <div class="stat-card__meta">01/10/2026 – 28/10/2026</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--caramel"
+                    ><i class="bi bi-receipt"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Đơn hàng hợp lệ</p>
+                <p class="stat-card__value">15</p>
+                <div class="stat-card__meta">Đã loại 1 đơn huỷ</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--green"
+                    ><i class="bi bi-people"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Khách hàng có mua</p>
+                <p class="stat-card__value">9</p>
+                <div class="stat-card__meta">
+                  Trong khoảng thời gian đã chọn
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--blue"
+                    ><i class="bi bi-graph-up"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Giá trị đơn trung bình</p>
+                <p class="stat-card__value">774.000₫</p>
+                <div class="stat-card__meta">Tính trên 15 đơn hợp lệ</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-xl-7">
+              <section class="admin-card h-100">
+                <div class="admin-card__header">
+                  <div>
+                    <h2>Top 5 khách hàng theo mức mua</h2>
+                    <p>Xếp theo tổng chi tiêu trong khoảng thời gian đã chọn</p>
+                  </div>
+                  <span class="status-badge status-badge--delivered"
+                    >01/10 – 28/10</span
+                  >
+                </div>
+                <div class="admin-card__body py-2">
+                  <div class="top-customer">
+                    <span class="top-customer__rank">01</span>
+                    <span class="avatar avatar--plum">TM</span>
+                    <span class="top-customer__main"
+                      ><strong>Ngô Thị Mai</strong
+                      ><small>2 đơn · TB 880.000₫/đơn</small>
+                    </span>
+                    <span class="top-customer__value"
+                      ><strong>1.760.000₫</strong></span
+                    >
+                  </div>
+                  <div class="top-customer">
+                    <span class="top-customer__rank">02</span>
+                    <span class="avatar avatar--caramel">TB</span>
+                    <span class="top-customer__main"
+                      ><strong>Trần Thị Bích</strong
+                      ><small>2 đơn · TB 860.000₫/đơn</small></span
+                    >
+                    <span class="top-customer__value"
+                      ><strong>1.720.000₫</strong></span
+                    >
+                  </div>
+                  <div class="top-customer">
+                    <span class="top-customer__rank">03</span>
+                    <span class="avatar avatar--green">TH</span>
+                    <span class="top-customer__main"
+                      ><strong>Phạm Thu Hà</strong
+                      ><small>2 đơn · TB 830.000₫/đơn</small></span
+                    >
+                    <span class="top-customer__value"
+                      ><strong>1.660.000₫</strong></span
+                    >
+                  </div>
+                  <div class="top-customer">
+                    <span class="top-customer__rank">04</span>
+                    <span class="avatar avatar--blue">HN</span>
+                    <span class="top-customer__main"
+                      ><strong>Lê Hoàng Nam</strong
+                      ><small>2 đơn · TB 815.000₫/đơn</small></span
+                    >
+                    <span class="top-customer__value"
+                      ><strong>1.630.000₫</strong></span
+                    >
+                  </div>
+                  <div class="top-customer">
+                    <span class="top-customer__rank">05</span>
+                    <span class="avatar avatar--rose">NA</span>
+                    <span class="top-customer__main"
+                      ><strong>Nguyễn Văn A</strong
+                      ><small>3 đơn · TB 516.667₫/đơn</small></span
+                    >
+                    <span class="top-customer__value"
+                      ><strong>1.550.000₫</strong></span
+                    >
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-xl-5">
+              <section class="admin-card h-100">
+                <div class="admin-card__header">
+                  <div>
+                    <h2>Tóm tắt kỳ thống kê</h2>
+                    <p>Kết quả tổng hợp từ dữ liệu đơn hàng</p>
+                  </div>
+                </div>
+                <div class="admin-card__body">
+                  <div class="row g-2 mb-3">
+                    <div class="col-6">
+                      <div class="kpi-mini">
+                        <span>Khách hàng top 1</span
+                        ><strong>Ngô Thị Mai</strong>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="kpi-mini">
+                        <span>Chi tiêu top 1</span><strong>1.760.000₫</strong>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="kpi-mini">
+                        <span>Đơn trong top 5</span><strong>11 đơn</strong>
+                      </div>
+                    </div>
+                    <div class="col-6"></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <section class="admin-card">
+            <div class="admin-card__header">
+              <div>
+                <h2>Chi tiết từng đơn hàng của top 5</h2>
+                <p>
+                  Nhấp vào từng khách hàng để mở danh sách đơn · mỗi đơn có liên
+                  kết xem chi tiết
+                </p>
+              </div>
+              <span class="cat-chip cat-chip--blue"
+                ><i class="bi bi-list-ul"></i> 11 đơn hàng</span
+              >
+            </div>
+            <div class="admin-card__body">
+              <details class="stat-details" open>
+                <summary>
+                  <span class="top-customer__rank">01</span>
+                  <span class="avatar avatar--plum">TM</span>
+                  <span class="top-customer__main"
+                    ><strong>Ngô Thị Mai</strong
+                    ><small>mai.ngo@gmail.com · 2 đơn hàng</small></span
+                  >
+                  <span class="top-customer__value"
+                    ><strong>1.760.000₫</strong
+                    ><small>Tổng chi tiêu</small></span
+                  >
+                </summary>
+                <div class="stat-details__body">
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0185</a
+                    >
+                    <span class="stat-order__meta"
+                      >22/10/2026 · Bánh Kem Hồng Ánh Nhũ ×1 + Vanilla Dừa Tươi
+                      ×1<br /><span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">920.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0177</a
+                    >
+                    <span class="stat-order__meta"
+                      >07/10/2026 · Tiramisu Cổ Điển ×2<br /><span
+                        class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">840.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </details>
+              <details class="stat-details">
+                <summary>
+                  <span class="top-customer__rank">02</span>
+                  <span class="avatar avatar--caramel">TB</span>
+                  <span class="top-customer__main"
+                    ><strong>Trần Thị Bích</strong
+                    ><small>bich.tran@gmail.com · 2 đơn hàng</small></span
+                  >
+                  <span class="top-customer__value"
+                    ><strong>1.720.000₫</strong
+                    ><small>Tổng chi tiêu</small></span
+                  >
+                </summary>
+                <div class="stat-details__body">
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0192</a
+                    >
+                    <span class="stat-order__meta"
+                      >27/10/2026 · Chocolate Truffle ×1 + Mousse Trà Xanh ×1<br /><span
+                        class="status-badge status-badge--pending"
+                        >Chưa xác nhận</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">810.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0181</a
+                    >
+                    <span class="stat-order__meta"
+                      >15/10/2026 · Bánh Sinh Nhật Hoa Kem ×1 + Bánh Kem Trái
+                      Cây ×1<br /><span
+                        class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">910.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </details>
+              <details class="stat-details">
+                <summary>
+                  <span class="top-customer__rank">03</span>
+                  <span class="avatar avatar--green">TH</span>
+                  <span class="top-customer__main"
+                    ><strong>Phạm Thu Hà</strong
+                    ><small>thuha.pham@gmail.com · 2 đơn hàng</small></span
+                  >
+                  <span class="top-customer__value"
+                    ><strong>1.660.000₫</strong
+                    ><small>Tổng chi tiêu</small></span
+                  >
+                </summary>
+                <div class="stat-details__body">
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0190</a
+                    >
+                    <span class="stat-order__meta"
+                      >26/10/2026 · Bánh Sinh Nhật Hoa Kem ×1 + Tiramisu Cổ Điển
+                      ×1<br /><span class="status-badge status-badge--confirmed"
+                        >Đã xác nhận</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">910.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0178</a
+                    >
+                    <span class="stat-order__meta"
+                      >09/10/2026 · Dâu Kem Hạnh Nhân ×1 + Mousse Chanh Dây
+                      ×1<br /><span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">750.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </details>
+              <details class="stat-details">
+                <summary>
+                  <span class="top-customer__rank">04</span>
+                  <span class="avatar avatar--blue">HN</span>
+                  <span class="top-customer__main"
+                    ><strong>Lê Hoàng Nam</strong
+                    ><small>nam.le@yahoo.com · 2 đơn hàng</small></span
+                  >
+                  <span class="top-customer__value"
+                    ><strong>1.630.000₫</strong
+                    ><small>Tổng chi tiêu</small></span
+                  >
+                </summary>
+                <div class="stat-details__body">
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0191</a
+                    >
+                    <span class="stat-order__meta"
+                      >26/10/2026 · Bánh Kem Dâu Tây ×2<br /><span
+                        class="status-badge status-badge--pending"
+                        >Chưa xác nhận</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">700.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0179</a
+                    >
+                    <span class="stat-order__meta"
+                      >11/10/2026 · Bánh Sinh Nhật Hoa Kem ×1 + Vanilla Dừa Tươi
+                      ×1<br /><span class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">930.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </details>
+              <details class="stat-details">
+                <summary>
+                  <span class="top-customer__rank">05</span>
+                  <span class="avatar avatar--rose">NA</span>
+                  <span class="top-customer__main"
+                    ><strong>Nguyễn Văn A</strong
+                    ><small>nguyenvana@gmail.com · 3 đơn hàng</small></span
+                  >
+                  <span class="top-customer__value"
+                    ><strong>1.550.000₫</strong
+                    ><small>Tổng chi tiêu</small></span
+                  >
+                </summary>
+                <div class="stat-details__body">
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0186</a
+                    >
+                    <span class="stat-order__meta"
+                      >23/10/2026 · Bánh Kem Dâu Tây ×1 + Tiramisu Cổ Điển ×1<br /><span
+                        class="status-badge status-badge--confirmed"
+                        >Đã xác nhận</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">770.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0182</a
+                    >
+                    <span class="stat-order__meta"
+                      >18/10/2026 · Bánh Kem Dâu Tây ×1<br /><span
+                        class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">350.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                  <div class="stat-order">
+                    <a
+                      class="stat-order__code"
+                      href="order-detail.html#order-sb-2026-0185"
+                      >SB-2026-0180</a
+                    >
+                    <span class="stat-order__meta"
+                      >12/10/2026 · Chocolate Truffle ×1<br /><span
+                        class="status-badge status-badge--delivered"
+                        >Đã giao</span
+                      ></span
+                    >
+                    <span class="stat-order__amount">430.000₫</span>
+                    <a
+                      href="order-detail.html#order-sb-2026-0185"
+                      class="btn-icon ms-1"
+                      title="Xem chi tiết đơn"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <footer class="admin-footer">
+            <span
+              >© 2026 Sweet Bakery.</span
+            >
+            <span>Phiên bản 1.0</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
