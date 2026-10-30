@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bảng điều khiển quản trị Sweet Bakery — giao diện Admin Dashboard."
+    />
+    <title>Người dùng | Sweet Bakery Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <input
+      type="checkbox"
+      id="admin-nav-toggle"
+      class="admin-nav-toggle"
+      aria-hidden="true"
+    />
+    <div class="admin-shell">
+      <label
+        for="admin-nav-toggle"
+        class="admin-sidebar-backdrop"
+        aria-hidden="true"
+      ></label>
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a>
+          <p class="admin-brand__sub">Trang Admin</p>
+        </div>
+        <div class="admin-sidebar__close-row">
+          <label
+            for="admin-nav-toggle"
+            class="admin-sidebar__close"
+            aria-label="Đóng menu"
+            ><i class="bi bi-x-lg"></i
+          ></label>
+        </div>
+        <nav class="admin-nav" aria-label="Điều hướng quản trị">
+          <span class="admin-nav__label">Tổng quan</span
+          ><a class="admin-nav__link" href="index.html"
+            ><i class="bi bi-grid-1x2"></i><span>Tổng quan</span></a
+          ><span class="admin-nav__label">Quản lý cửa hàng</span
+          ><a class="admin-nav__link active" href="users.html"
+            ><i class="bi bi-people"></i><span>Người dùng</span
+            ><span class="admin-nav__badge">11</span></a
+          ><a class="admin-nav__link" href="products.html"
+            ><i class="bi bi-cake2"></i><span>Sản phẩm</span
+            ><span class="admin-nav__badge">14</span></a
+          ><a class="admin-nav__link" href="orders.html"
+            ><i class="bi bi-receipt"></i><span>Đơn hàng</span
+            ><span class="admin-nav__badge admin-nav__badge--alert">2</span></a
+          ><a class="admin-nav__link" href="statistics.html"
+            ><i class="bi bi-bar-chart-line"></i
+            ><span>Thống kê khách hàng</span></a
+          ><span class="admin-nav__label">Hệ thống</span
+          ><a
+            class="admin-nav__link"
+            href="../index.html"
+            target="_blank"
+            rel="noopener"
+            ><i class="bi bi-shop"></i><span>Xem website</span
+            ><i class="bi bi-box-arrow-up-right"></i></a
+          ><a class="admin-nav__link" href="../pages/login.html"
+            ><i class="bi bi-box-arrow-right"></i><span>Đăng xuất</span></a
+          >
+        </nav>
+        <div class="admin-sidebar__footer">
+          <div class="admin-profile">
+            <span class="avatar">AD</span>
+            <div><strong>Admin</strong><small>Quản trị viên</small></div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-topbar__left">
+            <label
+              for="admin-nav-toggle"
+              class="admin-menu-btn d-lg-none"
+              aria-label="Mở menu"
+              ><i class="bi bi-list"></i
+            ></label>
+            <div>
+              <nav class="admin-breadcrumb" aria-label="Điều hướng">
+                Quản trị <span>/ Người dùng</span>
+              </nav>
+              <h1 class="admin-page-title">Người dùng</h1>
+            </div>
+          </div>
+          <div class="admin-topbar__right">
+            <span class="admin-date d-none d-md-inline-flex"
+              ><i class="bi bi-calendar3"></i>Thứ Tư, 28/10/2026</span
+            >
+            <a
+              href="../index.html"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-soft btn-sm d-none d-sm-inline-flex"
+              ><i class="bi bi-shop"></i> Xem cửa hàng</a
+            >
+            <a
+              href="orders.html"
+              class="admin-icon-btn"
+              aria-label="Đơn hàng cần xử lý"
+              ><i class="bi bi-bell"></i><span class="dot"></span
+            ></a>
+            <div class="admin-user-chip">
+              <span class="avatar">AD</span>
+              <div><strong>Admin</strong><small>Quản trị viên</small></div>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="target-alert" id="user-added-success" role="status">
+            <i class="bi bi-check2-circle"></i>
+            <div>
+              <strong>Đã tạo tài khoản mới.</strong>Thông tin đăng nhập đã được
+              gửi tới email của người dùng (minh hoạ giao diện).
+            </div>
+            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
+          </div>
+          <div class="target-alert" id="user-updated-success" role="status">
+            <i class="bi bi-check2-circle"></i>
+            <div>
+              <strong>Đã cập nhật thông tin người dùng.</strong>Thay đổi đã được
+              lưu vào hồ sơ tài khoản.
+            </div>
+            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
+          </div>
+          <div class="target-alert" id="user-locked-success" role="status">
+            <i class="bi bi-lock"></i>
+            <div>
+              <strong>Đã khoá tài khoản.</strong>Người dùng không thể đăng nhập
+              cho tới khi được mở khoá.
+            </div>
+            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
+          </div>
+          <div class="target-alert" id="user-unlocked-success" role="status">
+            <i class="bi bi-unlock"></i>
+            <div>
+              <strong>Đã mở khoá tài khoản.</strong>Người dùng có thể đăng nhập
+              và tiếp tục đặt hàng.
+            </div>
+            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
+          </div>
+
+          <div class="row g-3 mb-4">
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--rose"
+                    ><i class="bi bi-people"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Tổng người dùng</p>
+                <p class="stat-card__value">11</p>
+                <div class="stat-card__meta">
+                  Tất cả tài khoản trong hệ thống
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--green"
+                    ><i class="bi bi-person-check"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Đang hoạt động</p>
+                <p class="stat-card__value">10</p>
+                <div class="stat-card__meta">Có thể đăng nhập và đặt hàng</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--caramel"
+                    ><i class="bi bi-lock"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Đã khoá</p>
+                <p class="stat-card__value">1</p>
+                <div class="stat-card__meta">Tài khoản tạm ngưng hoạt động</div>
+              </div>
+            </div>
+            <div class="col-6 col-xl-3">
+              <div class="stat-card">
+                <div class="stat-card__top">
+                  <span class="stat-card__icon stat-card__icon--blue"
+                    ><i class="bi bi-shield-check"></i
+                  ></span>
+                </div>
+                <p class="stat-card__label">Quản trị viên</p>
+                <p class="stat-card__value">1</p>
+                <div class="stat-card__meta">
+                  Có quyền truy cập bảng điều khiển
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="admin-card mb-4">
+            <div class="admin-card__header">
+              <div>
+                <h2>Danh sách người dùng</h2>
+                <p>Quản lý tài khoản khách hàng và quyền truy cập hệ thống</p>
+              </div>
+              <a href="#user-add" class="btn btn-brand btn-sm"
+                ><i class="bi bi-person-plus"></i> Thêm người dùng</a
+              >
+            </div>
+            <div class="admin-card__body pb-3">
+              <div class="row g-2 align-items-end">
+                <div class="col-lg-5">
+                  <label class="form-label" for="user-search">Tìm kiếm</label>
+                  <div class="input-icon">
+                    <i class="bi bi-search"></i
+                    ><input
+                      class="form-control"
+                      id="user-search"
+                      type="search"
+                      placeholder="Tìm theo tên, email hoặc số điện thoại..."
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                  <label class="form-label" for="user-status-filter"
+                    >Trạng thái</label
+                  ><select class="form-select" id="user-status-filter">
+                    <option selected>Tất cả</option>
+                    <option>Hoạt động</option>
+                    <option>Đã khoá</option>
+                  </select>
+                </div>
+                <div class="col-6 col-lg-2">
+                  <label class="form-label" for="user-role-filter"
+                    >Vai trò</label
+                  ><select class="form-select" id="user-role-filter">
+                    <option selected>Tất cả</option>
+                    <option>Khách hàng</option>
+                    <option>Quản trị viên</option>
+                  </select>
+                </div>
+                <div class="col-lg-3 filter-actions">
+                  <button class="btn btn-brand flex-grow-1" type="button">
+                    <i class="bi bi-funnel"></i> Lọc</button
+                  ><button class="btn btn-soft" type="button">Đặt lại</button>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table admin-table align-middle">
+                <thead>
+                  <tr>
+                    <th style="width: 2rem">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn tất cả"
+                      />
+                    </th>
+                    <th>Người dùng</th>
+                    <th class="d-none d-xl-table-cell">Số điện thoại</th>
+                    <th class="d-none d-xxl-table-cell">Ngày tham gia</th>
+                    <th>Vai trò</th>
+                    <th>Trạng thái</th>
+                    <th class="text-center d-none d-xxl-table-cell">
+                      Đơn hàng
+                    </th>
+                    <th class="text-end">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Nguyễn Văn A"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--rose">NA</span>
+                        <div>
+                          <span class="cell-main">Nguyễn Văn A</span
+                          ><span class="cell-sub">nguyenvana@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      090 123 4567
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      12/03/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">3</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Trần Thị Bích"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--caramel">TB</span>
+                        <div>
+                          <span class="cell-main">Trần Thị Bích</span
+                          ><span class="cell-sub">bich.tran@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      091 234 5678
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      08/04/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">2</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Lê Hoàng Nam"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--blue">HN</span>
+                        <div>
+                          <span class="cell-main">Lê Hoàng Nam</span
+                          ><span class="cell-sub">nam.le@yahoo.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      098 765 4321
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      21/04/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">2</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Phạm Thu Hà"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--green">TH</span>
+                        <div>
+                          <span class="cell-main">Phạm Thu Hà</span
+                          ><span class="cell-sub">thuha.pham@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      093 456 7890
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      02/05/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">2</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Ngô Thị Mai"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--plum">TM</span>
+                        <div>
+                          <span class="cell-main">Ngô Thị Mai</span
+                          ><span class="cell-sub">mai.ngo@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      094 555 6666
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      19/05/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">2</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Võ Ngọc Lan"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--sand">NL</span>
+                        <div>
+                          <span class="cell-main">Võ Ngọc Lan</span
+                          ><span class="cell-sub">ngoclan.vo@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      097 111 2222
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      03/06/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">1</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Trịnh Quốc Bảo"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--rose">QB</span>
+                        <div>
+                          <span class="cell-main">Trịnh Quốc Bảo</span
+                          ><span class="cell-sub">bao.trinh@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      092 777 8888
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      14/06/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">1</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Bùi Thanh Tùng"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--caramel">TT</span>
+                        <div>
+                          <span class="cell-main">Bùi Thanh Tùng</span
+                          ><span class="cell-sub">tung.bui@outlook.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      096 333 4444
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      27/06/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--locked"
+                        >Đã khoá</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">1</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#unlock-user-8"
+                          class="btn-icon"
+                          title="Mở khoá tài khoản"
+                          style="color: var(--sb-success)"
+                          ><i class="bi bi-unlock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Đỗ Minh Khoa"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--blue">MK</span>
+                        <div>
+                          <span class="cell-main">Đỗ Minh Khoa</span
+                          ><span class="cell-sub">khoa.do@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      090 987 6543
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      09/07/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">1</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Lý Thanh Vy"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--green">TV</span>
+                        <div>
+                          <span class="cell-main">Lý Thanh Vy</span
+                          ><span class="cell-sub">vy.ly@gmail.com</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      095 999 0000
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      18/07/2026
+                    </td>
+                    <td><span class="user-role">Khách hàng</span></td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">1</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                        <a
+                          href="#lock-user-1"
+                          class="btn-icon btn-icon--danger"
+                          title="Khoá tài khoản"
+                          ><i class="bi bi-lock"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        aria-label="Chọn Ngọc Anh"
+                      />
+                    </td>
+                    <td>
+                      <div class="table-user">
+                        <span class="avatar avatar--plum">AD</span>
+                        <div>
+                          <span class="cell-main">Admin</span
+                          ><span class="cell-sub">admin@sweetbakery.vn</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-nowrap d-none d-xl-table-cell">
+                      090 123 4567
+                    </td>
+                    <td class="text-nowrap d-none d-xxl-table-cell">
+                      01/01/2026
+                    </td>
+                    <td>
+                      <span class="user-role user-role--admin"
+                        ><i class="bi bi-shield-check"></i> Quản trị viên</span
+                      >
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      >
+                    </td>
+                    <td class="text-center d-none d-xxl-table-cell">0</td>
+                    <td class="text-end">
+                      <span class="table-actions">
+                        <a
+                          href="#edit-user-1"
+                          class="btn-icon"
+                          title="Sửa thông tin"
+                          ><i class="bi bi-pencil-square"></i
+                        ></a>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="admin-card__footer d-flex flex-wrap align-items-center justify-content-between gap-2"
+            >
+              <span class="text-soft" style="font-size: 0.65rem"
+                >Hiển thị 1–11 trong 11 người dùng</span
+              >
+              <nav aria-label="Phân trang người dùng">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#!">Trước</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#!">1</a>
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#!">Sau</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </section>
+
+          <div
+            class="admin-modal"
+            id="user-add"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="user-add-title"
+          >
+            <a
+              class="admin-modal__backdrop"
+              href="#!"
+              aria-label="Đóng hộp thoại"
+            ></a>
+            <div class="admin-modal__dialog admin-modal__dialog--lg">
+              <div class="admin-modal__header">
+                <div>
+                  <span class="eyebrow">Đăng ký tài khoản</span>
+                  <h2 id="user-add-title">Thêm người dùng mới</h2>
+                  <p>
+                    Tạo tài khoản khách hàng hoặc quản trị viên cho Sweet Bakery
+                  </p>
+                </div>
+                <a class="admin-modal__close" href="#!" aria-label="Đóng"
+                  ><i class="bi bi-x-lg"></i
+                ></a>
+              </div>
+              <form>
+                <div class="admin-modal__body">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="add-name"
+                        >Họ và tên <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="add-name"
+                        type="text"
+                        placeholder="Ví dụ: Nguyễn Thị Hồng"
+                        autocomplete="name"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="add-email"
+                        >Email <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="add-email"
+                        type="email"
+                        placeholder="email@example.com"
+                        autocomplete="email"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="add-phone"
+                        >Số điện thoại <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="add-phone"
+                        type="tel"
+                        placeholder="090 123 4567"
+                        autocomplete="tel"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="add-role">Vai trò</label
+                      ><select class="form-select" id="add-role">
+                        <option value="customer" selected>Khách hàng</option>
+                        <option value="admin">Quản trị viên</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="add-password"
+                        >Mật khẩu <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="add-password"
+                        type="password"
+                        placeholder="Tối thiểu 8 ký tự"
+                        autocomplete="new-password"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="add-password-confirm"
+                        >Xác nhận mật khẩu
+                        <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="add-password-confirm"
+                        type="password"
+                        placeholder="Nhập lại mật khẩu"
+                        autocomplete="new-password"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="add-address">Địa chỉ</label
+                      ><input
+                        class="form-control"
+                        id="add-address"
+                        type="text"
+                        placeholder="Số nhà, đường, phường, quận, thành phố"
+                        autocomplete="street-address"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          id="add-send-mail"
+                          type="checkbox"
+                          checked
+                        /><label class="form-check-label" for="add-send-mail"
+                          >Gửi email thông tin tài khoản cho người dùng</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="admin-modal__footer">
+                  <a href="#!" class="btn btn-soft">Huỷ</a>
+                  <a href="#user-added-success" class="btn btn-brand"
+                    ><i class="bi bi-person-plus"></i> Tạo tài khoản</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+          <div
+            class="admin-modal"
+            id="edit-user-1"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="edit-user-1-title"
+          >
+            <a
+              class="admin-modal__backdrop"
+              href="#!"
+              aria-label="Đóng hộp thoại"
+            ></a>
+            <div class="admin-modal__dialog">
+              <div class="admin-modal__header">
+                <div>
+                  <span class="eyebrow">Người dùng #001</span>
+                  <h2 id="edit-user-1-title">Sửa thông tin người dùng</h2>
+                  <p>Cập nhật tài khoản của Nguyễn Văn A</p>
+                </div>
+                <a class="admin-modal__close" href="#!" aria-label="Đóng"
+                  ><i class="bi bi-x-lg"></i
+                ></a>
+              </div>
+              <form>
+                <div class="admin-modal__body">
+                  <div
+                    class="d-flex align-items-center gap-3 mb-3 p-3"
+                    style="
+                      border: 1px solid var(--sb-border);
+                      border-radius: 12px;
+                      background: #fffdfb;
+                    "
+                  >
+                    <span class="avatar avatar--lg avatar--rose">NA</span>
+                    <div>
+                      <strong class="d-block" style="font-size: 0.8rem"
+                        >Nguyễn Văn A</strong
+                      ><small class="text-soft"
+                        >Thành viên từ 12/03/2026 · 3 đơn hàng</small
+                      >
+                    </div>
+                    <span class="ms-auto"
+                      ><span class="status-badge status-badge--active"
+                        >Hoạt động</span
+                      ></span
+                    >
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label" for="edit-name-1"
+                        >Họ và tên <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="edit-name-1"
+                        type="text"
+                        value="Nguyễn Văn A"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="edit-email-1"
+                        >Email <span class="required">*</span></label
+                      ><input
+                        class="form-control"
+                        id="edit-email-1"
+                        type="email"
+                        value="nguyenvana@gmail.com"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="edit-phone-1"
+                        >Số điện thoại</label
+                      ><input
+                        class="form-control"
+                        id="edit-phone-1"
+                        type="tel"
+                        value="090 123 4567"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="edit-role-1">Vai trò</label
+                      ><select class="form-select" id="edit-role-1">
+                        <option value="customer" selected>Khách hàng</option>
+                        <option value="admin">Quản trị viên</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="edit-status-1"
+                        >Trạng thái</label
+                      ><select class="form-select" id="edit-status-1">
+                        <option value="active" selected>Đang hoạt động</option>
+                        <option value="locked">Đã khoá</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="edit-address-1"
+                        >Địa chỉ</label
+                      ><input
+                        class="form-control"
+                        id="edit-address-1"
+                        type="text"
+                        value="273 An Dương Vương, Phường Chợ Quán, Quận 5, TP.HCM"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <div class="admin-alert admin-alert--info">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                          <strong>Đổi mật khẩu</strong>Để trống nếu không muốn
+                          thay đổi. Mật khẩu mới cần tối thiểu 8 ký tự.
+                        </div>
+                      </div>
+                      <input
+                        class="form-control mt-2"
+                        type="password"
+                        placeholder="Mật khẩu mới (không bắt buộc)"
+                        autocomplete="new-password"
+                        aria-label="Mật khẩu mới (không bắt buộc)"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="admin-modal__footer">
+                  <a href="#!" class="btn btn-soft">Huỷ</a>
+                  <a href="#user-updated-success" class="btn btn-brand"
+                    ><i class="bi bi-check2"></i> Lưu thay đổi</a
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div
+            class="admin-modal"
+            id="lock-user-1"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="lock-user-1-title"
+          >
+            <a
+              class="admin-modal__backdrop"
+              href="#!"
+              aria-label="Đóng hộp thoại"
+            ></a>
+            <div class="admin-modal__dialog admin-modal__dialog--sm">
+              <div class="admin-modal__header">
+                <div>
+                  <span class="eyebrow">Quản lý người dùng</span>
+                  <h2 id="lock-user-1-title">Khoá tài khoản?</h2>
+                </div>
+                <a class="admin-modal__close" href="#!" aria-label="Đóng"
+                  ><i class="bi bi-x-lg"></i
+                ></a>
+              </div>
+              <div class="admin-modal__body">
+                <div class="delete-product mb-3">
+                  <span class="avatar avatar--lg avatar--rose">NA</span>
+                  <div>
+                    <strong>Nguyễn Văn A</strong
+                    ><span>nguyenvana@gmail.com</span>
+                  </div>
+                </div>
+                <div class="admin-alert admin-alert--warning">
+                  <i class="bi bi-exclamation-triangle"></i>
+                  <div>
+                    Người dùng sẽ không thể đăng nhập và đặt hàng. Toàn bộ dữ
+                    liệu đơn hàng cũ vẫn được giữ lại.
+                  </div>
+                </div>
+              </div>
+              <div class="admin-modal__footer">
+                <a href="#!" class="btn btn-soft">Huỷ</a>
+                <a href="#user-locked-success" class="btn btn-danger"
+                  >Khoá tài khoản</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="admin-modal"
+            id="unlock-user-8"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="unlock-user-8-title"
+          >
+            <a
+              class="admin-modal__backdrop"
+              href="#!"
+              aria-label="Đóng hộp thoại"
+            ></a>
+            <div class="admin-modal__dialog admin-modal__dialog--sm">
+              <div class="admin-modal__header">
+                <div>
+                  <span class="eyebrow">Quản lý người dùng</span>
+                  <h2 id="unlock-user-8-title">Mở khoá tài khoản?</h2>
+                </div>
+                <a class="admin-modal__close" href="#!" aria-label="Đóng"
+                  ><i class="bi bi-x-lg"></i
+                ></a>
+              </div>
+              <div class="admin-modal__body">
+                <div class="delete-product mb-3">
+                  <span class="avatar avatar--lg avatar--caramel">TT</span>
+                  <div>
+                    <strong>Bùi Thanh Tùng</strong
+                    ><span>tung.bui@outlook.com</span>
+                  </div>
+                </div>
+                <div class="admin-alert admin-alert--success">
+                  <i class="bi bi-check2-circle"></i>
+                  <div>Tài khoản sẽ có thể đăng nhập và đặt hàng trở lại.</div>
+                </div>
+              </div>
+              <div class="admin-modal__footer">
+                <a href="#!" class="btn btn-soft">Huỷ</a>
+                <a href="#user-unlocked-success" class="btn btn-brand"
+                  >Mở khoá tài khoản</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <footer class="admin-footer">
+            <span
+              >© 2026 Sweet Bakery. Giao diện quản trị minh hoạ — HTML/CSS,
+              không sử dụng JavaScript.</span
+            >
+            <span>Phiên bản 1.0 · Dữ liệu mẫu</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

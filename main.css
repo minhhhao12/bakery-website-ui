@@ -1,0 +1,11 @@
+@import "./css/theme.css";
+@import "./css/home.css";
+@import "./css/responsive.css";
+@import "./css/contact-float.css";
+
+:root{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
