@@ -1,5 +1,5 @@
 /* ==========================================================
-   AUTHENTICATION PAGES - Signin
+   AUTHENTICATION PAGES - Signin (Split Layout)
    ========================================================== */
 
 .auth-section {
@@ -7,28 +7,62 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--cream-400) 0%, var(--primary-100) 100%);
+  background: var(--cream-400);
   padding: var(--space-6) var(--space-4);
 }
 
-.auth-card {
+.auth-split-card {
+  display: flex;
   background-color: var(--color-surface);
   width: 100%;
-  max-width: 440px;
-  padding: var(--space-10) var(--space-8);
+  max-width: 1000px;
   border-radius: var(--radius-3xl);
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--color-border-soft);
+  overflow: hidden; /* Đảm bảo hình ảnh không bị tràn góc bo tròn */
+}
+
+/* Phần Banner Hình ảnh */
+.auth-visual {
+  flex: 1;
+  background: linear-gradient(rgba(139, 67, 88, 0.3), rgba(98, 42, 58, 0.8)), url('../assets/cake/53096885.cms.avif') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-10) var(--space-8);
+  color: #fff;
+}
+
+.auth-visual-title {
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: var(--heading-h2);
+  margin-bottom: var(--space-3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.auth-visual-desc {
+  color: var(--cream-100);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Phần Nội dung Form */
+.auth-content {
+  flex: 1.2;
+  padding: var(--space-10) var(--space-8);
+  background-color: var(--color-surface);
 }
 
 .auth-header {
   text-align: center;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .auth-logo {
   justify-content: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .auth-title {
@@ -43,8 +77,19 @@
   color: var(--color-text-muted);
 }
 
+/* Chia 2 cột cho các trường thông tin */
+.form-row {
+  display: flex;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.form-col {
+  flex: 1;
+}
+
 .form-group {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
 .form-label {
@@ -59,6 +104,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: var(--space-2);
   margin-bottom: var(--space-6);
   font-size: var(--text-sm);
 }
@@ -105,4 +151,34 @@
 
 .back-home-link:hover {
   color: var(--primary-700);
+}
+
+/* ==========================================================
+   RESPONSIVE (Mobile / Tablet)
+   ========================================================== */
+@media (max-width: 992px) {
+  .auth-split-card {
+    flex-direction: column;
+    max-width: 600px;
+  }
+  
+  .auth-visual {
+    min-height: 250px;
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .auth-content {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .auth-visual {
+    min-height: 200px;
+  }
 }
