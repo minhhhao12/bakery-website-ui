@@ -196,7 +196,7 @@ if(localStorage.getItem("login")){
         <div class="header-search__container">
           <form
             class="header-search__form"
-            action="../pages/search-results.html"
+            action="./pages/search-results.html"
             method="get"
             role="search"
           >
@@ -311,7 +311,7 @@ if(localStorage.getItem("login")){
                 </a>
                 <a
                   class="user-dropdown__link user-dropdown__link--danger"
-                  href="/pages/login.html"
+                  href="pages/login.html"
                   id="logout"
                 >
                   <svg
@@ -337,7 +337,7 @@ if(localStorage.getItem("login")){
           </details>
 
           <a
-            href="../pages/cart.html"
+            href="./pages/cart.html"
             class="cart-logo"
             aria-label="Xem giỏ hàng"
           >
