@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -151,7 +153,7 @@
                   <a href="orders.html" class="btn btn-soft btn-sm"
                     ><i class="bi bi-arrow-left"></i> Danh sách đơn</a
                   >
-                  <button class="btn btn-brand btn-sm" type="button">
+                  <button class="btn btn-brand btn-sm" type="button" data-toast="Chức năng in hoá đơn đang ở chế độ minh hoạ.">
                     <i class="bi bi-printer"></i> In hoá đơn
                   </button>
                 </div>
@@ -338,6 +340,7 @@
                       <button
                         class="btn btn-brand w-100 mt-2"
                         type="button"
+                        data-toast="Cập nhật trạng thái thành công (minh hoạ)."
           
                       >
                         Cập nhật

@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -40,7 +42,7 @@
       <aside class="admin-sidebar">
         <div class="admin-brand">
           <a class="admin-brand__logo" href="index.html">Sweet Bakery</a>
-          <p class="admin-brand__sub">Bảng điều khiển cửa hàng</p>
+          <p class="admin-brand__sub">Trang Admin</p>
         </div>
         <div class="admin-sidebar__close-row">
           <label
@@ -249,10 +251,10 @@
                 class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-3"
               >
                 <div class="d-flex flex-wrap gap-2">
-                  <button class="btn btn-brand" type="button">
+                  <button class="btn btn-brand" type="button" data-toast="Đã áp dụng lọc thành công">
                     <i class="bi bi-funnel"></i> Áp dụng bộ lọc
                   </button>
-                  <button class="btn btn-soft" type="button">
+                  <button class="btn btn-soft" type="button" >
                     <i class="bi bi-arrow-counterclockwise"></i> Đặt lại
                   </button>
                 </div>
@@ -287,21 +289,22 @@
                 <button
                   class="btn btn-soft btn-sm d-none d-sm-inline-flex"
                   type="button"
+                  data-toast="Xuất báo cáo thành công!"
                 >
                   <i class="bi bi-download"></i> Xuất báo cáo
                 </button>
-                <button class="btn btn-brand btn-sm" type="button">
+                <button class="btn btn-brand btn-sm" type="button" data-toast="Làm mới thành công!  ">
                   <i class="bi bi-arrow-repeat"></i> Làm mới
                 </button>
               </div>
             </div>
             <div class="admin-card__body pb-3">
               <div class="order-tabs">
-                <a class="order-tab active" href="#!">Tất cả <span>16</span></a>
-                <a class="order-tab" href="#!">Chưa xác nhận <span>2</span></a>
-                <a class="order-tab" href="#!">Đã xác nhận <span>2</span></a>
-                <a class="order-tab" href="#!">Đã giao <span>11</span></a>
-                <a class="order-tab" href="#!">Huỷ đơn <span>1</span></a>
+                <a class="order-tab active" href="#!" data-toast="Danh sách đang hiển thị tất cả đơn hàng mẫu.">Tất cả <span>16</span></a>
+                <a class="order-tab" href="#!" data-toast="Lọc đơn chưa xác nhận đang ở chế độ minh hoạ.">Chưa xác nhận <span>2</span></a>
+                <a class="order-tab" href="#!" data-toast="Lọc đơn đã xác nhận đang ở chế độ minh hoạ.">Đã xác nhận <span>2</span></a>
+                <a class="order-tab" href="#!" data-toast="Lọc đơn đã giao đang ở chế độ minh hoạ.">Đã giao <span>11</span></a>
+                <a class="order-tab" href="#!" data-toast="Lọc đơn huỷ đang ở chế độ minh hoạ.">Huỷ đơn <span>1</span></a>
               </div>
             </div>
             <div class="table-responsive">
@@ -1021,13 +1024,13 @@
               <nav aria-label="Phân trang đơn hàng">
                 <ul class="pagination pagination-sm">
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!">Trước</a>
+                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang đầu tiên.">Trước</a>
                   </li>
                   <li class="page-item active">
-                    <a class="page-link" href="#!">1</a>
+                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang 1.">1</a>
                   </li>
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!">Sau</a>
+                    <a class="page-link" href="#!" data-toast="Dữ liệu mẫu chỉ có một trang.">Sau</a>
                   </li>
                 </ul>
               </nav>

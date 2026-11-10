@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -127,15 +129,6 @@
           </div>
         </header>
         <main class="admin-content">
-          <div class="target-alert" id="product-added-success" role="status">
-            <i class="bi bi-check2-circle"></i>
-            <div>
-              <strong>Đã thêm sản phẩm thành công.</strong>Sản phẩm mới đã được
-              lưu và sẵn sàng hiển thị trên website Sweet Bakery.
-            </div>
-            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
-          </div>
-
           <div
             class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
           >
@@ -144,7 +137,7 @@
             >
           </div>
 
-          <form>
+          <form novalidate data-toast="Thêm sản phẩm thành công.">
             <div class="row g-4">
               <div class="col-xl-8">
                 <section class="admin-card mb-4">
@@ -152,9 +145,7 @@
                     <div>
                       <h2>Thông tin sản phẩm</h2>
                       <p>
-                        Các trường có dấu
-                        <span style="color: var(--sb-primary-dark)">*</span> là
-                        bắt buộc
+                        Nhập thông tin để minh hoạ giao diện thêm sản phẩm.
                       </p>
                     </div>
                   </div>
@@ -162,7 +153,7 @@
                     <div class="row g-3">
                       <div class="col-md-8">
                         <label class="form-label" for="add-product-name"
-                          >Tên sản phẩm <span class="required">*</span></label
+                          >Tên sản phẩm</label
                         >
                         <input
                           class="form-control"
@@ -173,82 +164,51 @@
                       </div>
                       <div class="col-md-4">
                         <label class="form-label" for="add-product-price"
-                          >Giá bán <span class="required">*</span></label
+                          >Giá bán</label
                         >
                         <div class="input-group">
                           <input
                             class="form-control"
                             id="add-product-price"
-                            type="number"
-                            min="0"
-                            step="1000"
-                            placeholder="350000"
+                            type="text"
+                            inputmode="numeric"
+                            data-price
+                            placeholder="350.000"
                           /><span class="input-group-text">₫</span>
                         </div>
                       </div>
                       <div class="col-12">
-                        <label class="form-label"
-                          >Phân loại sản phẩm
-                          <span class="required">*</span></label
+                        <label class="form-label" for="add-product-category"
+                          >Phân loại sản phẩm</label
                         >
-                        <div class="category-check">
-                          <input
-                            class="btn-check"
-                            type="checkbox"
-                            id="cat-fruit"
-                            checked
-                          /><label class="btn" for="cat-fruit">Trái cây</label>
-                          <input
-                            class="btn-check"
-                            type="checkbox"
-                            id="cat-chocolate"
-                          /><label class="btn" for="cat-chocolate"
-                            >Chocolate</label
-                          >
-                          <input
-                            class="btn-check"
-                            type="checkbox"
-                            id="cat-mousse"
-                          /><label class="btn" for="cat-mousse"
-                            >Mousse &amp; lạnh</label
-                          >
-                          <input
-                            class="btn-check"
-                            type="checkbox"
-                            id="cat-birthday"
-                            checked
-                          /><label class="btn" for="cat-birthday"
-                            >Sinh nhật</label
-                          >
-                          <input
-                            class="btn-check"
-                            type="checkbox"
-                            id="cat-pastry"
-                          /><label class="btn" for="cat-pastry"
-                            >Bánh mì &amp; Pastry</label
-                          >
-                          <input
-                            class="btn-check"
-                            type="checkbox"
-                            id="cat-savory"
-                          /><label class="btn" for="cat-savory">Bánh mặn</label>
-                        </div>
+                        <select class="form-select" id="add-product-category" name="category">
+                          <option value="" selected>Chọn phân loại</option>
+                          <option value="fruit">Trái cây</option>
+                          <option value="chocolate">Chocolate</option>
+                          <option value="mousse">Mousse &amp; lạnh</option>
+                          <option value="birthday">Sinh nhật</option>
+                          <option value="pastry">Bánh mì &amp; Pastry</option>
+                          <option value="savory">Bánh mặn</option>
+                        </select>
                         <div class="form-text">
-                          Chọn một hoặc nhiều phân loại. Đây là đúng các danh
-                          mục đang có trên website: Trái cây, Chocolate, Mousse
-                          &amp; lạnh, Sinh nhật, Bánh mì &amp; Pastry, Bánh mặn.
+                          Chọn một phân loại cho sản phẩm.
                         </div>
                       </div>
                       <div class="col-md-5">
-                        <label class="form-label" for="add-product-size"
-                          >Kích cỡ mặc định</label
-                        >
-                        <select class="form-select" id="add-product-size">
-                          <option>16 cm · 4–6 người</option>
-                          <option selected>18 cm · 6–8 người</option>
-                          <option>20 cm · 8–10 người</option>
-                          <option>24 cm · 10–12 người</option>
-                        </select>
+                        <fieldset>
+                          <legend class="form-label">Kích cỡ có sẵn</legend>
+                          <div class="category-check">
+                            <input class="btn-check" type="checkbox" name="sizes" value="16" id="add-size-16" />
+                            <label class="btn" for="add-size-16">16 cm · 4–6 người</label>
+                            <input class="btn-check" type="checkbox" name="sizes" value="18" id="add-size-18" checked />
+                            <label class="btn" for="add-size-18">18 cm · 6–8 người</label>
+                            <input class="btn-check" type="checkbox" name="sizes" value="20" id="add-size-20" />
+                            <label class="btn" for="add-size-20">20 cm · 8–10 người</label>
+                            <input class="btn-check" type="checkbox" name="sizes" value="24" id="add-size-24" />
+                            <label class="btn" for="add-size-24">24 cm · 10–12 người</label>
+                          </div>
+                          <div class="form-text">Có thể chọn nhiều kích cỡ.</div>
+                        </fieldset>
                       </div>
                       <div class="col-md-7">
                         <label class="form-label" for="add-product-status"
@@ -319,8 +279,8 @@
                   <a href="products.html" class="btn btn-soft"
                     ><i class="bi bi-x-lg"></i> Huỷ</a
                   >
-                  <a href="#product-added-success" class="btn btn-brand"
-                    ><i class="bi bi-plus-lg"></i> Thêm sản phẩm</a
+                  <button type="submit" class="btn btn-brand"
+                    ><i class="bi bi-plus-lg"></i> Thêm sản phẩm</button
                   >
                 </div>
               </div>
@@ -355,12 +315,12 @@
                   <div class="admin-card__body">
                     <ul class="legend-list">
                       <li>
-                        <i class="bi bi-check2-circle text-success"></i> Tên và
-                        giá bán là bắt buộc
+                        <i class="bi bi-check2-circle text-success"></i> Giá bán
+                        được định dạng theo tiền Việt
                       </li>
                       <li>
-                        <i class="bi bi-check2-circle text-success"></i> Chọn ít
-                        nhất một phân loại
+                        <i class="bi bi-check2-circle text-success"></i> Chọn một
+                        phân loại và nhiều kích cỡ
                       </li>
                       <li>
                         <i class="bi bi-check2-circle text-success"></i> Kiểm

@@ -128,7 +128,7 @@
                 class="user-dropdown__actions"
                 aria-label="Liên kết tài khoản"
               >
-                <a class="user-dropdown__link" href="#order-history">
+                <a class="user-dropdown__link" href="./account-info.html">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -141,12 +141,10 @@
                     stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="M6 2h9l5 5v15H6z" />
-                    <path d="M15 2v5h5" />
-                    <path d="M9 13h7M9 17h5" />
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21a8 8 0 0 1 16 0" />
                   </svg>
-                  <span>Lịch sử đơn hàng</span>
-                  <span class="user-dropdown__count">3</span>
+                  <span>Thông tin tài khoản</span>
                 </a>
                 <a
                   class="user-dropdown__link user-dropdown__link--danger"
@@ -507,9 +505,7 @@
                   Bạn chưa chọn chiếc bánh nào. Ghé thực đơn để chọn vị bánh yêu
                   thích nhé!
                 </p>
-                <a
-                  class="btn btn-primary"
-                  href="../index.html#best-seller"
+                <a class="btn btn-primary" href="../index.html#best-seller"
                   >Khám phá sản phẩm</a
                 >
               </div>
@@ -535,10 +531,7 @@
                 500.000₫.
               </p>
 
-              <a
-                class="cart-continue"
-                href="./products.html"
-              >
+              <a class="cart-continue" href="./products.html">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -658,7 +651,7 @@
                 </label>
               </div>
 
-              <div class="address-form" id="address-form" hidden>
+              <div class="address-form" id="address-form">
                 <div class="form-grid">
                   <div class="form-field">
                     <label for="receiver-name">Họ và tên người nhận</label>
@@ -680,21 +673,37 @@
                       autocomplete="tel"
                     />
                   </div>
-                  <div class="form-field">
-                    <label for="receiver-province">Tỉnh / Thành phố</label>
-                    <select class="select" id="receiver-province">
-                      <option>TP. Hồ Chí Minh</option>
-                      <option>Hà Nội</option>
-                      <option>Đà Nẵng</option>
-                      <option>Cần Thơ</option>
-                    </select>
+
+                  <div class="form-field form-field--full">
+                    <label for="receiver-address">Địa chỉ chi tiết</label>
+                    <input
+                      class="input"
+                      id="receiver-address"
+                      type="text"
+                      placeholder="Số nhà, tên đường, toà nhà..."
+                      autocomplete="street-address"
+                    />
+                  </div>
+                  <div class="form-field form-field--full">
+                    <label for="receiver-note">
+                      Ghi chú giao hàng
+                      <span class="optional">(không bắt buộc)</span>
+                    </label>
+                    <textarea
+                      class="textarea"
+                      id="receiver-note"
+                      placeholder="Ví dụ: gọi trước khi giao, giao trước 15h..."
+                    ></textarea>
                   </div>
                 </div>
               </div>
             </section>
 
             <!-- ===== Phương thức thanh toán ===== -->
-            <section class="checkout-panel" aria-labelledby="payment-title">
+            <section
+              class="checkout-panel payment-panel"
+              aria-labelledby="payment-title"
+            >
               <header class="checkout-panel__header">
                 <span class="checkout-step" aria-hidden="true">3</span>
                 <div class="checkout-panel__heading">
@@ -786,6 +795,116 @@
                   </span>
                 </label>
               </div>
+
+              <!-- Thông tin thẻ ngân hàng -->
+              <div class="payment-detail payment-detail--card">
+                <div class="card-payment">
+                  <div class="card-form">
+                    <div class="form-grid">
+                      <div class="form-field form-field--full">
+                        <label for="card-name">Tên chủ thẻ</label>
+                        <input
+                          class="input"
+                          id="card-name"
+                          type="text"
+                          placeholder="NGUYEN VAN A"
+                          autocomplete="cc-name"
+                        />
+                      </div>
+                      <div class="form-field form-field--full">
+                        <label for="card-number">Số thẻ</label>
+                        <input
+                          class="input"
+                          id="card-number"
+                          type="text"
+                          inputmode="numeric"
+                          placeholder="0000 0000 0000 0000"
+                          autocomplete="cc-number"
+                        />
+                      </div>
+                      <div class="form-field">
+                        <label for="card-expiry">Ngày hết hạn</label>
+                        <input
+                          class="input"
+                          id="card-expiry"
+                          type="text"
+                          inputmode="numeric"
+                          placeholder="MM/YY"
+                          autocomplete="cc-exp"
+                        />
+                      </div>
+                      <div class="form-field">
+                        <label for="card-cvv">CVV</label>
+                        <input
+                          class="input"
+                          id="card-cvv"
+                          type="password"
+                          inputmode="numeric"
+                          maxlength="4"
+                          placeholder="•••"
+                          autocomplete="cc-csc"
+                        />
+                      </div>
+                    </div>
+
+                    <label class="checkline">
+                      <input type="checkbox" />
+                      Lưu thẻ cho lần thanh toán sau
+                    </label>
+
+                    <p class="card-form__secure">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="4" y="11" width="16" height="10" rx="2" />
+                        <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                      </svg>
+                      Thông tin thẻ được mã hoá bảo mật, không lưu trên thiết bị
+                      của bạn.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thông tin thanh toán tiền mặt -->
+              <div class="payment-detail payment-detail--cash">
+                <div class="cash-note">
+                  <span class="cash-note__icon" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2" y="6" width="20" height="12" rx="2" />
+                      <circle cx="12" cy="12" r="2.5" />
+                      <path d="M6 12h.01M18 12h.01" />
+                    </svg>
+                  </span>
+                  <div>
+                    <strong>Thanh toán khi nhận bánh</strong>
+                    <p>
+                      Bạn thanh toán <strong>770.000₫</strong> trực tiếp cho
+                      shipper khi bánh được giao đến. Vui lòng chuẩn bị tiền mặt
+                      hoặc chuyển khoản nhanh.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
 
@@ -812,7 +931,14 @@
               </div>
               <div class="cart-summary__row">
                 <dt>Thanh toán</dt>
-                <dd id="summary-payment">Thẻ ngân hàng</dd>
+                <dd id="summary-payment">
+                  <span class="summary-payment summary-payment--card"
+                    >Thẻ ngân hàng</span
+                  >
+                  <span class="summary-payment summary-payment--cash"
+                    >Tiền mặt khi nhận hàng</span
+                  >
+                </dd>
               </div>
             </dl>
 
@@ -922,7 +1048,7 @@
       <div class="container">
         <div class="footer__grid">
           <div class="footer__col footer__brand">
-            <a href="./index.html" class="footer__logo">Sweet Bakery</a>
+            <a href="../index.html" class="footer__logo">Sweet Bakery</a>
             <p>
               Mỗi chiếc bánh là một tác phẩm nghệ thuật, được tạo nên từ đam mê
               và nguyên liệu thượng hạng.
@@ -1181,158 +1307,6 @@
       aria-live="polite"
     ></div>
 
-    <div
-      class="modal"
-      id="order-history"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="order-history-title"
-    >
-      <!-- href="#!" : đóng modal mà không cuộn trang lên đầu -->
-      <a class="modal__overlay" href="#!" aria-label="Đóng hộp thoại"></a>
-
-      <div class="modal__dialog">
-        <header class="modal__header">
-          <div>
-            <span class="section-subtitle">Tài khoản của bạn</span>
-            <h3 class="modal__title" id="order-history-title">
-              Lịch sử đơn hàng
-            </h3>
-          </div>
-          <a class="modal__close" href="#!" aria-label="Đóng hộp thoại">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </a>
-        </header>
-
-        <div class="modal__body">
-          <!-- Đơn hàng 1 -->
-          <article class="order-card">
-            <div class="order-card__top">
-              <div class="order-card__code">
-                <strong>#BK-241207</strong>
-                <span>07/12/2026 · 18:24</span>
-              </div>
-              <span class="badge badge-warning">Đang giao</span>
-            </div>
-            <ul class="order-card__items">
-              <li>
-                <img src="/assets/cake/banhkemdau.png" alt="" />
-                <div class="order-card__info">
-                  <strong>Bánh Kem Dâu Tây</strong>
-                  <span>Size 16cm · SL 1</span>
-                </div>
-                <span class="order-card__price">350.000₫</span>
-              </li>
-              <li>
-                <img src="/assets/cake/CLASSIC-TIRAMISU-MINI.png" alt="" />
-                <div class="order-card__info">
-                  <strong>Tiramisu Cổ Điển</strong>
-                  <span>Size 18cm · SL 1</span>
-                </div>
-                <span class="order-card__price">420.000₫</span>
-              </li>
-            </ul>
-            <div class="order-card__bottom">
-              <span class="order-card__total"
-                >Tổng cộng <strong>770.000₫</strong></span
-              >
-              <div class="order-card__actions">
-                <button type="button" class="btn btn-outline btn-sm">
-                  Xem chi tiết
-                </button>
-                <button type="button" class="btn btn-primary btn-sm">
-                  Mua lại
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Đơn hàng 2 -->
-          <article class="order-card">
-            <div class="order-card__top">
-              <div class="order-card__code">
-                <strong>#BK-241119</strong>
-                <span>19/11/2026 · 09:12</span>
-              </div>
-              <span class="badge badge-success">Hoàn tất</span>
-            </div>
-            <ul class="order-card__items">
-              <li>
-                <img src="/assets/cake/mousse-tra-xanh.png" alt="" />
-                <div class="order-card__info">
-                  <strong>Mousse Trà Xanh</strong>
-                  <span>Size 20cm · SL 2</span>
-                </div>
-                <span class="order-card__price">760.000₫</span>
-              </li>
-            </ul>
-            <div class="order-card__bottom">
-              <span class="order-card__total"
-                >Tổng cộng <strong>760.000₫</strong></span
-              >
-              <div class="order-card__actions">
-                <button type="button" class="btn btn-outline btn-sm">
-                  Xem chi tiết
-                </button>
-                <button type="button" class="btn btn-primary btn-sm">
-                  Mua lại
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Đơn hàng 3 -->
-          <article class="order-card">
-            <div class="order-card__top">
-              <div class="order-card__code">
-                <strong>#BK-241027</strong>
-                <span>27/10/2026 · 15:40</span>
-              </div>
-              <span class="badge badge-error">Đã hủy</span>
-            </div>
-            <ul class="order-card__items">
-              <li>
-                <img src="/assets/cake/capuchinocake.png" alt="" />
-                <div class="order-card__info">
-                  <strong>Bánh Capuchino</strong>
-                  <span>Size 16cm · SL 1</span>
-                </div>
-                <span class="order-card__price">400.000₫</span>
-              </li>
-            </ul>
-            <div class="order-card__bottom">
-              <span class="order-card__total"
-                >Tổng cộng <strong>400.000₫</strong></span
-              >
-              <div class="order-card__actions">
-                <button type="button" class="btn btn-outline btn-sm">
-                  Xem chi tiết
-                </button>
-                <button type="button" class="btn btn-primary btn-sm">
-                  Mua lại
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-
     <script src="../Javascript/cart.js"></script>
-    <script src="../Javascript/checkout.js"></script>
-    <script src="../Javascript/advanced-search.js" defer></script>
   </body>
 </html>

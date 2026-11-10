@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -41,7 +43,7 @@
         <div class="admin-brand">
           <a class="admin-brand__logo" href="index.html">Sweet Bakery</a
           >
-          <p class="admin-brand__sub">Bảng điều khiển cửa hàng</p>
+          <p class="admin-brand__sub">Trang Admin</p>
         </div>
         <div class="admin-sidebar__close-row">
           <label
@@ -162,7 +164,7 @@
                   />
                 </div>
                 <div class="col-md-4">
-                  <button class="btn btn-brand w-100" type="button">
+                  <button class="btn btn-brand w-100" type="button" data-toast="Thống kê đơn hàng từ ngày 01/10/2026 - 28/10/2026 thành công!">
                     <i class="bi bi-bar-chart-line"></i> Thống kê
                   </button>
                 </div>

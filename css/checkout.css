@@ -224,10 +224,18 @@
 /* ----- Form địa chỉ mới ----- */
 
 .address-form {
+  display: none;
+
   margin-top: var(--space-5);
   padding-top: var(--space-5);
 
   border-top: var(--border-1) dashed var(--color-border);
+}
+
+/* Chọn "Giao đến địa chỉ khác" thì mở form nhập địa chỉ */
+.checkout-panel:has(#address-other:checked) .address-form {
+  display: block;
+  animation: checkout-reveal var(--duration-normal) var(--ease-out);
 }
 
 .address-form[hidden],
@@ -393,18 +401,23 @@
 /* ----- Chi tiết từng phương thức ----- */
 
 .payment-detail {
+  display: none;
+
   margin-top: var(--space-5);
   padding-top: var(--space-5);
 
   border-top: var(--border-1) dashed var(--color-border);
 }
 
-.card-payment {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: var(--space-5);
-  align-items: center;
+/* Hiện đúng phần nhập liệu theo phương thức đang chọn */
+.payment-panel:has(.payment-option__input[value="card"]:checked)
+  .payment-detail--card,
+.payment-panel:has(.payment-option__input[value="cash"]:checked)
+  .payment-detail--cash {
+  display: block;
+  animation: checkout-reveal var(--duration-normal) var(--ease-out);
 }
+
 
 /* Thẻ ngân hàng minh hoạ */
 .bank-card {
@@ -603,6 +616,43 @@
 
 .cash-note p strong {
   color: var(--price-color);
+}
+
+/* ----------------------------------------------------------
+   04.1. ĐỒNG BỘ PHƯƠNG THỨC THANH TOÁN VÀO TÓM TẮT
+   ---------------------------------------------------------- */
+
+.summary-payment--cash {
+  display: none;
+}
+
+.cart-layout:has(.payment-option__input[value="cash"]:checked)
+  .summary-payment--card {
+  display: none;
+}
+
+.cart-layout:has(.payment-option__input[value="cash"]:checked)
+  .summary-payment--cash {
+  display: inline;
+}
+
+.bank-card__number {
+  margin: 0;
+}
+
+.card-form .checkline {
+  margin-top: 0;
+}
+
+@keyframes checkout-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ----------------------------------------------------------

@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -127,23 +129,6 @@
           </div>
         </header>
         <main class="admin-content">
-          <div class="target-alert" id="hidden-success" role="status">
-            <i class="bi bi-eye-slash"></i>
-            <div>
-              <strong>Đã ẩn sản phẩm khỏi website.</strong>Sản phẩm không còn
-              hiển thị với khách hàng nhưng vẫn được lưu trong lịch sử đơn hàng.
-            </div>
-            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
-          </div>
-          <div class="target-alert" id="deleted-success" role="status">
-            <i class="bi bi-check2-circle"></i>
-            <div>
-              <strong>Đã xoá sản phẩm.</strong>Sản phẩm chưa phát sinh đơn hàng
-              nên đã được xoá khỏi hệ thống.
-            </div>
-            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
-          </div>
-
           <div class="row g-3 mb-4">
             <div class="col-6 col-xl-3">
               <div class="stat-card">
@@ -244,7 +229,7 @@
                   </select>
                 </div>
                 <div class="col-lg-2 filter-actions">
-                  <button class="btn btn-brand w-100" type="button">
+                  <button class="btn btn-brand w-100" type="button" data-toast="Đã lọc sản phẩm thành công!">
                     <i class="bi bi-funnel"></i> Lọc
                   </button>
                 </div>
@@ -389,7 +374,8 @@
                           ><i class="bi bi-pencil-square"></i
                         ></a>
                         <a
-                          href="#delete-dau-kem-hanh-nhan"
+                          href="#!"
+                          data-toast="Sản phẩm đã bán 45 lần, không thể xoá vĩnh viễn; chỉ có thể ẩn khỏi website."
                           class="btn-icon btn-icon--danger"
                           title="Xoá sản phẩm"
                           ><i class="bi bi-trash3"></i
@@ -1154,13 +1140,13 @@
               <nav aria-label="Phân trang sản phẩm">
                 <ul class="pagination pagination-sm">
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!">Trước</a>
+                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang đầu tiên.">Trước</a>
                   </li>
                   <li class="page-item active">
-                    <a class="page-link" href="#!">1</a>
+                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang 1.">1</a>
                   </li>
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!">Sau</a>
+                    <a class="page-link" href="#!" data-toast="Dữ liệu mẫu chỉ có một trang.">Sau</a>
                   </li>
                 </ul>
               </nav>
@@ -1218,8 +1204,8 @@
                 </p>
               </div>
               <div class="admin-modal__footer">
-                <a href="#!" class="btn btn-soft">Huỷ</a
-                ><a href="#hidden-success" class="btn btn-brand"
+                <a href="#!" class="btn btn-soft" data-close-modal data-toast="Đã huỷ thao tác.">Huỷ</a
+                ><a href="#!" class="btn btn-brand" data-close-modal data-toast="Ẩn sản phẩm thành công (minh hoạ)."
                   ><i class="bi bi-eye-slash"></i> Ẩn khỏi website</a
                 >
               </div>

@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -131,10 +133,8 @@
           <div class="admin-alert admin-alert--info mb-4">
             <i class="bi bi-info-circle"></i>
             <div>
-              <strong>Chọn sản phẩm cần sửa ở cột bên trái.</strong>Mỗi sản phẩm
-              có một biểu mẫu riêng với đúng tên, giá, phân loại và hình ảnh
-              tương ứng. Trang này không dùng JavaScript, việc chuyển sản phẩm
-              được thực hiện bằng liên kết neo (anchor).
+              <strong>Chỉnh sửa thông tin sản phẩm bên dưới.</strong>
+              Đây là biểu mẫu minh hoạ, thay đổi chưa được lưu vào cơ sở dữ liệu.
             </div>
           </div>
           <div class="edit-layout">
@@ -165,7 +165,7 @@
                 </div>
                 <div class="row g-4">
                   <div class="col-lg-8">
-                    <section class="admin-card mb-4">
+                    <form class="admin-card mb-4" novalidate data-toast="Lưu sản phẩm thành công (minh hoạ).">
                       <div class="admin-card__header">
                         <div>
                           <h2>Thông tin sản phẩm</h2>
@@ -181,8 +181,7 @@
                             <label
                               class="form-label"
                               for="banh-kem-dau-tay-name"
-                              >Tên sản phẩm
-                              <span class="required">*</span></label
+                              >Tên sản phẩm</label
                             ><input
                               class="form-control"
                               id="banh-kem-dau-tay-name"
@@ -194,96 +193,50 @@
                             <label
                               class="form-label"
                               for="banh-kem-dau-tay-price"
-                              >Giá bán <span class="required">*</span></label
+                              >Giá bán</label
                             >
                             <div class="input-group">
                               <input
                                 class="form-control"
                                 id="banh-kem-dau-tay-price"
-                                type="number"
-                                min="0"
-                                step="1000"
-                                value="350000"
+                                type="text"
+                                inputmode="numeric"
+                                data-price
+                                value="350.000"
                               /><span class="input-group-text">₫</span>
                             </div>
                           </div>
                           <div class="col-12">
-                            <label class="form-label"
-                              >Phân loại sản phẩm
-                              <span class="required">*</span></label
+                            <label class="form-label" for="edit-product-category"
+                              >Phân loại sản phẩm</label
                             >
-                            <div class="category-check">
-                              <input
-                                class="btn-check"
-                                type="checkbox"
-                                id="banh-kem-dau-tay-cat-fruit"
-                                checked
-                              /><label
-                                class="btn"
-                                for="banh-kem-dau-tay-cat-fruit"
-                                >Trái cây</label
-                              ><input
-                                class="btn-check"
-                                type="checkbox"
-                                id="banh-kem-dau-tay-cat-chocolate"
-                              /><label
-                                class="btn"
-                                for="banh-kem-dau-tay-cat-chocolate"
-                                >Chocolate</label
-                              ><input
-                                class="btn-check"
-                                type="checkbox"
-                                id="banh-kem-dau-tay-cat-mousse"
-                              /><label
-                                class="btn"
-                                for="banh-kem-dau-tay-cat-mousse"
-                                >Mousse &amp; lạnh</label
-                              ><input
-                                class="btn-check"
-                                type="checkbox"
-                                id="banh-kem-dau-tay-cat-birthday"
-                                checked
-                              /><label
-                                class="btn"
-                                for="banh-kem-dau-tay-cat-birthday"
-                                >Sinh nhật</label
-                              ><input
-                                class="btn-check"
-                                type="checkbox"
-                                id="banh-kem-dau-tay-cat-pastry"
-                              /><label
-                                class="btn"
-                                for="banh-kem-dau-tay-cat-pastry"
-                                >Bánh mì &amp; Pastry</label
-                              ><input
-                                class="btn-check"
-                                type="checkbox"
-                                id="banh-kem-dau-tay-cat-savory"
-                              /><label
-                                class="btn"
-                                for="banh-kem-dau-tay-cat-savory"
-                                >Bánh mặn</label
-                              >
-                            </div>
+                            <select class="form-select" id="edit-product-category" name="category">
+                              <option value="fruit" selected>Trái cây</option>
+                              <option value="chocolate">Chocolate</option>
+                              <option value="mousse">Mousse &amp; lạnh</option>
+                              <option value="birthday">Sinh nhật</option>
+                              <option value="pastry">Bánh mì &amp; Pastry</option>
+                              <option value="savory">Bánh mặn</option>
+                            </select>
                             <div class="form-text">
-                              Các phân loại đang được gắn đúng với sản phẩm này
-                              trên website.
+                              Chọn một phân loại cho sản phẩm.
                             </div>
                           </div>
                           <div class="col-md-5">
-                            <label
-                              class="form-label"
-                              for="banh-kem-dau-tay-size"
-                              >Kích cỡ</label
-                            ><select
-                              class="form-select"
-                              id="banh-kem-dau-tay-size"
-                            >
-                              <option selected>16 cm · 4–6 người</option>
-                              <option>18 cm · 6–8 người</option>
-                              <option>20 cm · 8–10 người</option>
-                              <option>24 cm · 10–12 người</option>
-                            </select>
+                            <fieldset>
+                              <legend class="form-label">Kích cỡ có sẵn</legend>
+                              <div class="category-check">
+                                <input class="btn-check" type="checkbox" name="sizes" value="16" id="edit-size-16" checked />
+                                <label class="btn" for="edit-size-16">16 cm · 4–6 người</label>
+                                <input class="btn-check" type="checkbox" name="sizes" value="18" id="edit-size-18" />
+                                <label class="btn" for="edit-size-18">18 cm · 6–8 người</label>
+                                <input class="btn-check" type="checkbox" name="sizes" value="20" id="edit-size-20" />
+                                <label class="btn" for="edit-size-20">20 cm · 8–10 người</label>
+                                <input class="btn-check" type="checkbox" name="sizes" value="24" id="edit-size-24" />
+                                <label class="btn" for="edit-size-24">24 cm · 10–12 người</label>
+                              </div>
+                              <div class="form-text">Có thể chọn nhiều kích cỡ.</div>
+                            </fieldset>
                           </div>
                           <div class="col-md-7">
                             <label
@@ -321,11 +274,11 @@ Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</textarea
                         class="admin-card__footer d-flex flex-wrap justify-content-end gap-2"
                       >
                         <a href="products.html" class="btn btn-soft">Huỷ</a>
-                        <button type="button" class="btn btn-brand">
+                        <button type="submit" class="btn btn-brand">
                           <i class="bi bi-check2"></i> Lưu thay đổi
                         </button>
                       </div>
-                    </section>
+                    </form>
                   </div>
                   <div class="col-lg-4">
                     <section class="admin-card mb-3">
@@ -405,14 +358,11 @@ Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</textarea
                     </section>
                     <section class="admin-card">
                       <div class="admin-card__header">
-                        <div><h2>Phân loại đang gắn</h2></div>
+                        <div><h2>Phân loại ban đầu</h2></div>
                       </div>
                       <div class="admin-card__body">
                         <div class="d-flex flex-wrap gap-2">
                           <span class="cat-chip cat-chip--rose">Trái cây</span>
-                          <span class="cat-chip cat-chip--green"
-                            >Sinh nhật</span
-                          >
                         </div>
                         <div class="form-text mt-2">
                           Nếu thay đổi phân loại, sản phẩm sẽ xuất hiện trong bộ

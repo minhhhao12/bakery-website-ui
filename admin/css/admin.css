@@ -64,6 +64,22 @@ body.admin-body:has(.admin-modal:target) {
   overflow: hidden;
 }
 
+/* Toast dùng chung cho các trang admin. */
+.admin-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  max-width: min(420px, calc(100% - 40px));
+  padding: 14px 20px;
+  border: 1px solid var(--sb-success);
+  border-radius: var(--sb-radius-sm);
+  background: var(--sb-success-soft);
+  color: var(--sb-success);
+  box-shadow: var(--sb-shadow-lg);
+  font-size: 0.85rem;
+}
+
 a {
   text-decoration: none;
 }
