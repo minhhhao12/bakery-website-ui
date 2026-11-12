@@ -104,7 +104,7 @@
       <div class="container">
         <nav class="catalog-breadcrumb" aria-label="Điều hướng">
           <a href="../index.html">Trang chủ</a><span aria-hidden="true">/</span>
-          <span aria-current="page">Bánh sinh nhật</span>
+          <span aria-current="page">Tất cả</span>
         </nav>
 
         <section class="catalog-intro" aria-labelledby="catalog-heading">
@@ -148,6 +148,12 @@
             type="radio"
             name="cake-category"
           />
+          <input
+            class="catalog-filter-input"
+            id="filter-desert"
+            type="radio"
+            name="cake-category"
+          />
 
           <div class="catalog-toolbar">
             <div
@@ -156,10 +162,11 @@
               aria-label="Lọc theo hương vị"
             >
               <label for="filter-all">Tất cả</label>
-              <label for="filter-fruit">Trái cây</label>
-              <label for="filter-chocolate">Chocolate</label>
-              <label for="filter-mousse">Mousse &amp; lạnh</label>
-              <label for="filter-birthday">Sinh nhật</label>
+              <label for="filter-fruit">Sinh nhật</label>
+              <label for="filter-chocolate">Mousse</label>
+              <label for="filter-mousse">Bánh mì &amp; Pastry</label>
+              <label for="filter-birthday">Bánh mặn</label>
+              <label for="filter-desert">Tráng miệng</label>
             </div>
             <p class="catalog-count">12 mẫu bánh</p>
           </div>
@@ -342,15 +349,15 @@
               </div>
             </article>
 
-            <article class="catalog-card" data-category="chocolate">
+            <article class="catalog-card" data-category="pastry">
               <a
                 class="catalog-card__image"
                 href="./product_detail.html"
-                aria-label="Xem bánh chocolate berries"
+                aria-label="Xem bánh croissant"
               >
                 <img
-                  src="../assets/cake/catalog-chocolate-berry.jpg"
-                  alt="Bánh chocolate nhiều lớp với quả mọng"
+                  src="../assets/cake/croissant.png"
+                  alt="Bánh croissant nhiều lớp, vỏ vàng giòn"
                   loading="lazy"
                 />
               </a>
@@ -358,13 +365,13 @@
                 <div class="catalog-card__rating">
                   <span aria-label="5 trên 5 sao">★★★★★</span> 4.8
                 </div>
-                <h2><a href="./product_detail.html">Chocolate Berries</a></h2>
-                <p>Cốt cacao nhiều lớp, kem tươi và quả mọng chua ngọt.</p>
+                <h2><a href="./product_detail.html">Bánh Croissant</a></h2>
+                <p>Bánh croissant nhiều lớp, vỏ vàng giòn.</p>
                 <div class="catalog-card__footer">
                   <strong>460.000₫</strong
                   ><a
                     href="./product_detail.html"
-                    aria-label="Chọn bánh chocolate berries"
+                    aria-label="Chọn bánh croissant"
                     >Chọn bánh <span aria-hidden="true">→</span></a
                   >
                 </div>
@@ -459,7 +466,7 @@
               </div>
             </article>
 
-            <article class="catalog-card" data-category="mousse">
+            <article class="catalog-card" data-category="desert">
               <a
                 class="catalog-card__image"
                 href="./product_detail.html"

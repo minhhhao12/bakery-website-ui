@@ -251,7 +251,7 @@
                 class="d-flex flex-wrap align-items-center justify-content-between gap-2 mt-3"
               >
                 <div class="d-flex flex-wrap gap-2">
-                  <button class="btn btn-brand" type="button" data-toast="Đã áp dụng lọc thành công">
+                  <button class="btn btn-brand" type="button">
                     <i class="bi bi-funnel"></i> Áp dụng bộ lọc
                   </button>
                   <button class="btn btn-soft" type="button" >
@@ -289,22 +289,26 @@
                 <button
                   class="btn btn-soft btn-sm d-none d-sm-inline-flex"
                   type="button"
-                  data-toast="Xuất báo cáo thành công!"
                 >
                   <i class="bi bi-download"></i> Xuất báo cáo
                 </button>
-                <button class="btn btn-brand btn-sm" type="button" data-toast="Làm mới thành công!  ">
+                <button class="btn btn-brand btn-sm" type="button">
                   <i class="bi bi-arrow-repeat"></i> Làm mới
                 </button>
               </div>
             </div>
             <div class="admin-card__body pb-3">
-              <div class="order-tabs">
-                <a class="order-tab active" href="#!" data-toast="Danh sách đang hiển thị tất cả đơn hàng mẫu.">Tất cả <span>16</span></a>
-                <a class="order-tab" href="#!" data-toast="Lọc đơn chưa xác nhận đang ở chế độ minh hoạ.">Chưa xác nhận <span>2</span></a>
-                <a class="order-tab" href="#!" data-toast="Lọc đơn đã xác nhận đang ở chế độ minh hoạ.">Đã xác nhận <span>2</span></a>
-                <a class="order-tab" href="#!" data-toast="Lọc đơn đã giao đang ở chế độ minh hoạ.">Đã giao <span>11</span></a>
-                <a class="order-tab" href="#!" data-toast="Lọc đơn huỷ đang ở chế độ minh hoạ.">Huỷ đơn <span>1</span></a>
+              <div class="order-tabs" role="group" aria-label="Tình trạng đơn hàng">
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-all" checked />
+                <label class="order-tab" for="order-tab-all">Tất cả <span>16</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-pending" />
+                <label class="order-tab" for="order-tab-pending">Chưa xác nhận <span>2</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-confirmed" />
+                <label class="order-tab" for="order-tab-confirmed">Đã xác nhận <span>2</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-delivered" />
+                <label class="order-tab" for="order-tab-delivered">Đã giao <span>11</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-cancelled" />
+                <label class="order-tab" for="order-tab-cancelled">Huỷ đơn <span>1</span></label>
               </div>
             </div>
             <div class="table-responsive">
@@ -1024,13 +1028,13 @@
               <nav aria-label="Phân trang đơn hàng">
                 <ul class="pagination pagination-sm">
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang đầu tiên.">Trước</a>
+                    <a class="page-link" href="#!">Trước</a>
                   </li>
                   <li class="page-item active">
-                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang 1.">1</a>
+                    <a class="page-link" href="#!">1</a>
                   </li>
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!" data-toast="Dữ liệu mẫu chỉ có một trang.">Sau</a>
+                    <a class="page-link" href="#!">Sau</a>
                   </li>
                 </ul>
               </nav>

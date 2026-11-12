@@ -41,8 +41,7 @@
       ></label>
       <aside class="admin-sidebar">
         <div class="admin-brand">
-          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a
-          >
+          <a class="admin-brand__logo" href="index.html">Sweet Bakery</a>
           <p class="admin-brand__sub">Trang Admin</p>
         </div>
         <div class="admin-sidebar__close-row">
@@ -130,13 +129,6 @@
           </div>
         </header>
         <main class="admin-content">
-          <div class="admin-alert admin-alert--info mb-4">
-            <i class="bi bi-info-circle"></i>
-            <div>
-              <strong>Chỉnh sửa thông tin sản phẩm bên dưới.</strong>
-              Đây là biểu mẫu minh hoạ, thay đổi chưa được lưu vào cơ sở dữ liệu.
-            </div>
-          </div>
           <div class="edit-layout">
             <div class="product-edit-panels">
               <section
@@ -150,10 +142,6 @@
                     <h2 id="edit-banh-kem-dau-tay-title">
                       Sửa: Bánh Kem Dâu Tây
                     </h2>
-                    <p>
-                      Thông tin bên dưới được tải đúng theo sản phẩm bạn chọn,
-                      gồm cả phân loại và hình ảnh.
-                    </p>
                   </div>
                   <a
                     href="../pages/products.html"
@@ -165,15 +153,15 @@
                 </div>
                 <div class="row g-4">
                   <div class="col-lg-8">
-                    <form class="admin-card mb-4" novalidate data-toast="Lưu sản phẩm thành công (minh hoạ).">
+                    <form
+                      class="admin-card mb-4"
+                      novalidate
+                      data-toast="Lưu sản phẩm thành công."
+                    >
                       <div class="admin-card__header">
                         <div>
                           <h2>Thông tin sản phẩm</h2>
-                          <p>Cập nhật tên, giá, phân loại và mô tả</p>
                         </div>
-                        <span class="status-badge status-badge--active"
-                          >Đang bán</span
-                        >
                       </div>
                       <div class="admin-card__body">
                         <div class="row g-3">
@@ -207,16 +195,23 @@
                             </div>
                           </div>
                           <div class="col-12">
-                            <label class="form-label" for="edit-product-category"
+                            <label
+                              class="form-label"
+                              for="edit-product-category"
                               >Phân loại sản phẩm</label
                             >
-                            <select class="form-select" id="edit-product-category" name="category">
-                              <option value="fruit" selected>Trái cây</option>
-                              <option value="chocolate">Chocolate</option>
-                              <option value="mousse">Mousse &amp; lạnh</option>
+                            <select
+                              class="form-select"
+                              id="edit-product-category"
+                              name="category"
+                            >
                               <option value="birthday">Sinh nhật</option>
-                              <option value="pastry">Bánh mì &amp; Pastry</option>
+                              <option value="mousse">Mousse</option>
+                              <option value="pastry">
+                                Bánh mì &amp; Pastry
+                              </option>
                               <option value="savory">Bánh mặn</option>
+                              <option value="desert">Tráng miệng</option>
                             </select>
                             <div class="form-text">
                               Chọn một phân loại cho sản phẩm.
@@ -226,16 +221,52 @@
                             <fieldset>
                               <legend class="form-label">Kích cỡ có sẵn</legend>
                               <div class="category-check">
-                                <input class="btn-check" type="checkbox" name="sizes" value="16" id="edit-size-16" checked />
-                                <label class="btn" for="edit-size-16">16 cm · 4–6 người</label>
-                                <input class="btn-check" type="checkbox" name="sizes" value="18" id="edit-size-18" />
-                                <label class="btn" for="edit-size-18">18 cm · 6–8 người</label>
-                                <input class="btn-check" type="checkbox" name="sizes" value="20" id="edit-size-20" />
-                                <label class="btn" for="edit-size-20">20 cm · 8–10 người</label>
-                                <input class="btn-check" type="checkbox" name="sizes" value="24" id="edit-size-24" />
-                                <label class="btn" for="edit-size-24">24 cm · 10–12 người</label>
+                                <input
+                                  class="btn-check"
+                                  type="checkbox"
+                                  name="sizes"
+                                  value="16"
+                                  id="edit-size-16"
+                                  checked
+                                />
+                                <label class="btn" for="edit-size-16"
+                                  >16 cm · 4–6 người</label
+                                >
+
+                                <input
+                                  class="btn-check"
+                                  type="checkbox"
+                                  name="sizes"
+                                  value="20"
+                                  id="edit-size-20"
+                                />
+                                <label class="btn" for="edit-size-20"
+                                  >20 cm · 6–8 người</label
+                                >
+                                <input
+                                  class="btn-check"
+                                  type="checkbox"
+                                  name="sizes"
+                                  value="24"
+                                  id="edit-size-24"
+                                />
+                                <label class="btn" for="edit-size-24"
+                                  >24 cm · 8-12 người</label
+                                >
+                                <input
+                                  class="btn-check"
+                                  type="checkbox"
+                                  name="sizes"
+                                  value="18"
+                                  id="edit-size-18"
+                                />
+                                <label class="btn" for="edit-size-18"
+                                  >28 cm · 13-18 người</label
+                                >
                               </div>
-                              <div class="form-text">Có thể chọn nhiều kích cỡ.</div>
+                              <div class="form-text">
+                                Có thể chọn nhiều kích cỡ.
+                              </div>
                             </fieldset>
                           </div>
                           <div class="col-md-7">
@@ -247,12 +278,8 @@
                               class="form-select"
                               id="banh-kem-dau-tay-status"
                             >
-                              <option selected>
-                                Đang bán — hiển thị trên website
-                              </option>
-                              <option>
-                                Ẩn — không hiển thị với khách hàng
-                              </option>
+                              <option selected>Đang bán</option>
+                              <option>Ẩn</option>
                             </select>
                           </div>
                           <div class="col-12">
@@ -285,13 +312,11 @@ Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</textarea
                       <div class="admin-card__header">
                         <div>
                           <h2>Hình ảnh hiện tại</h2>
-                          <p>Ảnh đúng của sản phẩm đang sửa</p>
                         </div>
                       </div>
                       <div class="admin-card__body">
                         <div class="current-image">
-                          <span class="current-image__tag">Ảnh hiện tại</span
-                          ><img
+                          <img
                             src="../assets/cake/banhkemdau.png"
                             alt="Bánh Kem Dâu Tây"
                           />
@@ -308,15 +333,9 @@ Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</textarea
                           type="file"
                           accept="image/*"
                         />
-                        <div class="form-text mt-1">
-                          Chọn ảnh mới để thay thế ảnh đại diện sản phẩm.
-                        </div>
                       </div>
                     </section>
                     <section class="admin-card mb-3">
-                      <div class="admin-card__header">
-                        <div><h2>Thông tin bán hàng</h2></div>
-                      </div>
                       <div class="admin-card__body">
                         <div
                           class="d-flex justify-content-between align-items-center py-2"
@@ -341,48 +360,16 @@ Kem tươi dịu nhẹ, dâu chín mọng và cốt bánh mềm xốp.</textarea
                             >Mã sản phẩm</span
                           ><strong style="font-size: 0.8rem">SP-001</strong>
                         </div>
-                        <div class="admin-alert admin-alert--warning mt-2 mb-0">
-                          <i class="bi bi-exclamation-triangle"></i>
-                          <div>
-                            Sản phẩm đã được bán 128 lần. Không thể xoá vĩnh
-                            viễn; chỉ có thể ẩn khỏi website.
-                            <a
-                              href="products.html#delete-banh-kem-dau-tay"
-                              class="fw-semibold"
-                              style="color: inherit; text-decoration: underline"
-                              >Xem quy tắc xoá</a
-                            >.
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                    <section class="admin-card">
-                      <div class="admin-card__header">
-                        <div><h2>Phân loại ban đầu</h2></div>
-                      </div>
-                      <div class="admin-card__body">
-                        <div class="d-flex flex-wrap gap-2">
-                          <span class="cat-chip cat-chip--rose">Trái cây</span>
-                        </div>
-                        <div class="form-text mt-2">
-                          Nếu thay đổi phân loại, sản phẩm sẽ xuất hiện trong bộ
-                          lọc tương ứng ở trang bánh.
-                        </div>
                       </div>
                     </section>
                   </div>
                 </div>
               </section>
-
-              
-              
             </div>
           </div>
 
           <footer class="admin-footer">
-            <span
-              >© 2026 Sweet Bakery.</span
-            >
+            <span>© 2026 Sweet Bakery.</span>
             <span>Phiên bản 1.0</span>
           </footer>
         </main>

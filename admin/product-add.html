@@ -144,9 +144,6 @@
                   <div class="admin-card__header">
                     <div>
                       <h2>Thông tin sản phẩm</h2>
-                      <p>
-                        Nhập thông tin để minh hoạ giao diện thêm sản phẩm.
-                      </p>
                     </div>
                   </div>
                   <div class="admin-card__body">
@@ -181,14 +178,17 @@
                         <label class="form-label" for="add-product-category"
                           >Phân loại sản phẩm</label
                         >
-                        <select class="form-select" id="add-product-category" name="category">
+                        <select
+                          class="form-select"
+                          id="add-product-category"
+                          name="category"
+                        >
                           <option value="" selected>Chọn phân loại</option>
-                          <option value="fruit">Trái cây</option>
-                          <option value="chocolate">Chocolate</option>
-                          <option value="mousse">Mousse &amp; lạnh</option>
                           <option value="birthday">Sinh nhật</option>
+                          <option value="mousse">Mousse</option>
                           <option value="pastry">Bánh mì &amp; Pastry</option>
                           <option value="savory">Bánh mặn</option>
+                          <option value="desert">Tráng miệng</option>
                         </select>
                         <div class="form-text">
                           Chọn một phân loại cho sản phẩm.
@@ -198,16 +198,52 @@
                         <fieldset>
                           <legend class="form-label">Kích cỡ có sẵn</legend>
                           <div class="category-check">
-                            <input class="btn-check" type="checkbox" name="sizes" value="16" id="add-size-16" />
-                            <label class="btn" for="add-size-16">16 cm · 4–6 người</label>
-                            <input class="btn-check" type="checkbox" name="sizes" value="18" id="add-size-18" checked />
-                            <label class="btn" for="add-size-18">18 cm · 6–8 người</label>
-                            <input class="btn-check" type="checkbox" name="sizes" value="20" id="add-size-20" />
-                            <label class="btn" for="add-size-20">20 cm · 8–10 người</label>
-                            <input class="btn-check" type="checkbox" name="sizes" value="24" id="add-size-24" />
-                            <label class="btn" for="add-size-24">24 cm · 10–12 người</label>
+                            <input
+                              class="btn-check"
+                              type="checkbox"
+                              name="sizes"
+                              value="16"
+                              id="add-size-16"
+                            />
+                            <label class="btn" for="add-size-16"
+                              >16 cm · 4–6 người</label
+                            >
+
+                            <input
+                              class="btn-check"
+                              type="checkbox"
+                              name="sizes"
+                              value="20"
+                              id="add-size-20"
+                            />
+                            <label class="btn" for="add-size-20"
+                              >20 cm · 6-8 người</label
+                            >
+                            <input
+                              class="btn-check"
+                              type="checkbox"
+                              name="sizes"
+                              value="24"
+                              id="add-size-24"
+                            />
+                            <label class="btn" for="add-size-24"
+                              >24 cm · 8-12 người</label
+                            >
+                            <input
+                              class="btn-check"
+                              type="checkbox"
+                              name="sizes"
+                              value="18"
+                              id="add-size-18"
+                              checked
+                            />
+                            <label class="btn" for="add-size-18"
+                              >28 cm · 13–18 người</label
+                            >
                           </div>
-                          <div class="form-text">Có thể chọn nhiều kích cỡ.</div>
+                          <div class="form-text">
+                            Có thể chọn nhiều kích cỡ.
+                          </div>
                         </fieldset>
                       </div>
                       <div class="col-md-7">
@@ -215,10 +251,8 @@
                           >Trạng thái hiển thị</label
                         >
                         <select class="form-select" id="add-product-status">
-                          <option selected>
-                            Đang bán — hiển thị trên website
-                          </option>
-                          <option>Ẩn — không hiển thị với khách hàng</option>
+                          <option selected>Đang bán</option>
+                          <option>Ẩn</option>
                         </select>
                       </div>
                       <div class="col-12">
@@ -279,9 +313,9 @@
                   <a href="products.html" class="btn btn-soft"
                     ><i class="bi bi-x-lg"></i> Huỷ</a
                   >
-                  <button type="submit" class="btn btn-brand"
-                    ><i class="bi bi-plus-lg"></i> Thêm sản phẩm</button
-                  >
+                  <button type="submit" class="btn btn-brand">
+                    <i class="bi bi-plus-lg"></i> Thêm sản phẩm
+                  </button>
                 </div>
               </div>
 
@@ -305,32 +339,6 @@
                       Ảnh này sẽ được dùng làm ảnh đại diện sản phẩm trên trang
                       bánh.
                     </div>
-                  </div>
-                </section>
-
-                <section class="admin-card">
-                  <div class="admin-card__header">
-                    <div><h2>Lưu ý khi thêm</h2></div>
-                  </div>
-                  <div class="admin-card__body">
-                    <ul class="legend-list">
-                      <li>
-                        <i class="bi bi-check2-circle text-success"></i> Giá bán
-                        được định dạng theo tiền Việt
-                      </li>
-                      <li>
-                        <i class="bi bi-check2-circle text-success"></i> Chọn một
-                        phân loại và nhiều kích cỡ
-                      </li>
-                      <li>
-                        <i class="bi bi-check2-circle text-success"></i> Kiểm
-                        tra ảnh xem trước trước khi lưu
-                      </li>
-                      <li>
-                        <i class="bi bi-info-circle text-primary"></i> Sản phẩm
-                        mới mặc định “Đang bán”
-                      </li>
-                    </ul>
                   </div>
                 </section>
               </div>

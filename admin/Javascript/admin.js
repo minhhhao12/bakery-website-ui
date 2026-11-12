@@ -38,7 +38,6 @@ document.querySelectorAll('button[data-toast], a[data-toast]').forEach((button) 
   });
 });
 
-// 4. Form chỉ hiện toast minh hoạ, không kiểm tra hay lưu dữ liệu.
 document.querySelectorAll('form[data-toast]').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
