@@ -227,7 +227,11 @@
                   </select>
                 </div>
                 <div class="col-lg-3 filter-actions">
-                  <button class="btn btn-brand flex-grow-1" type="button" data-toast="Đã lọc người dùng thành công!">
+                  <button
+                    class="btn btn-brand flex-grow-1"
+                    type="button"
+                    data-toast="Đã lọc người dùng thành công!"
+                  >
                     <i class="bi bi-funnel"></i> Lọc</button
                   ><button class="btn btn-soft" type="button">Đặt lại</button>
                 </div>
@@ -784,13 +788,28 @@
               <nav aria-label="Phân trang người dùng">
                 <ul class="pagination pagination-sm">
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang đầu tiên.">Trước</a>
+                    <a
+                      class="page-link"
+                      href="#!"
+                      data-toast="Bạn đang ở trang đầu tiên."
+                      >Trước</a
+                    >
                   </li>
                   <li class="page-item active">
-                    <a class="page-link" href="#!" data-toast="Bạn đang ở trang 1.">1</a>
+                    <a
+                      class="page-link"
+                      href="#!"
+                      data-toast="Bạn đang ở trang 1."
+                      >1</a
+                    >
                   </li>
                   <li class="page-item disabled">
-                    <a class="page-link" href="#!" data-toast="Dữ liệu mẫu chỉ có một trang.">Sau</a>
+                    <a
+                      class="page-link"
+                      href="#!"
+                      data-toast="Dữ liệu mẫu chỉ có một trang."
+                      >Sau</a
+                    >
                   </li>
                 </ul>
               </nav>
@@ -826,8 +845,7 @@
                 <div class="admin-modal__body">
                   <div class="row g-3">
                     <div class="col-md-6">
-                      <label class="form-label" for="add-name"
-                        >Họ và tên</label
+                      <label class="form-label" for="add-name">Họ và tên</label
                       ><input
                         class="form-control"
                         id="add-name"
@@ -837,8 +855,7 @@
                       />
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label" for="add-email"
-                        >Email</label
+                      <label class="form-label" for="add-email">Email</label
                       ><input
                         class="form-control"
                         id="add-email"
@@ -912,10 +929,16 @@
                   </div>
                 </div>
                 <div class="admin-modal__footer">
-                  <a href="#!" class="btn btn-soft" data-close-modal data-toast="Đã huỷ thao tác.">Huỷ</a>
-                  <button type="submit" class="btn btn-brand"
-                    ><i class="bi bi-person-plus"></i> Tạo tài khoản</button
+                  <a
+                    href="#!"
+                    class="btn btn-soft"
+                    data-close-modal
+                    data-toast="Đã huỷ thao tác."
+                    >Huỷ</a
                   >
+                  <button type="submit" class="btn btn-brand">
+                    <i class="bi bi-person-plus"></i> Tạo tài khoản
+                  </button>
                 </div>
               </form>
             </div>
@@ -943,7 +966,7 @@
                   ><i class="bi bi-x-lg"></i
                 ></a>
               </div>
-              <form novalidate data-toast="Cập nhật người dùng thành công (minh hoạ).">
+              <form novalidate data-toast="Cập nhật người dùng thành công.">
                 <div class="admin-modal__body">
                   <div
                     class="d-flex align-items-center gap-3 mb-3 p-3"
@@ -976,16 +999,17 @@
                         id="edit-name-1"
                         type="text"
                         value="Nguyễn Văn A"
+                        disabled
                       />
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label" for="edit-email-1"
-                        >Email</label
+                      <label class="form-label" for="edit-email-1">Email</label
                       ><input
                         class="form-control"
                         id="edit-email-1"
                         type="email"
                         value="nguyenvana@gmail.com"
+                        disabled
                       />
                     </div>
                     <div class="col-md-6">
@@ -996,6 +1020,7 @@
                         id="edit-phone-1"
                         type="tel"
                         value="090 123 4567"
+                        disabled
                       />
                     </div>
                     <div class="col-md-6">
@@ -1021,31 +1046,23 @@
                         id="edit-address-1"
                         type="text"
                         value="273 An Dương Vương, Phường Chợ Quán, Quận 5, TP.HCM"
+                        disabled
                       />
                     </div>
-                    <div class="col-12">
-                      <div class="admin-alert admin-alert--info">
-                        <i class="bi bi-shield-check"></i>
-                        <div>
-                          <strong>Đổi mật khẩu</strong>Ô nhập mật khẩu mới để
-                          minh hoạ giao diện.
-                        </div>
-                      </div>
-                      <input
-                        class="form-control mt-2"
-                        type="password"
-                        placeholder="Mật khẩu mới (không bắt buộc)"
-                        autocomplete="new-password"
-                        aria-label="Mật khẩu mới (không bắt buộc)"
-                      />
-                    </div>
+                    
                   </div>
                 </div>
                 <div class="admin-modal__footer">
-                  <a href="#!" class="btn btn-soft" data-close-modal data-toast="Đã huỷ thao tác.">Huỷ</a>
-                  <button type="submit" class="btn btn-brand"
-                    ><i class="bi bi-check2"></i> Lưu thay đổi</button
+                  <a
+                    href="#!"
+                    class="btn btn-soft"
+                    data-close-modal
+                    data-toast="Đã huỷ thao tác."
+                    >Huỷ</a
                   >
+                  <button type="submit" class="btn btn-brand">
+                    <i class="bi bi-check2"></i> Lưu thay đổi
+                  </button>
                 </div>
               </form>
             </div>
@@ -1090,8 +1107,18 @@
                 </div>
               </div>
               <div class="admin-modal__footer">
-                <a href="#!" class="btn btn-soft" data-close-modal data-toast="Đã huỷ thao tác.">Huỷ</a>
-                <a href="#!" class="btn btn-danger" data-close-modal data-toast="Khoá tài khoản thành công (minh hoạ)."
+                <a
+                  href="#!"
+                  class="btn btn-soft"
+                  data-close-modal
+                  data-toast="Đã huỷ thao tác."
+                  >Huỷ</a
+                >
+                <a
+                  href="#!"
+                  class="btn btn-danger"
+                  data-close-modal
+                  data-toast="Khoá tài khoản thành công."
                   >Khoá tài khoản</a
                 >
               </div>
@@ -1134,8 +1161,18 @@
                 </div>
               </div>
               <div class="admin-modal__footer">
-                <a href="#!" class="btn btn-soft" data-close-modal data-toast="Đã huỷ thao tác.">Huỷ</a>
-                <a href="#!" class="btn btn-brand" data-close-modal data-toast="Mở khoá tài khoản thành công (minh hoạ)."
+                <a
+                  href="#!"
+                  class="btn btn-soft"
+                  data-close-modal
+                  data-toast="Đã huỷ thao tác."
+                  >Huỷ</a
+                >
+                <a
+                  href="#!"
+                  class="btn btn-brand"
+                  data-close-modal
+                  data-toast="Mở khoá tài khoản thành công."
                   >Mở khoá tài khoản</a
                 >
               </div>
@@ -1144,9 +1181,9 @@
 
           <footer class="admin-footer">
             <span
-              >© 2026 Sweet Bakery. Giao diện quản trị minh hoạ — HTML/CSS/JavaScript.</span
+              >© 2026 Sweet Bakery.</span
             >
-            <span>Phiên bản 1.0 · Dữ liệu mẫu</span>
+            <span>Phiên bản 1.0</span>
           </footer>
         </main>
       </div>

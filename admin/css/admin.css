@@ -1542,6 +1542,12 @@ h5 {
   color: var(--sb-muted);
   font-size: 0.66rem;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.order-tab-input:focus-visible + .order-tab {
+  outline: 2px solid var(--sb-primary-dark);
+  outline-offset: 3px;
 }
 
 .order-tab span {
@@ -1557,13 +1563,13 @@ h5 {
   font-size: 0.55rem;
 }
 
-.order-tab.active {
+.order-tab-input:checked + .order-tab {
   border-color: var(--sb-primary-soft-2);
   background: var(--sb-primary-soft);
   color: var(--sb-primary-dark);
 }
 
-.order-tab.active span {
+.order-tab-input:checked + .order-tab span {
   background: #fff;
   color: var(--sb-primary-dark);
 }
