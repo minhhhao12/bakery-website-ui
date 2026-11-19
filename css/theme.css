@@ -471,7 +471,9 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-height);
+}
+:target{
+    scroll-margin-top: calc(var(--navbar-height)+var(--space-3,12px));
 }
 
 body {
