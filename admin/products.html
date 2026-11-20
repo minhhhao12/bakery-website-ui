@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -127,23 +129,6 @@
           </div>
         </header>
         <main class="admin-content">
-          <div class="target-alert" id="hidden-success" role="status">
-            <i class="bi bi-eye-slash"></i>
-            <div>
-              <strong>Đã ẩn sản phẩm khỏi website.</strong>Sản phẩm không còn
-              hiển thị với khách hàng nhưng vẫn được lưu trong lịch sử đơn hàng.
-            </div>
-            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
-          </div>
-          <div class="target-alert" id="deleted-success" role="status">
-            <i class="bi bi-check2-circle"></i>
-            <div>
-              <strong>Đã xoá sản phẩm.</strong>Sản phẩm chưa phát sinh đơn hàng
-              nên đã được xoá khỏi hệ thống.
-            </div>
-            <a href="#!" class="target-alert__close" aria-label="Đóng">×</a>
-          </div>
-
           <div class="row g-3 mb-4">
             <div class="col-6 col-xl-3">
               <div class="stat-card">
@@ -226,12 +211,11 @@
                     >Phân loại</label
                   ><select class="form-select" id="product-category">
                     <option selected>Tất cả phân loại</option>
-                    <option>Trái cây</option>
-                    <option>Chocolate</option>
-                    <option>Mousse &amp; lạnh</option>
                     <option>Sinh nhật</option>
+                    <option>Mousse</option>
                     <option>Bánh mì &amp; Pastry</option>
                     <option>Bánh mặn</option>
+                    <option>Tráng miệng</option>
                   </select>
                 </div>
                 <div class="col-6 col-lg-2">
@@ -244,12 +228,15 @@
                   </select>
                 </div>
                 <div class="col-lg-2 filter-actions">
-                  <button class="btn btn-brand w-100" type="button">
+                  <button
+                    class="btn btn-brand w-100"
+                    type="button"
+                    data-toast="Đã lọc sản phẩm thành công!"
+                  >
                     <i class="bi bi-funnel"></i> Lọc
                   </button>
                 </div>
               </div>
-              
             </div>
             <div class="table-responsive">
               <table class="table admin-table align-middle">
@@ -287,15 +274,12 @@
                         />
                         <div>
                           <span class="cell-main">Bánh Kem Dâu Tây</span
-                          ><span class="cell-sub"
-                            >Mã: SP-001 · 16 cm · 4–6 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-001</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip--rose">Trái cây</span>
                         <span class="cat-chip cat-chip--green">Sinh nhật</span>
                       </div>
                     </td>
@@ -349,18 +333,13 @@
                         />
                         <div>
                           <span class="cell-main">Dâu Kem Hạnh Nhân</span
-                          ><span class="cell-sub"
-                            >Mã: SP-002 · 16 cm · 4–6 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-002</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip--rose">Trái cây</span>
-                        <span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
-                        >
+                        <span class="cat-chip cat-chip--blue">Mousse</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">390.000₫</td>
@@ -388,8 +367,8 @@
                           title="Sửa sản phẩm"
                           ><i class="bi bi-pencil-square"></i
                         ></a>
-                        <a
-                          href="#delete-dau-kem-hanh-nhan"
+                         <a
+                          href="#delete-banh-kem-dau-tay"
                           class="btn-icon btn-icon--danger"
                           title="Xoá sản phẩm"
                           ><i class="bi bi-trash3"></i
@@ -413,15 +392,12 @@
                         />
                         <div>
                           <span class="cell-main">Bánh Kem Trái Cây</span
-                          ><span class="cell-sub"
-                            >Mã: SP-003 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-003</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip--rose">Trái cây</span>
                         <span class="cat-chip cat-chip--green">Sinh nhật</span>
                       </div>
                     </td>
@@ -475,18 +451,13 @@
                         />
                         <div>
                           <span class="cell-main">Mousse Chanh Dây</span
-                          ><span class="cell-sub"
-                            >Mã: SP-004 · 16 cm · 4–6 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-004</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip--rose">Trái cây</span>
-                        <span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
-                        >
+                        <span class="cat-chip cat-chip--blue">Mousse</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">360.000₫</td>
@@ -539,15 +510,13 @@
                         />
                         <div>
                           <span class="cell-main">Chocolate Truffle</span
-                          ><span class="cell-sub"
-                            >Mã: SP-005 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-005</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip">Chocolate</span>
+                        <span class="cat-chip cat-chip--green">Sinh nhật</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">430.000₫</td>
@@ -600,15 +569,13 @@
                         />
                         <div>
                           <span class="cell-main">Chocolate Cherry</span
-                          ><span class="cell-sub"
-                            >Mã: SP-006 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-006</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip">Chocolate</span>
+                        <span class="cat-chip cat-chip--green">Sinh nhật</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">450.000₫</td>
@@ -650,26 +617,26 @@
                       <input
                         class="form-check-input"
                         type="checkbox"
-                        aria-label="Chọn Chocolate Berries"
+                        aria-label="Chọn Bánh Croissant"
                       />
                     </td>
                     <td>
                       <div class="table-product">
                         <img
-                          src="../assets/cake/catalog-chocolate-berry.jpg"
-                          alt="Chocolate Berries"
+                          src="../assets/cake/croissant.png"
+                          alt="Bánh Croissant"
                         />
                         <div>
-                          <span class="cell-main">Chocolate Berries</span
-                          ><span class="cell-sub"
-                            >Mã: SP-007 · 18 cm · 6–8 người</span
-                          >
+                          <span class="cell-main">Bánh Croissant</span
+                          ><span class="cell-sub">Mã: SP-007</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip">Chocolate</span>
+                        <span class="cat-chip cat-chip--sand"
+                          >Bánh mì &amp; Pastry</span
+                        >
                       </div>
                     </td>
                     <td class="text-nowrap text-price">460.000₫</td>
@@ -692,7 +659,7 @@
                           ><i class="bi bi-eye"></i
                         ></a>
                         <a
-                          href="product-edit.html#edit-chocolate-berries"
+                          href="product-edit.html#edit-banh-croissant"
                           class="btn-icon"
                           title="Sửa sản phẩm"
                           ><i class="bi bi-pencil-square"></i
@@ -722,15 +689,12 @@
                         />
                         <div>
                           <span class="cell-main">Chocolate Óc Chó</span
-                          ><span class="cell-sub"
-                            >Mã: SP-008 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-008</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip">Chocolate</span>
                         <span class="cat-chip cat-chip--green">Sinh nhật</span>
                       </div>
                     </td>
@@ -784,18 +748,13 @@
                         />
                         <div>
                           <span class="cell-main">Bánh Cappuccino</span
-                          ><span class="cell-sub"
-                            >Mã: SP-009 · 16 cm · 4–6 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-009</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip">Chocolate</span>
-                        <span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
-                        >
+                        <span class="cat-chip cat-chip--blue">Mousse</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">400.000₫</td>
@@ -848,17 +807,13 @@
                         />
                         <div>
                           <span class="cell-main">Mousse Trà Xanh</span
-                          ><span class="cell-sub"
-                            >Mã: SP-010 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-010</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
-                        >
+                        <span class="cat-chip cat-chip--blue">Mousse</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">380.000₫</td>
@@ -911,17 +866,13 @@
                         />
                         <div>
                           <span class="cell-main">Tiramisu Cổ Điển</span
-                          ><span class="cell-sub"
-                            >Mã: SP-011 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-011</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
-                        <span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
-                        >
+                        <span class="cat-chip cat-chip--rose">Tráng miệng</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">420.000₫</td>
@@ -974,9 +925,7 @@
                         />
                         <div>
                           <span class="cell-main">Bánh Sinh Nhật Hoa Kem</span
-                          ><span class="cell-sub"
-                            >Mã: SP-012 · 20 cm · 8–10 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-012</span>
                         </div>
                       </div>
                     </td>
@@ -1035,16 +984,13 @@
                         />
                         <div>
                           <span class="cell-main">Vanilla Dừa Tươi</span
-                          ><span class="cell-sub"
-                            >Mã: SP-013 · 18 cm · 6–8 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-013</span>
                         </div>
                       </div>
                     </td>
                     <td class="d-none d-xl-table-cell">
                       <div class="d-flex flex-wrap gap-1">
                         <span class="cat-chip cat-chip--green">Sinh nhật</span>
-                        <span class="cat-chip cat-chip--rose">Trái cây</span>
                       </div>
                     </td>
                     <td class="text-nowrap text-price">440.000₫</td>
@@ -1097,9 +1043,7 @@
                         />
                         <div>
                           <span class="cell-main">Bánh Kem Hồng Ánh Nhũ</span
-                          ><span class="cell-sub"
-                            >Mã: SP-014 · 20 cm · 8–10 người</span
-                          >
+                          ><span class="cell-sub">Mã: SP-014</span>
                         </div>
                       </div>
                     </td>
@@ -1159,7 +1103,7 @@
                   <li class="page-item active">
                     <a class="page-link" href="#!">1</a>
                   </li>
-                  <li class="page-item disabled">
+                  <li class="page-item">
                     <a class="page-link" href="#!">Sau</a>
                   </li>
                 </ul>
@@ -1218,18 +1162,24 @@
                 </p>
               </div>
               <div class="admin-modal__footer">
-                <a href="#!" class="btn btn-soft">Huỷ</a
-                ><a href="#hidden-success" class="btn btn-brand"
-                  ><i class="bi bi-eye-slash"></i> Ẩn khỏi website</a
-                >
+                <a
+                  href="#!"
+                  class="btn btn-soft"
+                  data-close-modal
+                  >Huỷ</a
+                ><a
+                          href="#!"
+                          data-toast="Ẩn sản phẩm thành công."
+                          class="btn-icon btn-icon--danger"
+                          title="Xoá sản phẩm"
+                          ><i class="bi bi-trash3"></i
+                        ></a>
               </div>
             </div>
           </div>
 
           <footer class="admin-footer">
-            <span
-              >© 2026 Sweet Bakery.</span
-            >
+            <span>© 2026 Sweet Bakery.</span>
             <span>Phiên bản 1.0</span>
           </footer>
         </main>

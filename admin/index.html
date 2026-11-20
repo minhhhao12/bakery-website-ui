@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -155,7 +157,7 @@
                 </div>
                 <p class="stat-card__label">Doanh thu tháng 10</p>
                 <p class="stat-card__value">11.610.000₫</p>
-                <div class="stat-card__meta">
+                <div class="stat-card__meta"> 
                   Không tính đơn huỷ · so với tháng trước
                 </div>
               </div>
@@ -203,7 +205,7 @@
                 <p class="stat-card__label">Sản phẩm đang bán</p>
                 <p class="stat-card__value">14</p>
                 <div class="stat-card__meta">
-                  4 phân loại · 1 sản phẩm chưa bán
+                  5 phân loại · 1 sản phẩm chưa bán
                 </div>
               </div>
             </div>
@@ -215,7 +217,7 @@
                 <div class="admin-card__header">
                   <div>
                     <h2>Doanh thu 7 ngày gần nhất</h2>
-                    <p>Chỉ tính các đơn không bị huỷ · đơn vị: nghìn đồng</p>
+                  
                   </div>
                   <span class="cat-chip cat-chip--green"
                     ><i class="bi bi-graph-up-arrow"></i> 21/10 – 27/10</span
@@ -302,12 +304,17 @@
                 <div class="admin-card__header">
                   <div>
                     <h2>Sản phẩm theo phân loại</h2>
-                    <p>Phân loại chính của 14 sản phẩm đang quản lý</p>
+                    
                   </div>
                 </div>
                 <div class="admin-card__body">
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="donut-chart">
+                  <div class="d-flex flex-wrap align-items-center gap-4">
+                    <div
+                      class="donut-chart"
+                      role="img"
+                      aria-label="14 sản phẩm: Sinh nhật 8, Mousse 4, Bánh mì và Pastry 1, Bánh mặn 0, Tráng miệng 1"
+                      style="background: conic-gradient(var(--sb-success) 0 57.142857%, var(--sb-info) 57.142857% 85.714286%, #d6a65c 85.714286% 92.857143%, var(--sb-primary) 92.857143% 100%)"
+                    >
                       <div class="donut-chart__center">
                         <strong>14</strong><small>sản phẩm</small>
                       </div>
@@ -316,30 +323,37 @@
                       <li>
                         <span
                           class="legend-list__dot"
-                          style="background: #b8657c"
+                          style="background: var(--sb-success)"
                         ></span
-                        >Trái cây <strong>4</strong>
+                        >Sinh nhật <strong>8</strong>
                       </li>
                       <li>
                         <span
                           class="legend-list__dot"
-                          style="background: #dda38a"
+                          style="background: var(--sb-info)"
                         ></span
-                        >Chocolate <strong>5</strong>
+                        >Mousse <strong>4</strong>
+                      </li>
+                      <li>
+                        <span
+                          class="legend-list__dot"
+                          style="background: #d6a65c"
+                        ></span
+                        >Bánh mì &amp; Pastry <strong>1</strong>
                       </li>
                       <li>
                         <span
                           class="legend-list__dot"
                           style="background: #c7bfba"
                         ></span
-                        >Mousse &amp; lạnh <strong>2</strong>
+                        >Bánh mặn <strong>0</strong>
                       </li>
                       <li>
                         <span
                           class="legend-list__dot"
-                          style="background: #8b4358"
+                          style="background: var(--sb-primary)"
                         ></span
-                        >Sinh nhật <strong>3</strong>
+                        >Tráng miệng <strong>1</strong>
                       </li>
                     </ul>
                   </div>
@@ -357,7 +371,7 @@
                 <div class="admin-card__header">
                   <div>
                     <h2>Đơn hàng gần đây</h2>
-                    <p>Cập nhật mới nhất từ cửa hàng</p>
+                   
                   </div>
                   <a href="orders.html" class="btn btn-soft btn-sm"
                     >Xem tất cả <i class="bi bi-arrow-right"></i
@@ -588,8 +602,8 @@
                     <span class="top-customer__main"
                       ><strong>Bánh Kem Dâu Tây</strong
                       ><small
-                        ><span class="cat-chip cat-chip--rose"
-                          >Trái cây</span
+                         ><span class="cat-chip cat-chip--green"
+                           >Sinh nhật</span
                         ></small
                       ></span
                     >
@@ -602,8 +616,8 @@
                     <span class="top-customer__main"
                       ><strong>Tiramisu Cổ Điển</strong
                       ><small
-                        ><span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
+                         ><span class="cat-chip cat-chip--rose"
+                           >Tráng miệng</span
                         ></small
                       ></span
                     >
@@ -617,7 +631,7 @@
                       ><strong>Mousse Trà Xanh</strong
                       ><small
                         ><span class="cat-chip cat-chip--blue"
-                          >Mousse &amp; lạnh</span
+                           >Mousse</span
                         ></small
                       ></span
                     >
@@ -630,7 +644,7 @@
                     <span class="top-customer__main"
                       ><strong>Bánh Cappuccino</strong
                       ><small
-                        ><span class="cat-chip cat-chip">Chocolate</span></small
+                         ><span class="cat-chip cat-chip--blue">Mousse</span></small
                       ></span
                     >
                     <span class="top-customer__value"
@@ -674,10 +688,9 @@
 
           <footer class="admin-footer">
             <span
-              >© 2026 Sweet Bakery. Giao diện quản trị minh hoạ — HTML/CSS,
-              không sử dụng JavaScript.</span
+              >© 2026 Sweet Bakery</span
             >
-            <span>Phiên bản 1.0 · Dữ liệu mẫu</span>
+            <span>Phiên bản 1.0</span>
           </footer>
         </main>
       </div>

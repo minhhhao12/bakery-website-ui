@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -40,7 +42,7 @@
       <aside class="admin-sidebar">
         <div class="admin-brand">
           <a class="admin-brand__logo" href="index.html">Sweet Bakery</a>
-          <p class="admin-brand__sub">Bảng điều khiển cửa hàng</p>
+          <p class="admin-brand__sub">Trang Admin</p>
         </div>
         <div class="admin-sidebar__close-row">
           <label
@@ -252,7 +254,7 @@
                   <button class="btn btn-brand" type="button">
                     <i class="bi bi-funnel"></i> Áp dụng bộ lọc
                   </button>
-                  <button class="btn btn-soft" type="button">
+                  <button class="btn btn-soft" type="button" >
                     <i class="bi bi-arrow-counterclockwise"></i> Đặt lại
                   </button>
                 </div>
@@ -296,12 +298,17 @@
               </div>
             </div>
             <div class="admin-card__body pb-3">
-              <div class="order-tabs">
-                <a class="order-tab active" href="#!">Tất cả <span>16</span></a>
-                <a class="order-tab" href="#!">Chưa xác nhận <span>2</span></a>
-                <a class="order-tab" href="#!">Đã xác nhận <span>2</span></a>
-                <a class="order-tab" href="#!">Đã giao <span>11</span></a>
-                <a class="order-tab" href="#!">Huỷ đơn <span>1</span></a>
+              <div class="order-tabs" role="group" aria-label="Tình trạng đơn hàng">
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-all" checked />
+                <label class="order-tab" for="order-tab-all">Tất cả <span>16</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-pending" />
+                <label class="order-tab" for="order-tab-pending">Chưa xác nhận <span>2</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-confirmed" />
+                <label class="order-tab" for="order-tab-confirmed">Đã xác nhận <span>2</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-delivered" />
+                <label class="order-tab" for="order-tab-delivered">Đã giao <span>11</span></label>
+                <input class="visually-hidden order-tab-input" type="radio" name="order-tab" id="order-tab-cancelled" />
+                <label class="order-tab" for="order-tab-cancelled">Huỷ đơn <span>1</span></label>
               </div>
             </div>
             <div class="table-responsive">

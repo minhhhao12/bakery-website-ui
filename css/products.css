@@ -93,20 +93,24 @@
 #filter-fruit:checked ~ .catalog-toolbar label[for="filter-fruit"],
 #filter-chocolate:checked ~ .catalog-toolbar label[for="filter-chocolate"],
 #filter-mousse:checked ~ .catalog-toolbar label[for="filter-mousse"],
+#filter-desert:checked ~ .catalog-toolbar label[for="filter-desert"],
 #filter-birthday:checked ~ .catalog-toolbar label[for="filter-birthday"] {
   border-color: var(--primary-600);
   background: var(--primary-600);
   color: #fff;
 }
 
+
 #filter-all:focus-visible ~ .catalog-toolbar label[for="filter-all"],
 #filter-fruit:focus-visible ~ .catalog-toolbar label[for="filter-fruit"],
 #filter-chocolate:focus-visible ~ .catalog-toolbar label[for="filter-chocolate"],
 #filter-mousse:focus-visible ~ .catalog-toolbar label[for="filter-mousse"],
+#filter-desert:focus-visible ~ .catalog-toolbar label[for="filter-desert"],
 #filter-birthday:focus-visible ~ .catalog-toolbar label[for="filter-birthday"] {
   outline: 3px solid var(--primary-300);
   outline-offset: 3px;
 }
+
 
 .catalog-count {
   flex: 0 0 auto;

@@ -1,7 +1,7 @@
-if(localStorage.getItem("login")){
-    const header=document.getElementById("header");
-    if(header){
-    header.innerHTML=`<div class="header__container container">
+if (localStorage.getItem("login")) {
+  const header = document.getElementById("header");
+  if (header) {
+    header.innerHTML = `<div class="header__container container">
         <div class="header-logo__container">
           <a href="../index.html" class="home-logo">
             <span class="logo-text">Sweet Bakery</span>
@@ -105,7 +105,7 @@ if(localStorage.getItem("login")){
                 class="user-dropdown__actions"
                 aria-label="Liên kết tài khoản"
               >
-                <a class="user-dropdown__link" href="#order-history">
+                <a class="user-dropdown__link" href="account-info.html">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -118,13 +118,12 @@ if(localStorage.getItem("login")){
                     stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="M6 2h9l5 5v15H6z" />
-                    <path d="M15 2v5h5" />
-                    <path d="M9 13h7M9 17h5" />
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21a8 8 0 0 1 16 0" />
                   </svg>
-                  <span>Lịch sử đơn hàng</span>
-                  <span class="user-dropdown__count">3</span>
+                  <span>Thông tin tài khoản</span>
                 </a>
+
                 <a
                   class="user-dropdown__link user-dropdown__link--danger"
                   href="login.html"
@@ -181,11 +180,10 @@ if(localStorage.getItem("login")){
             <span class="cart-text">Giỏ hàng</span>
           </a>
         </div>
-      </div>`
-    }
-    else{
-        const header_index=document.getElementById("header_index");
-        header_index.innerHTML=`<div class="header__container container">
+      </div>`;
+  } else {
+    const header_index = document.getElementById("header_index");
+    header_index.innerHTML = `<div class="header__container container">
         <div class="header-logo__container">
           <a href="index.html" class="home-logo">
             <span class="logo-text">Sweet Bakery</span>
@@ -289,7 +287,7 @@ if(localStorage.getItem("login")){
                 class="user-dropdown__actions"
                 aria-label="Liên kết tài khoản"
               >
-                <a class="user-dropdown__link" href="#order-history">
+                <a class="user-dropdown__link" href="./pages/account-info.html">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -302,13 +300,12 @@ if(localStorage.getItem("login")){
                     stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="M6 2h9l5 5v15H6z" />
-                    <path d="M15 2v5h5" />
-                    <path d="M9 13h7M9 17h5" />
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21a8 8 0 0 1 16 0" />
                   </svg>
-                  <span>Lịch sử đơn hàng</span>
-                  <span class="user-dropdown__count">3</span>
+                  <span>Thông tin tài khoản</span>
                 </a>
+
                 <a
                   class="user-dropdown__link user-dropdown__link--danger"
                   href="pages/login.html"
@@ -365,10 +362,10 @@ if(localStorage.getItem("login")){
             <span class="cart-text">Giỏ hàng</span>
           </a>
         </div>
-      </div>`
-    }
+      </div>`;
+  }
+  const logout = document.getElementById("logout");
+  logout.addEventListener("click", () => {
+    localStorage.removeItem("login");
+  });
 }
-const logout=document.getElementById("logout");
-logout.addEventListener("click",()=>{
-    localStorage.removeItem("login")
-})

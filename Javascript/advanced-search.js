@@ -33,6 +33,24 @@ function makeSelect(options) {
   return select;
 }
 
+function formatPriceInput(input) {
+  const caret = input.selectionStart ?? input.value.length;
+  const digitsBeforeCaret = (input.value.slice(0, caret).match(/\d/g) || []).length;
+  const digits = input.value.replace(/\D/g, "");
+  const formatted = digits
+    ? new Intl.NumberFormat("vi-VN").format(BigInt(digits))
+    : "";
+  input.value = formatted;
+
+  let nextCaret = 0;
+  let countedDigits = 0;
+  while (nextCaret < formatted.length && countedDigits < digitsBeforeCaret) {
+    if (/\d/.test(formatted[nextCaret])) countedDigits += 1;
+    nextCaret += 1;
+  }
+  input.setSelectionRange(nextCaret, nextCaret);
+}
+
 function addAdvancedSearchButton(form) {
   if (form.querySelector(".advanced-search")) return;
 
@@ -75,86 +93,20 @@ function addAdvancedSearchButton(form) {
 
   const priceFields = document.createElement("div");
   priceFields.className = "advanced-search__price-fields";
-  const priceInputs = [];
   for (const [labelText, placeholder] of [["Giá từ", "0"], ["Đến", "Không giới hạn"]]) {
     const input = document.createElement("input");
-    input.type = "number";
-    input.min = "0";
-    input.step = "10000";
+    input.type = "text";
+    input.inputMode = "numeric";
+    input.autocomplete = "off";
     input.placeholder = placeholder;
     input.className = "advanced-search__control";
-    priceInputs.push(input);
-    priceFields.append(makeField(labelText, input));
+    input.setAttribute("aria-label", labelText);
+    input.addEventListener("input", () => formatPriceInput(input));
+    const field = makeField(labelText, input);
+    field.classList.add("advanced-search__price-field");
+    priceFields.append(field);
   }
-
-  const rangeSection = document.createElement("div");
-  rangeSection.className = "advanced-search__range-section";
-  const rangeLabels = document.createElement("div");
-  rangeLabels.className = "advanced-search__range-values";
-  const minOutput = document.createElement("output");
-  const maxOutput = document.createElement("output");
-  rangeLabels.append(minOutput, maxOutput);
-
-  const rangeRail = document.createElement("div");
-  rangeRail.className = "advanced-search__range-rail";
-  const minRange = document.createElement("input");
-  minRange.type = "range";
-  minRange.min = "0";
-  minRange.max = "500000";
-  minRange.step = "10000";
-  minRange.value = "0";
-  minRange.setAttribute("aria-label", "Giá tối thiểu");
-  minRange.className = "advanced-search__range-input advanced-search__range-input--min";
-  const maxRange = document.createElement("input");
-  maxRange.type = "range";
-  maxRange.min = "0";
-  maxRange.max = "500000";
-  maxRange.step = "10000";
-  maxRange.value = "500000";
-  maxRange.setAttribute("aria-label", "Giá tối đa");
-  maxRange.className = "advanced-search__range-input advanced-search__range-input--max";
-  const minMark = document.createElement("span");
-  minMark.className = "advanced-search__range-mark advanced-search__range-mark--min";
-  minMark.setAttribute("aria-hidden", "true");
-  const maxMark = document.createElement("span");
-  maxMark.className = "advanced-search__range-mark advanced-search__range-mark--max";
-  maxMark.setAttribute("aria-hidden", "true");
-  rangeRail.append(minRange, maxRange, minMark, maxMark);
-  rangeSection.append(rangeLabels, rangeRail);
-
-  const minPriceInput = priceInputs[0];
-  const maxPriceInput = priceInputs[1];
-  const formatPrice = (value) => `${new Intl.NumberFormat("vi-VN").format(value)}₫`;
-  const updateRange = (changed) => {
-    let min = Number(minRange.value);
-    let max = Number(maxRange.value);
-    if (min > max) {
-      if (changed === "min") minRange.value = String(max);
-      else maxRange.value = String(min);
-      min = Number(minRange.value);
-      max = Number(maxRange.value);
-    }
-    minPriceInput.value = min === 0 ? "" : String(min);
-    maxPriceInput.value = max === 500000 ? "" : String(max);
-    minOutput.textContent = formatPrice(min);
-    maxOutput.textContent = formatPrice(max);
-    rangeRail.style.setProperty("--range-start", `${(min / 500000) * 100}%`);
-    rangeRail.style.setProperty("--range-end", `${(max / 500000) * 100}%`);
-  };
-
-  minRange.addEventListener("input", () => updateRange("min"));
-  maxRange.addEventListener("input", () => updateRange("max"));
-  minPriceInput.addEventListener("input", () => {
-    minRange.value = String(Math.min(500000, Math.max(0, Number(minPriceInput.value) || 0)));
-    updateRange("min");
-  });
-  maxPriceInput.addEventListener("input", () => {
-    maxRange.value = String(Math.min(500000, Math.max(0, Number(maxPriceInput.value) || 500000)));
-    updateRange("max");
-  });
-  updateRange("initial");
-
-  panel.append(priceFields, rangeSection, makeField("Sắp xếp", makeSelect(sortOptions)));
+  panel.append(priceFields, makeField("Sắp xếp", makeSelect(sortOptions)));
   details.append(summary, panel);
 
   const submitButton = form.querySelector('button[type="submit"]');

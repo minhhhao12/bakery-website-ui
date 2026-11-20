@@ -23,8 +23,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <script src="Javascript/admin.js" defer></script>
   </head>
   <body class="admin-body">
+    <div class="admin-toast" id="admin-toast" role="status" hidden></div>
     <input
       type="checkbox"
       id="admin-nav-toggle"
@@ -192,7 +194,7 @@
                         />
                         <div class="order-item__info">
                           <strong>Bánh Kem Hồng Ánh Nhũ</strong
-                          ><span>20 cm · 8–10 người · Số lượng: 1</span
+                          ><span>20 cm · 6-8 người · Số lượng: 1</span
                           ><span
                             ><span class="cat-chip cat-chip--green"
                               >Sinh nhật</span
@@ -208,14 +210,12 @@
                         />
                         <div class="order-item__info">
                           <strong>Vanilla Dừa Tươi</strong
-                          ><span>18 cm · 6–8 người · Số lượng: 1</span
+                          ><span>16 cm · 4–6 người · Số lượng: 1</span
                           ><span
                             ><span class="cat-chip cat-chip--green"
                               >Sinh nhật</span
                             >
-                            <span class="cat-chip cat-chip--rose"
-                              >Trái cây</span
-                            ></span
+                            </span
                           >
                         </div>
                         <span class="order-item__price">440.000₫</span>
@@ -338,6 +338,7 @@
                       <button
                         class="btn btn-brand w-100 mt-2"
                         type="button"
+                        data-toast="Cập nhật trạng thái thành công."
           
                       >
                         Cập nhật
