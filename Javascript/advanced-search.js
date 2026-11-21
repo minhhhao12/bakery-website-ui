@@ -1,9 +1,10 @@
 const categories = [
   ["all", "Tất cả loại bánh"],
-  ["fruit", "Trái cây"],
-  ["chocolate", "Chocolate"],
-  ["mousse", "Mousse & bánh lạnh"],
-  ["birthday", "Bánh sinh nhật"],
+  ["birthday", "Sinh nhật"],
+  ["mousse", "Mousse"],
+  ["baguette", "Bánh mì & Pastry "],
+  ["Savory", "Bánh mặn"],
+  ["Dessert", "Tráng miệng"],
 ];
 
 const sortOptions = [
