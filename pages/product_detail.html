@@ -32,8 +32,7 @@
         <div class="header-search__container">
           <form
             class="header-search__form"
-            action="search-results.html"
-            method="get"
+            action="./search-results.html"
             role="search"
           >
             <svg
@@ -61,11 +60,18 @@
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
 
         <!-- Header Actions -->
         <div class="header__container--right">
-          <a href="login.html" class="header-btn login-btn">
+          <a href="./login.html" class="header-btn login-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -82,9 +88,33 @@
             </svg>
             <span>Đăng nhập</span>
           </a>
-          <a href="signin.html" class="header-btn register-btn">
+          <a href="./signin.html" class="header-btn register-btn">
             <span>Đăng ký</span>
           </a>
+          <!-- <a href="#" class="cart-logo" aria-label="Xem giỏ hàng">
+            <div class="cart-icon-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
+              </svg>
+              <span class="cart-badge">2</span>
+            </div>
+            <span class="cart-text">Giỏ hàng</span>
+          </a> -->
         </div>
       </div>
     </header>

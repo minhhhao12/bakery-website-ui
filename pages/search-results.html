@@ -58,6 +58,13 @@
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./search-results.html?category=all" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./search-results.html?category=birthday" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./search-results.html?category=bread-pastry" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./search-results.html?category=savory" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./search-results.html?category=dessert" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
 
         <div class="header__container--right">
@@ -92,7 +99,7 @@
           <p class="breadcrumb">
             <a href="../index.html" class="link">Trang chủ</a> / Tìm kiếm
           </p>
-          <h2 class="search-title">
+          <h2 id="catalog-heading" class="search-title">
             Kết quả tìm kiếm cho:
             <span class="search-keyword">"bánh kem chocolate"</span>
           </h2>
@@ -100,7 +107,7 @@
         </div>
 
         <div class="best-seller__grid">
-          <div class="product-card card">
+          <a href="product_detail.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img
                 src="../assets/cake/53096885.cms.avif"
@@ -114,14 +121,12 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">450.000₫</span>
-                <a href="product_detail.html" class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="product-card card">
+          <a href="product_detail.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img
                 src="../assets/cake/Mint-Chocolate-So-0.png"
@@ -137,14 +142,12 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">390.000₫</span>
-                <a href="product_detail.html" class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="product-card card">
+          <a href="product_detail.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img
                 src="../assets/cake/capuchinocake.png"
@@ -159,12 +162,10 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">400.000₫</span>
-                <a href="product_detail.html" class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <nav class="catalog-pagination" aria-label="Phân trang minh họa">
@@ -447,5 +448,6 @@
 
     <script src="../Javascript/auth.js"></script>
     <script src="../Javascript/advanced-search.js" defer></script>
+    <script src="../Javascript/header-categories.js"></script>
   </body>
 </html>

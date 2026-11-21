@@ -21,7 +21,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__container container">
         <div class="header-logo__container">
           <a href="../index.html" class="home-logo">
@@ -34,7 +34,6 @@
           <form
             class="header-search__form"
             action="./search-results.html"
-            method="get"
             role="search"
           >
             <svg
@@ -62,114 +61,38 @@
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
 
         <!-- Header Actions -->
         <div class="header__container--right">
-          <details class="user-menu">
-            <summary class="user-menu__trigger">
-              <span class="user-menu__avatar" aria-hidden="true">A</span>
-              <span class="user-menu__name">Nguyễn Văn A</span>
-              <svg
-                class="user-menu__chevron"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </summary>
-
-            <div class="user-dropdown">
-              <div class="user-dropdown__profile">
-                <span class="user-dropdown__avatar" aria-hidden="true">A</span>
-                <div class="user-dropdown__identity">
-                  <strong class="user-dropdown__title">Nguyễn Văn A</strong>
-                  <span class="user-dropdown__subtitle"
-                    >Thành viên Bạc · Sweet Bakery</span
-                  >
-                </div>
-              </div>
-
-              <hr class="divider" />
-
-              <dl class="user-info">
-                <div class="user-info__row">
-                  <dt>Họ và tên</dt>
-                  <dd>Nguyễn Văn A</dd>
-                </div>
-                <div class="user-info__row">
-                  <dt>Email</dt>
-                  <dd>nguyenvana@gmail.com</dd>
-                </div>
-                <div class="user-info__row">
-                  <dt>Địa chỉ</dt>
-                  <dd>273 An Dương Vương, Phường Chợ Quán, TP.HCM</dd>
-                </div>
-                <div class="user-info__row">
-                  <dt>Số điện thoại</dt>
-                  <dd>090 123 4567</dd>
-                </div>
-              </dl>
-
-              <hr class="divider" />
-
-              <nav
-                class="user-dropdown__actions"
-                aria-label="Liên kết tài khoản"
-              >
-                <a class="user-dropdown__link" href="./account-info.html">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="8" r="4" />
-                    <path d="M4 21a8 8 0 0 1 16 0" />
-                  </svg>
-                  <span>Thông tin tài khoản</span>
-                </a>
-                <a
-                  class="user-dropdown__link user-dropdown__link--danger"
-                  href="./login.html"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                    <path d="m16 17 5-5-5-5" />
-                    <path d="M21 12H9" />
-                  </svg>
-                  <span>Đăng xuất</span>
-                </a>
-              </nav>
-            </div>
-          </details>
-
-          <a href="./cart.html" class="cart-logo" aria-label="Giỏ hàng của bạn">
+          <a href="./login.html" class="header-btn login-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Đăng nhập</span>
+          </a>
+          <a href="./signin.html" class="header-btn register-btn">
+            <span>Đăng ký</span>
+          </a>
+          <!-- <a href="#" class="cart-logo" aria-label="Xem giỏ hàng">
             <div class="cart-icon-wrapper">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +115,7 @@
               <span class="cart-badge">2</span>
             </div>
             <span class="cart-text">Giỏ hàng</span>
-          </a>
+          </a> -->
         </div>
       </div>
     </header>

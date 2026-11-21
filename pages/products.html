@@ -22,14 +22,16 @@
     <header class="header" id="header">
       <div class="header__container container">
         <div class="header-logo__container">
-          <a href="../index.html" class="home-logo"
-            ><span class="logo-text">Sweet Bakery</span></a
-          >
+          <a href="../index.html" class="home-logo">
+            <span class="logo-text">Sweet Bakery</span>
+          </a>
         </div>
+
+        <!-- Search Bar -->
         <div class="header-search__container">
           <form
             class="header-search__form"
-            action="../index.html#best-seller"
+            action="./search-results.html"
             role="search"
           >
             <svg
@@ -42,7 +44,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              aria-hidden="true"
+              class="search-icon"
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.3-4.3" />
@@ -57,45 +59,61 @@
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
+
+        <!-- Header Actions -->
         <div class="header__container--right">
           <a href="./login.html" class="header-btn login-btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.8"
+              stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              aria-hidden="true"
             >
-              <path d="M20 21a8 8 0 0 0-16 0" />
-              <circle cx="12" cy="8" r="5" />
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
             </svg>
             <span>Đăng nhập</span>
           </a>
           <a href="./signin.html" class="header-btn register-btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="10" cy="7" r="4" />
-              <path d="M19 8v6M22 11h-6" />
-            </svg>
             <span>Đăng ký</span>
           </a>
+          <!-- <a href="#" class="cart-logo" aria-label="Xem giỏ hàng">
+            <div class="cart-icon-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-shopping-cart"
+              >
+                <circle cx="8" cy="21" r="1" />
+                <circle cx="19" cy="21" r="1" />
+                <path
+                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                />
+              </svg>
+              <span class="cart-badge">2</span>
+            </div>
+            <span class="cart-text">Giỏ hàng</span>
+          </a> -->
         </div>
       </div>
     </header>
@@ -161,12 +179,12 @@
               role="group"
               aria-label="Lọc theo hương vị"
             >
-              <label for="filter-all">Tất cả</label>
-              <label for="filter-fruit">Sinh nhật</label>
-              <label for="filter-chocolate">Mousse</label>
-              <label for="filter-mousse">Bánh mì &amp; Pastry</label>
-              <label for="filter-birthday">Bánh mặn</label>
-              <label for="filter-desert">Tráng miệng</label>
+              <label id="label-all" for="filter-all">Tất cả</label>
+              <label id="birthday" for="filter-fruit">Sinh nhật</label>
+              <label id="mousse" for="filter-chocolate">Mousse</label>
+              <label id="bread-pastry" for="filter-mousse">Bánh mì &amp; Pastry</label>
+              <label id="savory" for="filter-birthday">Bánh mặn</label>
+              <label id="dessert" for="filter-desert">Tráng miệng</label>
             </div>
             <p class="catalog-count">14 mẫu bánh</p>
           </div>
@@ -813,5 +831,6 @@
 
     <script src="../Javascript/auth.js"></script>
     <script src="../Javascript/advanced-search.js" defer></script>
+    <script src="../Javascript/product.js"></script>
   </body>
 </html>

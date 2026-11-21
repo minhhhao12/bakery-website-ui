@@ -24,15 +24,16 @@
     <header class="header" id="header">
       <div class="header__container container">
         <div class="header-logo__container">
-          <a href="../index.html" class="home-logo"
-            ><span class="logo-text">Sweet Bakery</span></a
-          >
+          <a href="../index.html" class="home-logo">
+            <span class="logo-text">Sweet Bakery</span>
+          </a>
         </div>
+
+        <!-- Search Bar -->
         <div class="header-search__container">
           <form
             class="header-search__form"
-            action="search-results.html"
-            method="get"
+            action="./search-results.html"
             role="search"
           >
             <svg
@@ -46,28 +47,54 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="search-icon"
-              aria-hidden="true"
             >
               <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" /></svg
-            ><input
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input
               type="search"
               class="header-search__input"
               placeholder="Tìm bánh kem, tiramisu, croissant..."
               aria-label="Tìm kiếm sản phẩm"
-            /><button type="submit" class="header-search__btn">
+            />
+            <button type="submit" class="header-search__btn">
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
+
+        <!-- Header Actions -->
         <div class="header__container--right">
-          <a href="./login.html" class="header-btn login-btn"
-            ><span>Đăng nhập</span></a
-          ><a href="./signin.html" class="header-btn register-btn"
-            ><span>Đăng ký</span></a
-          ><a href="./cart.html" class="cart-logo" aria-label="Xem giỏ hàng"
-            ><span class="cart-icon-wrapper"
-              ><svg
+          <a href="./login.html" class="header-btn login-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Đăng nhập</span>
+          </a>
+          <a href="./signin.html" class="header-btn register-btn">
+            <span>Đăng ký</span>
+          </a>
+          <!-- <a href="#" class="cart-logo" aria-label="Xem giỏ hàng">
+            <div class="cart-icon-wrapper">
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
                 height="22"
@@ -77,16 +104,18 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                aria-hidden="true"
+                class="lucide lucide-shopping-cart"
               >
                 <circle cx="8" cy="21" r="1" />
                 <circle cx="19" cy="21" r="1" />
                 <path
                   d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-                /></svg
-              ><span class="cart-badge">1</span></span
-            ><span class="cart-text">Giỏ hàng</span></a
-          >
+                />
+              </svg>
+              <span class="cart-badge">2</span>
+            </div>
+            <span class="cart-text">Giỏ hàng</span>
+          </a> -->
         </div>
       </div>
     </header>

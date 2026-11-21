@@ -55,6 +55,13 @@
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
 
         <!-- Header Actions -->
@@ -213,7 +220,7 @@
         </div>
         <div class="best-seller__grid">
           <!-- Card 1 -->
-          <div class="product-card card">
+          <a href="./pages/product_detail.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img src="./assets/cake/banhkemdau.png" alt="Bánh kem dâu tây" />
               <span class="badge badge-sale">Bán chạy</span>
@@ -225,16 +232,12 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">350.000₫</span>
-                <a
-                  href="./pages/product_detail.html"
-                  class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
           <!-- Card 2 -->
-          <div class="product-card card">
+          <a href="./pages/product_tiramisu.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img
                 src="./assets/cake/CLASSIC-TIRAMISU-MINI.png"
@@ -250,16 +253,12 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">420.000₫</span>
-                <a
-                  href="./pages/product_tiramisu.html"
-                  class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
           <!-- Card 3 -->
-          <div class="product-card card">
+          <a href="./pages/product_mousse.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img
                 src="./assets/cake/mousse-tra-xanh.png"
@@ -273,16 +272,12 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">380.000₫</span>
-                <a
-                  href="./pages/product_mousse.html"
-                  class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
           <!-- Card 4 -->
-          <div class="product-card card">
+          <a href="./pages/product_cappuccino.html" class="product-card card">
             <div class="product-card__img-wrapper">
               <img src="./assets/cake/capuchinocake.png" alt="Bánh Capuchino" />
               <span class="badge badge-sale">Bán chạy</span>
@@ -295,14 +290,10 @@
               </p>
               <div class="product-card__footer">
                 <span class="product-card__price">400.000₫</span>
-                <a
-                  href="./pages/product_cappuccino.html"
-                  class="btn btn-primary btn-sm"
-                  >Đặt ngay</a
-                >
+                <span class="btn btn-primary btn-sm">Đặt ngay</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="best-seller__action">
           <a href="./pages/products.html" class="btn btn-outline">Xem tất cả sản phẩm →</a>
@@ -768,5 +759,6 @@
     <script src="./Javascript/auth.js"></script>
     <script src="./Javascript/menu.js"></script>
     <script src="./Javascript/advanced-search.js"></script>
+    <script src="./Javascript/header-categories.js"></script>
   </body>
 </html>

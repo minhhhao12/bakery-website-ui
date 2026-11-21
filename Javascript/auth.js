@@ -41,6 +41,13 @@ if (localStorage.getItem("login")) {
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
 
         <!-- Header Actions -->
@@ -223,6 +230,13 @@ if (localStorage.getItem("login")) {
               <span>Tìm kiếm</span>
             </button>
           </form>
+          <nav class="header-category-nav" aria-label="Phân loại sản phẩm">
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="all">Tất cả</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="birthday">Sinh nhật</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="bread-pastry">Bánh mì &amp; Pastry</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="savory">Bánh mặn</a>
+            <a class="header-category-nav__link" href="./pages/products.html" data-category="dessert">Tráng miệng</a>
+          </nav>
         </div>
 
         <!-- Header Actions -->
